@@ -1,0 +1,4 @@
+#### get google homepage
+GET https://www.google.com
+Accept: application/text
+Content-Type: application/json; charset=utf-8

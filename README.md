@@ -77,6 +77,12 @@ Section 1. Project Kickoff and Setting upthe bases
    III. delete some files
 
 2. Tools and Extensions
+   I. See npm and node version
+   II. install ES7,Bracket pair colorizer,Turbo Console Log,Import Cost, REST Client,ngrok for VSCode
+   III. create components-><TestComponent/>
+   IV. npm i lodash
+   V. create rest.http to test rest client
+   VI. run ngrok start with the commande palette.
 3. Building the UI Layout
 4. Bootstrap Integration
 5. Navbar Design
