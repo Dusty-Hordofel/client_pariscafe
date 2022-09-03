@@ -71,31 +71,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Section 1. Project Kickoff and Setting upthe bases
 
-1. Project Installs
-   I. npx-create-react-app fe_indicafe
-   II. npm start to run the project using the terminal
-   III. delete some files
+1.  Project Installs
+    I. npx-create-react-app fe_indicafe
+    II. npm start to run the project using the terminal
+    III. delete some files
 
-2. Tools and Extensions
-   I. See npm and node version
-   II. install ES7,Bracket pair colorizer,Turbo Console Log,Import Cost, REST Client,ngrok for VSCode
-   III. create components-><TestComponent/>
-   IV. npm i lodash
-   V. create rest.http to test rest client
-   VI. run ngrok start with the commande palette.
+2.  Tools and Extensions
+    I. See npm and node version
+    II. install ES7,Bracket pair colorizer,Turbo Console Log,Import Cost, REST Client,ngrok for VSCode
+    III. create components-><TestComponent/>
+    IV. npm i lodash
+    V. create rest.http to test rest client
+    VI. run ngrok start with the commande palette.
 
-3. Building the UI Layout
-   I. create components->Layout-><Layout/> && renderLayout()
-   II create <Navbar /> <Main /> <Footer /> && <Layout/>
-   III. create Layout.css
-   IV. create Navbar-><Navbar />,Main-><Main /> & Footer-><Footer />
-   V. create Navbar,Main & Footer css files & import <Layout/> in App.js
+3.  Building the UI Layout
+    I. create components->Layout-><Layout/> && renderLayout()
+    II create <Navbar /> <Main /> <Footer /> && <Layout/>
+    III. create Layout.css
+    IV. create Navbar-><Navbar />,Main-><Main /> & Footer-><Footer />
+    V. create Navbar,Main & Footer css files & import <Layout/> in App.js
 
-4. Bootstrap Integration
-5. Navbar Design
-6. Styling Navbar
-7. Design Project Logo/Brand
-8. Design Dynamic Component
-9. Designing Footer Component
+4.  Bootstrap Integration
+    I. update App.css file
+    II. npm i bootstrap && App.js
+    III. fontawesome
+
+         I. npm i --save @fortawesome/fontawesome-svg-core
+         II. npm i --save @fortawesome/free-solid-svg-icons
+         III. npm i --save @fortawesome/free-regular-svg-icons
+         IV. npm i --save @fortawesome/react-fontawesome@latest
+
+    IV. add Roboto Condensed Italic (https://fonts.google.com/specimen/Roboto+Condensed) && App.css
+
+5.  Navbar Design
+6.  Styling Navbar
+7.  Design Project Logo/Brand
+8.  Design Dynamic Component
+9.  Designing Footer Component
 10. Sign up with Github and Integration
 11. Sign up with Netlify, Setting up CI / CD for the front end project.
+
+Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
+Beaucoup s’exposent trop vite et tombent également vite.
+Faites preuve de patience et de sagesse.
