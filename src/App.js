@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import _ from 'lodash';
 import './App.css';
+import Layout from './components/Layout/Layout';
 
 function App() {
   const [name, setName] = useState('React');
@@ -8,7 +9,11 @@ function App() {
 
   console.log(name);
 
-  return <div className="App">Hello React 2</div>;
+  return (
+    <div className="App">
+      <Layout />
+    </div>
+  );
 }
 
 export default App;

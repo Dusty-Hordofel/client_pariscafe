@@ -83,7 +83,14 @@ Section 1. Project Kickoff and Setting upthe bases
    IV. npm i lodash
    V. create rest.http to test rest client
    VI. run ngrok start with the commande palette.
+
 3. Building the UI Layout
+   I. create components->Layout-><Layout/> && renderLayout()
+   II create <Navbar /> <Main /> <Footer /> && <Layout/>
+   III. create Layout.css
+   IV. create Navbar-><Navbar />,Main-><Main /> & Footer-><Footer />
+   V. create Navbar,Main & Footer css files & import <Layout/> in App.js
+
 4. Bootstrap Integration
 5. Navbar Design
 6. Styling Navbar
