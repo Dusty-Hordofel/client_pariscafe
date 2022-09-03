@@ -1,8 +1,10 @@
+import './Main.css';
+
 const Main = () => {
-  const renderMain = () => {
-    return <div>Main</div>;
-  };
-  return <div>{renderMain()}</div>;
+  //props from Layout
+  const renderMain = (props) => <div className="main">Main</div>;
+
+  return <>{renderMain()}</>;
 };
 
 export default Main;

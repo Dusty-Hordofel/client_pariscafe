@@ -4,7 +4,7 @@ import './Layout.css';
 import Main from './Main/Main';
 import Navbar from './Navbar/Navbar';
 
-const Layout = () => {
+const Layout = (props) => {
   const renderLayout = () => (
     <div className="layout">
       <Navbar />

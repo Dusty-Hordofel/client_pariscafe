@@ -100,6 +100,7 @@ Section 1. Project Kickoff and Setting upthe bases
          II. npm i --save @fortawesome/free-solid-svg-icons
          III. npm i --save @fortawesome/free-regular-svg-icons
          IV. npm i --save @fortawesome/react-fontawesome@latest
+         V. npm i @fortawesome/free-brands-svg-icons
 
     IV. add Roboto Condensed Italic (https://fonts.google.com/specimen/Roboto+Condensed) && App.css
 
@@ -118,6 +119,8 @@ Section 1. Project Kickoff and Setting upthe bases
     II. style <Navbar/> && Logo
 
 8.  Design Dynamic Component
+    I.update & style <Main/> & pass it a props.
+    II. update & style <Footer/> .
 9.  Designing Footer Component
 10. Sign up with Github and Integration
 11. Sign up with Netlify, Setting up CI / CD for the front end project.

@@ -17,7 +17,7 @@ const Navbar = () => {
             <img src={logo} alt="logo" className="logo" />
             <label style={{ fontSize: '14px', fontWeight: 'bold' }}>
               ind<span className="logo-label">iC</span>af&egrave;
-              {/* &egrave is used to indicate */}
+              {/* &egrave is used to indicate*/}
             </label>
           </a>
           <button
