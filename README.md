@@ -118,12 +118,13 @@ Section 1. Project Kickoff and Setting upthe bases
     I. add assets folder
     II. style <Navbar/> && Logo
 
-8.  Design Dynamic Component
+8.  Design Dynamic Component & Footer Component
     I.update & style <Main/> & pass it a props.
     II. update & style <Footer/> .
-9.  Designing Footer Component
-10. Sign up with Github and Integration
-11. Sign up with Netlify, Setting up CI / CD for the front end project.
+
+9.  Sign up with Github and Integration (alredy done)
+10. Sign up with Netlify, Setting up CI / CD for the front end project.
+    I.
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.

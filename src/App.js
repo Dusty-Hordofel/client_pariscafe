@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import _ from 'lodash';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from './components/Layout/Layout';
