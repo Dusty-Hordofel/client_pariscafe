@@ -1,0 +1,31 @@
+nav {
+  background-color: var(--primary-navbar) !important;
+  border-bottom: 1px solid var(--primary-navy);
+}
+
+nav ul > li > a {
+  text-transform: uppercase;
+  color: var(--primary-navy) !important;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-nav .nav-item .active {
+  border-bottom: 3px solid var(--primary-orange) !important;
+}
+
+.navbar-nav .nav-item:hover {
+  border-bottom: 3px solid var(--primary-green) !important;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+nav .nav-link {
+  font-weight: bold;
+}
+
+form input[type='text'] {
+  background-color: var(--primary-peach) !important;
+}

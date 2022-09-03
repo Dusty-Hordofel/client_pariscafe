@@ -110,6 +110,8 @@ Section 1. Project Kickoff and Setting upthe bases
     IV. import {fontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 6.  Styling Navbar
+    I. change container-fluid to container to have more space.
+    II. style <Navbar/>
 7.  Design Project Logo/Brand
 8.  Design Dynamic Component
 9.  Designing Footer Component

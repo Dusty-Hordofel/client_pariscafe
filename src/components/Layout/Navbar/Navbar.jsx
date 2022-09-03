@@ -4,12 +4,14 @@ import {
   faCartPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Navbar.css';
 
 const Navbar = () => {
   const renderNavbar = () => {
     return (
       <nav className="navbar navbar-expand-lg bg-light">
-        <div className="container-fluid">
+        {/*container-fluid*/}
+        <div className="container">
           <a className="navbar-brand" href="/">
             Navbar
           </a>
@@ -48,15 +50,26 @@ const Navbar = () => {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                <FontAwesomeIcon icon={faSearch} />
-              </button>
+              <div className="input-group">
+                <input
+                  className="form-control"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                {/*<div className="input-group-append">*/}
+                <button
+                  className="btn btn-outline-success"
+                  type="submit"
+                  style={{
+                    background: 'var(--primary-green)',
+                    color: 'var(--primary-white)',
+                  }}
+                >
+                  <FontAwesomeIcon icon={faSearch} />
+                </button>
+                {/*</div>*/}
+              </div>
             </form>
           </div>
         </div>
