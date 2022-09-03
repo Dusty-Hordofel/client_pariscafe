@@ -29,3 +29,23 @@ nav .nav-link {
 form input[type='text'] {
   background-color: var(--primary-peach) !important;
 }
+
+/** Logo **/
+.logo {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px solid var(--primary-navy);
+  background-color: orangered;
+  margin-right: 4px;
+}
+
+.logo-label {
+  font-size: 28px;
+}
+
+.navbar-brand {
+  margin-right: 16px;
+}

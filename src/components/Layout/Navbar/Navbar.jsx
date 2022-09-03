@@ -5,6 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css';
+import logo from '../../../assets/images/dosa.jpg';
 
 const Navbar = () => {
   const renderNavbar = () => {
@@ -13,7 +14,11 @@ const Navbar = () => {
         {/*container-fluid*/}
         <div className="container">
           <a className="navbar-brand" href="/">
-            Navbar
+            <img src={logo} alt="logo" className="logo" />
+            <label style={{ fontSize: '14px', fontWeight: 'bold' }}>
+              ind<span className="logo-label">iC</span>af&egrave;
+              {/* &egrave is used to indicate */}
+            </label>
           </a>
           <button
             className="navbar-toggler"
@@ -56,6 +61,7 @@ const Navbar = () => {
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                  size="40"
                 />
                 {/*<div className="input-group-append">*/}
                 <button
