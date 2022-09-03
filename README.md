@@ -104,6 +104,11 @@ Section 1. Project Kickoff and Setting upthe bases
     IV. add Roboto Condensed Italic (https://fonts.google.com/specimen/Roboto+Condensed) && App.css
 
 5.  Navbar Design
+    I. <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> && index.html
+    II. import <Navbar/> from Bootstrap to <Navbar>
+    III. import { faBars, faSearch, faCartPlus } from '@fortawesome/free-solid-svg-icons';
+    IV. import {fontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 6.  Styling Navbar
 7.  Design Project Logo/Brand
 8.  Design Dynamic Component
