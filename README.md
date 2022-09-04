@@ -124,7 +124,23 @@ Section 1. Project Kickoff and Setting upthe bases
 
 9.  Sign up with Github and Integration (alredy done)
 10. Sign up with Netlify, Setting up CI / CD for the front end project.
-    I.
+
+Section 2. Design the Project Landing Page for our App
+
+11. Intro - Setting up the Landing Page
+    I. create components->LandingPage->LandingPage.js
+    II. import <Layout/> && <LandingPage/>
+    III. npm i react-router-dom
+    IV. create components->Routes-><Route/> && App.js
+12. Sprucing up the Landing Page
+13. Design a background for Landing Page
+14. Designing the Dish Menu
+15. Integration with Typed component
+16. CI/CD - Deploy to Netlify
+
+Section 3. Catalog Design
+
+17. 18. 19. 20.
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
