@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Layout from '../Layout/Layout';
+import Menu from './Menu/Menu';
 
 const LandingPage = () => {
   const renderLandingPage = () => {
@@ -12,7 +13,7 @@ const LandingPage = () => {
               fontFamily: 'Roboto Bold',
             }}
           >
-            indiCaf&egrave;
+            parisCaf&egrave;
           </h1>
           <p>
             <button
@@ -30,6 +31,7 @@ const LandingPage = () => {
             our offers and enjoy the savories
           </p>
           <p>Home Deiveries under 30 minutes flat.</p>
+          <Menu />
         </section>
       </Layout>
     );

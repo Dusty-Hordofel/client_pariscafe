@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="container">
           <div className="row justify-content-center flex-wrap">
             <section className="col-12 col-md-4 footer-column">
-              <p>indiCaf&egrave; - A Food Delivery Startup</p>
+              <p>parisCaf&egrave; - A Food Delivery Startup</p>
               <p>Copyright &copy; 2021</p>
             </section>
             <section className="col-12 col-md-4 footer-column">

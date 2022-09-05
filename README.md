@@ -142,10 +142,13 @@ Section 2. Design the Project Landing Page for our App
     I. add section & style it in <LandingPage/>
     II. update <Main/> adding a conditionnal rendering for background image and title (done in last section )
 
-14. Designing the Dish Menu
-    I.
-15. Integration with Typed component
-16. CI/CD - Deploy to Netlify
+14. Designing the Dish Menu & Integration with Typed component
+    I. add src->assets->addI-images & LandingPage->Menu-><Menu/>
+    II. add Bootstrap <Card/> && <Menu/>
+    III. add <Menu/> && <LandingPage/>
+    IV. npm install react-typed --force (for animated text)
+
+15. CI/CD - Deploy to Netlify
 
 Section 3. Catalog Design
 

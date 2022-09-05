@@ -12,7 +12,7 @@ const Navbar = () => {
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo" className="logo" />
             <label style={{ fontSize: '14px', fontWeight: 'bold' }}>
-              ind<span className="logo-label">iC</span>af&egrave;
+              pari<span className="logo-label">sC</span>af&egrave;
               {/* &egrave is used to indicate*/}
             </label>
           </a>
