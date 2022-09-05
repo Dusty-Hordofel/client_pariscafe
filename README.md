@@ -152,7 +152,11 @@ Section 2. Design the Project Landing Page for our App
 
 Section 3. Catalog Design
 
-17. 18. 19. 20.
+17. Intro to Catalog Design
+18. Carousel Design
+19. First Steps to API Driven Design
+20. Intro to MongoDB on Cloud
+21. API integration with Mongo
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
