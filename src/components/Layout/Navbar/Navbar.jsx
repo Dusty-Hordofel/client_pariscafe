@@ -61,10 +61,10 @@ const Navbar = () => {
                 />
                 {/*<div className="input-group-append">*/}
                 <button
-                  className="btn btn-outline-success"
+                  className="btn btn-outline-var(--primary-navy)"
                   type="submit"
                   style={{
-                    background: 'var(--primary-green)',
+                    background: 'var(--primary-navy)',
                     color: 'var(--primary-white)',
                   }}
                 >

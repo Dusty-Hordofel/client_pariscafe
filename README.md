@@ -139,8 +139,11 @@ Section 2. Design the Project Landing Page for our App
     III. update <Main/> adding a conditionnal rendering for background image and title
 
 13. Design a background for Landing Page
-    I.
+    I. add section & style it in <LandingPage/>
+    II. update <Main/> adding a conditionnal rendering for background image and title (done in last section )
+
 14. Designing the Dish Menu
+    I.
 15. Integration with Typed component
 16. CI/CD - Deploy to Netlify
 
