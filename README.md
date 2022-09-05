@@ -132,8 +132,14 @@ Section 2. Design the Project Landing Page for our App
     II. import <Layout/> && <LandingPage/>
     III. npm i react-router-dom
     IV. create components->Routes-><Route/> && App.js
+
 12. Sprucing up the Landing Page
+    I. pass title as a props in <LandingPage/> && pass it in <Main>
+    II. define a background & backdrop props in <LandingPage/> && <Layout>
+    III. update <Main/> adding a conditionnal rendering for background image and title
+
 13. Design a background for Landing Page
+    I.
 14. Designing the Dish Menu
 15. Integration with Typed component
 16. CI/CD - Deploy to Netlify
