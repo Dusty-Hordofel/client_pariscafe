@@ -1,0 +1,4 @@
+### route endpoint
+GET http://localhost:4310
+Accept: application/json
+Content-Type: application/json

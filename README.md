@@ -160,7 +160,15 @@ Section 3. Catalog Design
     II. add Boostrap caroussel in a function!
     III. create UI->SlideShow-><SlideShow/> && <Catalog/>
     IV.style <SlideShow/>
+
 18. First Steps to API Driven Design
+    I. create backend & src folder
+    II. npm init -y
+    III. npm i express dotenv cors
+    IV. npm i -D morgan nodemon
+    V. create src->index.js(entrie point) & fill it.
+    VI. add a script in package.json file & create res.rest.
+
 19. Intro to MongoDB on Cloud
 20. API integration with Mongo
 21. Designing our First API
