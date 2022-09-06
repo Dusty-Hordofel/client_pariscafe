@@ -170,6 +170,8 @@ Section 3. Catalog Design
     VI. add a script in package.json file & create res.rest.
 
 19. Intro to MongoDB on Cloud
+    I. setup MongoDB in the cloud...
+
 20. API integration with Mongo
 21. Designing our First API
 22. Designing our First Mongo model
