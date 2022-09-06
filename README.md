@@ -153,6 +153,7 @@ Section 2. Design the Project Landing Page for our App
 Section 3. Catalog Design
 
 16. Intro to Catalog Design
+    I. create components->Catalogue-><Catalog/>
 17. Carousel Design
 18. First Steps to API Driven Design
 19. Intro to MongoDB on Cloud
