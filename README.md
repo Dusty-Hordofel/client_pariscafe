@@ -154,7 +154,12 @@ Section 3. Catalog Design
 
 16. Intro to Catalog Design
     I. create components->Catalogue-><Catalog/>
+
 17. Carousel Design
+    I. npm install react-bootstrap bootstrap
+    II. add Boostrap caroussel in a function!
+    III. create UI->SlideShow-><SlideShow/> && <Catalog/>
+    IV.style <SlideShow/>
 18. First Steps to API Driven Design
 19. Intro to MongoDB on Cloud
 20. API integration with Mongo
