@@ -181,6 +181,9 @@ Section 3. Catalog Design
     II. create {fetchAllCategories} controllers & test it creating http.category.rest
 
 22. Designing our First Mongo model
+    I. create a category models
+    II. use category model in controllers->category.js
+    III. test the script in http.category.rest
 23. Designing API Error Handling Semantics
 24. API - Create a Dish Category
 25. Introduction to input validation on APIs
