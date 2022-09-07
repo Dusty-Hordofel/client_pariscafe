@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
@@ -17,8 +18,15 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello World' });
 });
 
-const port = process.env.PORT || 4112;
+const PORT = process.env.PORT || 4112;
+const DATABASE = process.env.DATABASE;
 
-app.listen(port, () => {
-  console.log(`Server is runing on port ${port}`);
+app.listen(PORT, async () => {
+  console.log(`Server is runing on port ${PORT}`);
+  try {
+    await mongoose.connect(DATABASE);
+    console.log('Connected to mongoDB');
+  } catch (error) {
+    console.log('🚀 ~ file: index.js ~ line 29 ~ app.listen ~ error', error);
+  }
 });

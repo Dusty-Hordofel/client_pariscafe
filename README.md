@@ -173,6 +173,7 @@ Section 3. Catalog Design
     I. setup MongoDB in the cloud...
 
 20. API integration with Mongo
+    I. npm i mongoose & connect to MongoDB database
 21. Designing our First API
 22. Designing our First Mongo model
 23. Designing API Error Handling Semantics
