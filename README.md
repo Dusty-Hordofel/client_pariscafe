@@ -174,7 +174,12 @@ Section 3. Catalog Design
 
 20. API integration with Mongo
     I. npm i mongoose & connect to MongoDB database
+
 21. Designing our First API
+    I.create routes->category.js & controllers->category.js
+    II. create category model
+    II. create {fetchAllCategories} controllers & test it creating http.category.rest
+
 22. Designing our First Mongo model
 23. Designing API Error Handling Semantics
 24. API - Create a Dish Category

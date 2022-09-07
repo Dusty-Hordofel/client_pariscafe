@@ -1,0 +1,2 @@
+### get all categories
+GET http://localhost:4310/api/categories

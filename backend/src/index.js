@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const categoryRoute = require('./routes/category');
 
 const app = express(); // Create Express app
 dotenv.config(); //to use .env file
@@ -14,12 +15,16 @@ app.use(express.json()); //to parse json data
 app.use(express.urlencoded({ extended: false }));
 // app.use('/api', require('./routes'));
 
+const PORT = process.env.PORT || 4112;
+const DATABASE = process.env.DATABASE;
+const PREFIX = process.env.PREFIX;
+
+app.use(PREFIX, categoryRoute);
+// app.use(`/${PREFIX}/categories`, categoryRoute);
+
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello World' });
 });
-
-const PORT = process.env.PORT || 4112;
-const DATABASE = process.env.DATABASE;
 
 app.listen(PORT, async () => {
   console.log(`Server is runing on port ${PORT}`);
