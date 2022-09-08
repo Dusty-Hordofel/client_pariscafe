@@ -184,7 +184,10 @@ Section 3. Catalog Design
     I. create a category models
     II. use category model in controllers->category.js
     III. test the script in http.category.rest
+
 23. Designing API Error Handling Semantics
+    I. npm i http-errors && index.js
+    II.update category controllers
 24. API - Create a Dish Category
 25. Introduction to input validation on APIs
 26. API End point - Retrieve Category By Id

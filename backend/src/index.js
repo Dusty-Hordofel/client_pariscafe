@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const createError = require('http-errors');
 const dotenv = require('dotenv');
 const categoryRoute = require('./routes/category');
 
@@ -35,3 +36,19 @@ app.listen(PORT, async () => {
     console.log('🚀 ~ file: index.js ~ line 29 ~ app.listen ~ error', error);
   }
 });
+
+app.use(async (req, res, next) => {
+  next(createError.NotFound());
+}); //if we don't use next(error) then the error will not be handled by the error handler middleware
+
+app.use((err, req, res, next) => {
+  res.status = err.status || 500;
+  console.log(err.status);
+
+  res.send({
+    error: {
+      status: err.status || 500,
+      message: err.message || 'Internal Server Error',
+    },
+  });
+}); //it will handle all the errors
