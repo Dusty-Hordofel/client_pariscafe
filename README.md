@@ -188,7 +188,10 @@ Section 3. Catalog Design
 23. Designing API Error Handling Semantics
     I. npm i http-errors && index.js
     II.update category controllers
+
 24. API - Create a Dish Category
+    I. create createCategory routes and endpoint.
+    II.test the script
 25. Introduction to input validation on APIs
 26. API End point - Retrieve Category By Id
 27. Design API Endpoint to create a dish resource

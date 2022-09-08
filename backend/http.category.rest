@@ -1,2 +1,15 @@
 ### get all categories
 GET http://localhost:4310/api/categories
+
+### get invalid routes
+GET http://localhost:4310/api/categories2
+
+### create a new category
+POST http://localhost:4310/api/categories
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "test category-321"
+    }
+    
