@@ -1,0 +1,11 @@
+### createDish
+POST http://localhost:4310/api/dishes
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "massololio",
+    "price": 100,
+    "category": "631a4877595d10643e102877",
+    "description": "massango com arroz"
+    }

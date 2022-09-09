@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const createError = require('http-errors');
 const dotenv = require('dotenv');
-const categoryRoute = require('./routes/category');
+const categoryRoutes = require('./routes/category');
+const dishRoutes = require('./routes/dish');
 
 const app = express(); // Create Express app
 dotenv.config(); //to use .env file
@@ -20,8 +21,9 @@ const PORT = process.env.PORT || 4112;
 const DATABASE = process.env.DATABASE;
 const PREFIX = process.env.PREFIX;
 
-app.use(PREFIX, categoryRoute);
-// app.use(`/${PREFIX}/categories`, categoryRoute);
+app.use(PREFIX, categoryRoutes);
+app.use(PREFIX, dishRoutes);
+// we can also use this synthax: app.use(`/${PREFIX}/categories`, categoryRoute);
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello World' });

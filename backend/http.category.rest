@@ -19,3 +19,14 @@ Accept: application/json
 
 ### update category by id
 PUT http://localhost:4310/api/categories/631a49cf3aab65fcfb8d21b0
+
+### createDish
+POST http://localhost:4310/api/dishes
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "massango",
+    "price": 100,
+    "categoryId": "631a49cf3aab65fcfb8d21b0"
+    }
