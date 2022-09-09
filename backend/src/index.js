@@ -42,10 +42,10 @@ app.use(async (req, res, next) => {
 }); //if we don't use next(error) then the error will not be handled by the error handler middleware
 
 app.use((err, req, res, next) => {
-  res.status = err.status || 500;
-  console.log(err.status);
+  // res.status = err.status || 500;
+  // console.log(err.status);
 
-  res.send({
+  res.status(err.status || 500).json({
     error: {
       status: err.status || 500,
       message: err.message || 'Internal Server Error',

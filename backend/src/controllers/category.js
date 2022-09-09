@@ -1,6 +1,7 @@
 const Category = require('../models/category');
 const createError = require('http-errors');
 const { categorySchema } = require('../validators/schema-validator');
+const mongoose = require('mongoose');
 
 exports.fetchAllCategories = async (req, res, next) => {
   try {
@@ -11,9 +12,8 @@ exports.fetchAllCategories = async (req, res, next) => {
     res.status(200).json(result);
   } catch (error) {
     console.log('🚀 ~ file: category.js ~ line 8 ', error);
-    next(error);
+    next(error); //if we don't use next(error) then the error will not be handled by the error handler middleware
     // res.status(400).json({ error: error.message });
-    // next(error); //if we don't use next(error) then the error will not be handled by the error handler middleware
   }
 };
 
@@ -42,4 +42,29 @@ exports.createCategory = async (req, res, next) => {
     // next(error); //if we don't use next(error) then the error will not be handled by the error handler middleware
   } //otherwise we send the error
   //   res.status(201).json({ message: 'create category' });
+};
+
+exports.getCategory = (req, res) => {
+  res.status(200).json(req.category);
+};
+
+exports.getCategoryId = async (req, res, next, id) => {
+  try {
+    const category = await Category.findById(id);
+    if (!category) return next(createError(404, 'Category not found'));
+
+    req.category = category;
+    next();
+  } catch (error) {
+    console.log(
+      '🚀 ~ file: category.js ~ line 61 ~ exports.getCategoryId=async ~ error',
+      error
+    );
+
+    if (error instanceof mongoose.CastError) {
+      return next(createError(400, 'Invalid Category Id'));
+    }
+
+    next(error);
+  }
 };

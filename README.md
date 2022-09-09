@@ -198,6 +198,8 @@ Section 3. Catalog Design
     II. use schema-validator in category controllers & test the script
 
 26. API End point - Retrieve Category By Id
+    I. update error.status in index.js.
+    II. create getCategoryId & getCategory controllers
 27. Design API Endpoint to create a dish resource
 28. Enhance API to work with binary data - upload dish image
 29. API Input Data validation and Error Handling

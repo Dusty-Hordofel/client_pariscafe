@@ -10,6 +10,12 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "testzzzzzzzzzzzzzzzzzzzzzzzzzz"
+    "name": "testzzzzzzzzzzzz"
     }
-    
+
+### get category by id
+GET http://localhost:4310/api/categories/631a49cf3aab65fcfb8d21b01
+Accept: application/json
+
+### update category by id
+PUT http://localhost:4310/api/categories/631a49cf3aab65fcfb8d21b0
