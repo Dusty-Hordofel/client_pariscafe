@@ -10,6 +10,6 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "test category-321"
+    "name": "testzzzzzzzzzzzzzzzzzzzzzzzzzz"
     }
     
