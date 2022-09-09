@@ -192,7 +192,11 @@ Section 3. Catalog Design
 24. API - Create a Dish Category
     I. create createCategory routes and endpoint.
     II.test the script
+
 25. Introduction to input validation on APIs
+    I. npm i joi & create validators->schema-validator.js
+    II. use schema-validator in category controllers & test the script
+
 26. API End point - Retrieve Category By Id
 27. Design API Endpoint to create a dish resource
 28. Enhance API to work with binary data - upload dish image
