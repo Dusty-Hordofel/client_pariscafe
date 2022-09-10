@@ -49,6 +49,49 @@ exports.createDish = async (req, res, next) => {
   // res.status(201).json({ message: 'Dish created successfully' });
 };
 
+exports.fetchDishes = async (req, res, next) => {
+  try {
+    const dishes = await Dish.find()
+      .select('-photo')
+      .populate('category', '_id, name');
+
+    if (dishes.length === 0) throw createError(400, 'No Disheses found');
+
+    res.status(200).json(dishes);
+  } catch (error) {
+    console.log(
+      '🚀 ~ file: dish.js ~ line 63 ~ exports.fetchDishes= ~ error',
+      error
+    );
+    next(error);
+  }
+};
+
+exports.fetchDishById = (req, res) => {
+  req.dish.photo = undefined;
+  res.status(200).json(req.dish);
+};
+
+exports.fetchDish = async (req, res, next, id) => {
+  try {
+    const dish = await Dish.findById(id);
+    if (!dish) throw createError(404, 'Dish not found');
+
+    req.dish = dish;
+    next();
+  } catch (error) {
+    console.log(
+      '🚀 ~ file: dish.js ~ line 59 ~ exports.fetchDish= ~ error',
+      error
+    );
+    if (error instanceof mongoose.CastError) {
+      return next(createError(400, 'Invalid Dish Id'));
+    }
+
+    next(error);
+  }
+};
+
 function savePhoto(dish, photo) {
   //TODO: Handle empty object scenario using lodash
 

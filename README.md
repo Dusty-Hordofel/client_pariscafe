@@ -211,22 +211,26 @@ Section 3. Catalog Design
 
 29. API Input Data validation and Error Handling
     I. handle error in createDish controllers.
-30. API Endpoint to Fetch All Dishes
-31. API Endpoint to retrieve dish photo
-32. API Code Integration with Github
-33. API Deploy to Cloud - Heroku
-34. UI - API Integration - Setting up AXIOS
-35. UI - API Integration - Getting Dish Data
-36. UI-API Integration - Presenting Dish detail as Card Component
-37. API Endpoint to Filter Dishes By Category
-38. Dish Filtering on UI
-39. Adding Event Handling to Filter Dishes
-40. Display Filtered Dishes
-41. Designing a Spinner Component for our app
-42. Design Adding dishes To Cart
-43. Design Notification Component to our App
-44. Deploy to Cloud - Heroku
-45. Deploy to Netlify - Connect Two Clouds
+30. API Input Data validation and Error Handling (update)
+    I. handle error in createDish controllers.
+    II. create routes->dish->{fetchDishes,fetchDish,fetchDishById} & controllers
+
+31. API Endpoint to Fetch All Dishes
+32. API Endpoint to retrieve dish photo
+33. API Code Integration with Github
+34. API Deploy to Cloud - Heroku
+35. UI - API Integration - Setting up AXIOS
+36. UI - API Integration - Getting Dish Data
+37. UI-API Integration - Presenting Dish detail as Card Component
+38. API Endpoint to Filter Dishes By Category
+39. Dish Filtering on UI
+40. Adding Event Handling to Filter Dishes
+41. Display Filtered Dishes
+42. Designing a Spinner Component for our app
+43. Design Adding dishes To Cart
+44. Design Notification Component to our App
+45. Deploy to Cloud - Heroku
+46. Deploy to Netlify - Connect Two Clouds
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
