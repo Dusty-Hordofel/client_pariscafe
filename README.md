@@ -208,7 +208,9 @@ Section 3. Catalog Design
 28. Enhance API to work with binary data - upload dish image
     I. create savePhoto() && createDish
     II. use (https://onlinejpgtools.com/convert-jpg-to-base64)
+
 29. API Input Data validation and Error Handling
+    I. handle error in createDish controllers.
 30. API Endpoint to Fetch All Dishes
 31. API Endpoint to retrieve dish photo
 32. API Code Integration with Github
