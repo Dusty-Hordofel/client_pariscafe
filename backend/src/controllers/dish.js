@@ -67,6 +67,17 @@ exports.fetchDishes = async (req, res, next) => {
   }
 };
 
+exports.getDishPhoto = (req, res) => {
+  const dish = req.dish;
+
+  if (dish.photo.data) {
+    res.set('Content-Type', dish.photo.contentType); //set is used to set the header. we are setting the content type
+    res.send(dish.photo.data); // we are sending the photo
+  } else {
+    return res.status(204).json({ message: 'No data Found' });
+  }
+};
+
 exports.fetchDishById = (req, res) => {
   req.dish.photo = undefined;
   res.status(200).json(req.dish);

@@ -5,6 +5,7 @@ const {
   fetchDishes,
   fetchDish,
   fetchDishById,
+  getDishPhoto,
 } = require('../controllers/dish');
 
 // router.get();
@@ -13,6 +14,7 @@ router.get('/dishes', fetchDishes);
 router.param('id', fetchDish);
 
 router.get('/dishes/:id', fetchDishById);
+router.get('/dishes/:id/photo', getDishPhoto);
 // router.param('id', );
 // router.get('/dish/:id', );
 

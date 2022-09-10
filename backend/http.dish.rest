@@ -23,3 +23,7 @@ Accept: application/json
 GET http://localhost:4310/api/dishes/631c69a9dea4007d7507518d
 Content-Type: application/json
 Accept: application/json
+
+#### get a photo
+GET http://localhost:4310/api/dishes/631c69a9dea4007d7507518d/photo
+Content-Type: application/json

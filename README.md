@@ -217,6 +217,9 @@ Section 3. Catalog Design
 
 31. API Endpoint to Fetch All Dishes
 32. API Endpoint to retrieve dish photo
+    I. create routes->dish->getDishPhoto & controller
+    II. test the script in http.dish.rest
+
 33. API Code Integration with Github
 34. API Deploy to Cloud - Heroku
 35. UI - API Integration - Setting up AXIOS
