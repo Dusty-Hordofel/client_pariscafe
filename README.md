@@ -152,7 +152,42 @@ Section 2. Design the Project Landing Page for our App
 
 Section 3. Catalog Design
 
-17. 18. 19. 20.
+16. Intro to Catalog Design
+    I. create components->Catalogue-><Catalog/>
+
+17. Carousel Design
+    I. npm install react-bootstrap bootstrap
+    II. add Boostrap caroussel in a function!
+    III. create UI->SlideShow-><SlideShow/> && <Catalog/>
+    IV.style <SlideShow/>
+18. First Steps to API Driven Design
+19. Intro to MongoDB on Cloud
+20. API integration with Mongo
+21. Designing our First API
+22. Designing our First Mongo model
+23. Designing API Error Handling Semantics
+24. API - Create a Dish Category
+25. Introduction to input validation on APIs
+26. API End point - Retrieve Category By Id
+27. Design API Endpoint to create a dish resource
+28. Enhance API to work with binary data - upload dish image
+29. API Input Data validation and Error Handling
+30. API Endpoint to Fetch All Dishes
+31. API Endpoint to retrieve dish photo
+32. API Code Integration with Github
+33. API Deploy to Cloud - Heroku
+34. UI - API Integration - Setting up AXIOS
+35. UI - API Integration - Getting Dish Data
+36. UI-API Integration - Presenting Dish detail as Card Component
+37. API Endpoint to Filter Dishes By Category
+38. Dish Filtering on UI
+39. Adding Event Handling to Filter Dishes
+40. Display Filtered Dishes
+41. Designing a Spinner Component for our app
+42. Design Adding dishes To Cart
+43. Design Notification Component to our App
+44. Deploy to Cloud - Heroku
+45. Deploy to Netlify - Connect Two Clouds
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
