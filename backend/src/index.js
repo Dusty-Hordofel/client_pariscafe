@@ -13,8 +13,9 @@ dotenv.config(); //to use .env file
 //Middleware
 app.use(morgan('dev')); //to see the requests in the console
 app.use(cors()); //to allow cross-origin requests
-app.use(express.json()); //to parse json data
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit: '1mb' })); //to parse json data
+app.use(express.urlencoded({ limit: '1mb', extended: true })); //to parse urlencoded data
+
 // app.use('/api', require('./routes'));
 
 const PORT = process.env.PORT || 4112;

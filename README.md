@@ -204,7 +204,10 @@ Section 3. Catalog Design
 27. Design API Endpoint to create a dish resource
     I. create routes->dish.js, controllers->dish.js & validators->schema-validator
     II.create models->dish.js
+
 28. Enhance API to work with binary data - upload dish image
+    I. create savePhoto() && createDish
+    II. use (https://onlinejpgtools.com/convert-jpg-to-base64)
 29. API Input Data validation and Error Handling
 30. API Endpoint to Fetch All Dishes
 31. API Endpoint to retrieve dish photo
