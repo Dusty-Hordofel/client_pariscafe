@@ -221,6 +221,12 @@ Section 3. Catalog Design
     II. test the script in http.dish.rest
 
 33. API Code Integration with Github
+    I. backend folder in github if it isn't done.
+    II. Go to heroku (https://dashboard.heroku.com/apps) & create a new app (api-pariscafe)
+    III. connect Heroku with Github and select the api-pariscafe branch.
+    IV. go to settings-> click on Reavel Config Vars & add (DATABASE,PORT & PREFIX)
+    V. npm config set legacy-peer-deps true
+
 34. API Deploy to Cloud - Heroku
 35. UI - API Integration - Setting up AXIOS
 36. UI - API Integration - Getting Dish Data
