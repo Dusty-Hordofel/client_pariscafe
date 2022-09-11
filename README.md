@@ -1,3 +1,5 @@
+FRONTEND
+
 Section 1. Project Kickoff and Setting upthe bases
 
 1.  Project Installs
@@ -89,6 +91,9 @@ Section 3. Catalog Design
     II. add Boostrap caroussel in a function!
     III. create UI->SlideShow-><SlideShow/> && <Catalog/>
     IV.style <SlideShow/>
+
+BACKEND
+
 18. First Steps to API Driven Design
 19. Intro to MongoDB on Cloud
 20. API integration with Mongo
@@ -105,7 +110,13 @@ Section 3. Catalog Design
 31. API Endpoint to retrieve dish photo
 32. API Code Integration with Github
 33. API Deploy to Cloud - Heroku
+
+FRONTEND
+
 34. UI - API Integration - Setting up AXIOS
+    I. npm i axios && src->utils->AxiosInstance.js
+    II. create .env file & src->config->Config.js && utils->AxiosInstance.js
+
 35. UI - API Integration - Getting Dish Data
 36. UI-API Integration - Presenting Dish detail as Card Component
 37. API Endpoint to Filter Dishes By Category
