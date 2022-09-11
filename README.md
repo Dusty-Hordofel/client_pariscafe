@@ -118,6 +118,14 @@ FRONTEND
     II. create .env file & src->config->Config.js && utils->AxiosInstance.js
 
 35. UI - API Integration - Getting Dish Data
+    I. update components->Catalog information
+    II. create src->api->category & dish
+    III. <Catalog/>
+
+            I. import {useEffect ,useState} & create init function.
+            II.import getDishList()
+            III. create  [dishes, setDishes] & [loading, setLoading] states.
+
 36. UI-API Integration - Presenting Dish detail as Card Component
 37. API Endpoint to Filter Dishes By Category
 38. Dish Filtering on UI
