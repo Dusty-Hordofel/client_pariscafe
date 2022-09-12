@@ -127,6 +127,16 @@ FRONTEND
             III. create  [dishes, setDishes] & [loading, setLoading] states.
 
 36. UI-API Integration - Presenting Dish detail as Card Component
+
+    I.create components->UI-><BrowseCard/ > & BrowseCard.css
+    II. <Catalog/>
+
+            I. import <BrowseCard/> & pass dish as a props
+            II. create displayDishes()
+            III. add fontawesome cdn in public->index.html
+            IV. create displayDishes & addDishToCart.js &&
+            V. pass addDishToCart ass a props in displayDishes
+
 37. API Endpoint to Filter Dishes By Category
 38. Dish Filtering on UI
 39. Adding Event Handling to Filter Dishes
