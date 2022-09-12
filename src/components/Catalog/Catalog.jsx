@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
 import Layout from '../Layout/Layout';
 import Slideshow from '../UI/Slideshow/Slideshow';
-import { getDishList } from '../../api/dish/index';
+import { getDishList, getFilteredDishList } from '../../api/dish/index';
+import { getCategoryList } from '../../api/category/index';
+import CheckboxGroup from '../UI/CheckboxGroup/CheckboxGroup';
 import BrowseCard from '../UI/BrowseCard/BrowseCard';
 
 const Catalog = () => {
   const [dishes, setDishes] = useState([]);
+  const [filteredDishes, setFilteredDishes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  console.log(categories);
 
   const init = async () => {
     try {
@@ -15,6 +21,10 @@ const Catalog = () => {
       console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
       setDishes(result.data);
 
+      // get all categories
+
+      const categoryList = await getCategoryList();
+      setCategories(categoryList.data);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -57,6 +67,29 @@ const Catalog = () => {
     );
   };
 
+  const getFilteredDishes = async (categories) => {
+    console.log(
+      '🚀 ~ file: Catalog.js ~ line 72 ~ getFilteredDishes ~ categories',
+      categories
+    );
+
+    try {
+      const result = await getFilteredDishList(categories);
+      console.log(
+        '🚀 ~ file: Catalog.js ~ line 94 ~ getFilteredDishes ~ result',
+        result
+      );
+      setFilteredDishes(result.data);
+    } catch (error) {
+      if (error.response) {
+        console.log(
+          '🚀 ~ file: Catalog.js ~ line 81 ~ getFilteredDishes ~ error.response',
+          error.response.data.error
+        );
+      }
+    }
+  };
+
   const renderCatalog = () => {
     return (
       <Layout title="Dishes Catalog" background={true}>
@@ -66,7 +99,13 @@ const Catalog = () => {
               <Slideshow />
             </div>
             <div className="row justify-content-center mt-4">
-              <div className="col-lg-2 mt-2"></div>
+              <div className="col-lg-2 mt-2">
+                <h4>Filter By Category</h4>
+                <CheckboxGroup
+                  categories={categories}
+                  handleFiltering={getFilteredDishes}
+                />
+              </div>
               <div className="col-lg-10 mt-2">
                 <div className="row justify-content-center">
                   {displayDishes()}

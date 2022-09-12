@@ -138,7 +138,22 @@ FRONTEND
             V. pass addDishToCart ass a props in displayDishes
 
 37. API Endpoint to Filter Dishes By Category
-38. Dish Filtering on UI
+
+38. Dish Filtering on UI & Adding Event Handling to Filter Dishes
+    I. create UI->checkbox-group->CheckboxGroup.js && CheckboxGroup.css
+    II. <CheckboxGroup/>
+
+            I. Retrieve categories as a Props from <Catalog/>
+            II. create renderCheckboxGroup() & handleSelected()
+            III. create  [selected, setSelected] & handleSelected
+            IV.
+
+    III.<Catalog/>
+    I. use api->category->getCategoryList() & get All Categories
+    II. create const [categories, setCategories]
+    III. pass handleFiltering as props to <CheckboxGroup/>
+    IV. create getFilteredDishes() & api->dish->getFilteredDishList()
+
 39. Adding Event Handling to Filter Dishes
 40. Display Filtered Dishes
 41. Designing a Spinner Component for our app
