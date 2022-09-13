@@ -34,6 +34,7 @@ a {
   --primary-red: red;
   --primary-backdrop: #282c34;
   --primary-alt-orange: #f1c17e;
+  --primary-scale-spinner: #f37a24;
 }
 
 body {

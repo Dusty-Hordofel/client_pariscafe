@@ -5,11 +5,14 @@ import { getDishList, getFilteredDishList } from '../../api/dish/index';
 import { getCategoryList } from '../../api/category/index';
 import CheckboxGroup from '../UI/CheckboxGroup/CheckboxGroup';
 import BrowseCard from '../UI/BrowseCard/BrowseCard';
+import AppSpinner from '../UI/Spinner/AppSpinner';
 
 const Catalog = () => {
   const [dishes, setDishes] = useState([]);
   const [filteredDishes, setFilteredDishes] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  const [loading, setLoading] = useState(false);
 
   // console.log(dishes);
   console.log(
@@ -20,6 +23,7 @@ const Catalog = () => {
 
   const init = async () => {
     try {
+      setLoading(true);
       const result = await getDishList();
       // console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
       setDishes(result.data);
@@ -28,7 +32,9 @@ const Catalog = () => {
 
       const categoryList = await getCategoryList();
       setCategories(categoryList.data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       if (error.response) {
         console.log(
           '🚀 ~ file: Catalog.js ~ line 21 ~ init ~ error.response',
@@ -91,6 +97,7 @@ const Catalog = () => {
     const categoriesLength = categories.length;
 
     try {
+      setLoading(true);
       const result =
         categoriesLength > 0
           ? await getFilteredDishList(categories)
@@ -106,7 +113,9 @@ const Catalog = () => {
       );
 
       setFilteredDishes(result.data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       console.log(
         '🚀 ~ file: Catalog.jsx ~ line 74 ~ getFilteredDishes ~ error',
         error
@@ -117,29 +126,33 @@ const Catalog = () => {
   const renderCatalog = () => {
     return (
       <Layout title="Dishes Catalog" background={true}>
-        <section className="container mt-4">
-          <div className="row justify-content-center">
-            <div className="col-md-8 col-12">
-              <Slideshow />
-            </div>
-            <div className="row justify-content-center mt-4">
-              <div className="col-lg-2 mt-2">
-                <h4>Filter By Category</h4>
-                <CheckboxGroup
-                  categories={categories}
-                  handleFiltering={getFilteredDishes}
-                />
+        {loading ? (
+          <AppSpinner />
+        ) : (
+          <section className="container mt-4">
+            <div className="row justify-content-center">
+              <div className="col-md-8 col-12">
+                <Slideshow />
               </div>
-              <div className="col-lg-10 mt-2">
-                <div className="row justify-content-center">
-                  {displayDishes()}
+              <div className="row justify-content-center mt-4">
+                <div className="col-lg-2 mt-2">
+                  <h4>Filter By Category</h4>
+                  <CheckboxGroup
+                    categories={categories}
+                    handleFiltering={getFilteredDishes}
+                  />
+                </div>
+                <div className="col-lg-10 mt-2">
+                  <div className="row justify-content-center">
+                    {displayDishes()}
 
-                  {displayFilteredDishes()}
+                    {displayFilteredDishes()}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </Layout>
     );
   };

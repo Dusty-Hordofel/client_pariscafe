@@ -164,6 +164,10 @@ FRONTEND
     II. components->Layout->navbar : add a conditionnal rendering for active style.
 
 41. Designing a Spinner Component for our app
+    I. npm i react-spinners
+    II. create components-> UI->spinner && <Catalog/> & <CheckboxGroup/>
+    III. App.css
+    IV. add a conditionnal rendering for spinner in <Catalog/>
 42. Design Adding dishes To Cart
 43. Design Notification Component to our App
 44. Deploy to Cloud - Heroku
