@@ -168,7 +168,9 @@ FRONTEND
     II. create components-> UI->spinner && <Catalog/> & <CheckboxGroup/>
     III. App.css
     IV. add a conditionnal rendering for spinner in <Catalog/>
+
 42. Design Adding dishes To Cart
+    I. create components->cart->caddDishToCart() && <Catalog/>
 43. Design Notification Component to our App
 44. Deploy to Cloud - Heroku
 45. Deploy to Netlify - Connect Two Clouds

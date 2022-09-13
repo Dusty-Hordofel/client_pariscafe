@@ -6,6 +6,7 @@ import { getCategoryList } from '../../api/category/index';
 import CheckboxGroup from '../UI/CheckboxGroup/CheckboxGroup';
 import BrowseCard from '../UI/BrowseCard/BrowseCard';
 import AppSpinner from '../UI/Spinner/AppSpinner';
+import { addDishToCart } from '../Cart/cartHandler';
 
 const Catalog = () => {
   const [dishes, setDishes] = useState([]);
@@ -55,11 +56,7 @@ const Catalog = () => {
           dishes.map((dish) => {
             return (
               <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish._id}>
-                <BrowseCard
-                  dish={dish}
-                  key={dish._id}
-                  addDishToCart={addDishToCart}
-                />
+                <BrowseCard dish={dish} key={dish._id} addToCart={addToCart} />
               </div>
             );
           })}
@@ -82,11 +79,12 @@ const Catalog = () => {
     );
   };
 
-  const addDishToCart = (dish) => {
+  const addToCart = (dish) => {
     console.log(
       '🚀 ~ file: Catalog.jsx ~ line 54 ~ addDishToCart ~ dish)',
       dish
     );
+    addDishToCart(dish);
   };
 
   const getFilteredDishes = async (categories) => {
