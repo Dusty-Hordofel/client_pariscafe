@@ -9,25 +9,26 @@ import BrowseCard from '../UI/BrowseCard/BrowseCard';
 const Catalog = () => {
   const [dishes, setDishes] = useState([]);
   const [filteredDishes, setFilteredDishes] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
 
-  console.log(categories);
+  // console.log(dishes);
+  console.log(
+    '🚀 ~ file: Catalog.jsx ~ line 12 ~ Catalog ~ filteredDishes',
+    filteredDishes
+  );
+  // console.log(categories);
 
   const init = async () => {
     try {
-      setLoading(true);
       const result = await getDishList();
-      console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
+      // console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
       setDishes(result.data);
 
       // get all categories
 
       const categoryList = await getCategoryList();
       setCategories(categoryList.data);
-      setLoading(false);
     } catch (error) {
-      setLoading(false);
       if (error.response) {
         console.log(
           '🚀 ~ file: Catalog.js ~ line 21 ~ init ~ error.response',
@@ -60,6 +61,21 @@ const Catalog = () => {
     );
   };
 
+  const displayFilteredDishes = () => {
+    return (
+      <>
+        {filteredDishes.length > 0 &&
+          filteredDishes.map((dish) => {
+            return (
+              <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish.id}>
+                <BrowseCard dish={dish} key={dish._id} />
+              </div>
+            );
+          })}
+      </>
+    );
+  };
+
   const addDishToCart = (dish) => {
     console.log(
       '🚀 ~ file: Catalog.jsx ~ line 54 ~ addDishToCart ~ dish)',
@@ -69,24 +85,19 @@ const Catalog = () => {
 
   const getFilteredDishes = async (categories) => {
     console.log(
-      '🚀 ~ file: Catalog.js ~ line 72 ~ getFilteredDishes ~ categories',
+      '🚀 ~ file: Catalog.jsx ~ line 67 ~ getFilteredDishes ~ categories',
       categories
     );
 
     try {
       const result = await getFilteredDishList(categories);
-      console.log(
-        '🚀 ~ file: Catalog.js ~ line 94 ~ getFilteredDishes ~ result',
-        result
-      );
+      console.log(result);
       setFilteredDishes(result.data);
     } catch (error) {
-      if (error.response) {
-        console.log(
-          '🚀 ~ file: Catalog.js ~ line 81 ~ getFilteredDishes ~ error.response',
-          error.response.data.error
-        );
-      }
+      console.log(
+        '🚀 ~ file: Catalog.jsx ~ line 74 ~ getFilteredDishes ~ error',
+        error
+      );
     }
   };
 
@@ -109,6 +120,8 @@ const Catalog = () => {
               <div className="col-lg-10 mt-2">
                 <div className="row justify-content-center">
                   {displayDishes()}
+
+                  {displayFilteredDishes()}
                 </div>
               </div>
             </div>

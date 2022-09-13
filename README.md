@@ -155,8 +155,13 @@ FRONTEND
     IV. create getFilteredDishes() & api->dish->getFilteredDishList()
 
 39. Adding Event Handling to Filter Dishes (done in the previous section)
+    I. pass handleFiltering as props to <CheckboxGroup/>
+    II. create getFilteredDishes() & api->dish->getFilteredDishList()
 
 40. Display Filtered Dishes
+    <Catalog/>
+    I. create displayFilteredDishes
+    II.
 41. Designing a Spinner Component for our app
 42. Design Adding dishes To Cart
 43. Design Notification Component to our App

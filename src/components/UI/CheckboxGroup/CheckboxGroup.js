@@ -2,17 +2,23 @@ import React, { useState } from 'react';
 import './CheckboxGroup.css';
 
 const CheckboxGroup = ({ categories, handleFiltering }) => {
-  //categories from <Catalog/>
-
+  //categories & handleFiltering from <Catalog/>
   const [selected, setSelected] = useState([]);
 
+  console.log(
+    '🚀 ~ file: CheckboxGroup.js ~ line 7 ~ CheckboxGroup ~ selected',
+    selected
+  );
+
+  //handleSelected to get the categyId
   const handleSelected = (category) => {
-    const alreadySelected = selected.indexOf(category);
-    console.log(alreadySelected);
+    //La méthode indexOf() renvoie l'indice de la première occurence de la valeur cherchée au sein de la chaîne courante (à partir de indexDébut). Elle renvoie -1 si la valeur cherchée n'est pas trouvée.
+    const alreadySelected = selected.indexOf(category); //if alreadySelected is not -1 (if alreadySelected exist), remove the category from the array
+
     const newSelectedArray = [...selected];
 
     if (alreadySelected !== -1) {
-      newSelectedArray.splice(alreadySelected, 1);
+      newSelectedArray.splice(alreadySelected, 1); //create a new array with the selected category
     } else {
       newSelectedArray.push(category);
     }
