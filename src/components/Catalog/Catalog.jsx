@@ -6,6 +6,8 @@ import { getCategoryList } from '../../api/category/index';
 import CheckboxGroup from '../UI/CheckboxGroup/CheckboxGroup';
 import BrowseCard from '../UI/BrowseCard/BrowseCard';
 import AppSpinner from '../UI/Spinner/AppSpinner';
+import { Notification } from '../UI/Notification/Notification';
+
 import { addDishToCart } from '../Cart/cartHandler';
 
 const Catalog = () => {
@@ -14,6 +16,19 @@ const Catalog = () => {
   const [categories, setCategories] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const closeHandler = () => {
+    setShow(false);
+  };
+
+  const showNotification = () => (
+    <>
+      {show && (
+        <Notification show={show} text={'ADD_TO_CART'} close={closeHandler} />
+      )}
+    </>
+  );
 
   // console.log(dishes);
   console.log(
@@ -85,6 +100,7 @@ const Catalog = () => {
       dish
     );
     addDishToCart(dish);
+    setShow(true);
   };
 
   const getFilteredDishes = async (categories) => {
@@ -124,6 +140,7 @@ const Catalog = () => {
   const renderCatalog = () => {
     return (
       <Layout title="Dishes Catalog" background={true}>
+        {showNotification()}
         {loading ? (
           <AppSpinner />
         ) : (

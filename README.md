@@ -171,7 +171,11 @@ FRONTEND
 
 42. Design Adding dishes To Cart
     I. create components->cart->caddDishToCart() && <Catalog/>
+    II. npm i react-notifications
+
 43. Design Notification Component to our App
+    I. create UI->notification && <Catalog/>
+    II. create showNotification && closeHandler
 44. Deploy to Cloud - Heroku
 45. Deploy to Netlify - Connect Two Clouds
 
