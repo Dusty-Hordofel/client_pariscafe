@@ -88,10 +88,23 @@ const Catalog = () => {
       '🚀 ~ file: Catalog.jsx ~ line 67 ~ getFilteredDishes ~ categories',
       categories
     );
+    const categoriesLength = categories.length;
 
     try {
-      const result = await getFilteredDishList(categories);
-      console.log(result);
+      const result =
+        categoriesLength > 0
+          ? await getFilteredDishList(categories)
+          : await getDishList();
+      categoriesLength > 0 ? setDishes([]) : setFilteredDishes([]);
+      categoriesLength > 0
+        ? setFilteredDishes(result.data)
+        : setDishes(result.data);
+
+      console.log(
+        '🚀 ~ file: Catalog.js ~ line 94 ~ getFilteredDishes ~ result',
+        result
+      );
+
       setFilteredDishes(result.data);
     } catch (error) {
       console.log(

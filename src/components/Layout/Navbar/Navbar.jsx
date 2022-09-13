@@ -2,6 +2,7 @@ import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css';
 import logo from '../../../assets/images/dosa.jpg';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const renderNavbar = () => {
@@ -29,14 +30,16 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a
-                  href="/catalog"
-                  className="nav-link active"
-                  aria-current="page"
-                >
+              <li
+                className={
+                  window.location.pathname === '/catalog'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link className="nav-link " aria-current="page" to="/catalog">
                   Browse
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a href="/" className="nav-link">
