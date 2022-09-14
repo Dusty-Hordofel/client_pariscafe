@@ -24,7 +24,7 @@ const LandingPage = () => {
                 margin: '3px 10px',
               }}
             >
-              <Link to="/browse" style={{ color: 'inherit' }}>
+              <Link to="/catalog" style={{ color: 'inherit' }}>
                 Explore
               </Link>
             </button>{' '}

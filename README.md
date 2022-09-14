@@ -185,6 +185,17 @@ FRONTEND
     II. in the terminal: netlify login , netlify status, netlify link(Choose from a list of your recently updated sites).
     III. sudo netlify env:import .env
 
+Section 4. Cart Component Design
+
+46. Cart Component Design
+    I. update a link informations
+    II. create components->Cart-><Cart/>
+    III. <Cart/> && <Routes/>
+
+47. Quick Detour - CORS Review, Key element of distributed app
+
+    I.
+
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
 Faites preuve de patience et de sagesse.

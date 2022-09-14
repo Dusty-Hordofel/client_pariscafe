@@ -10,13 +10,13 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-light">
         {/*container-fluid*/}
         <div className="container">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img src={logo} alt="logo" className="logo" />
             <label style={{ fontSize: '14px', fontWeight: 'bold' }}>
               pari<span className="logo-label">sC</span>af&egrave;
               {/* &egrave is used to indicate*/}
             </label>
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -42,19 +42,25 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a href="/" className="nav-link">
+                <Link to="/" className="nav-link">
                   Sign in
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/" className="nav-link">
+                <Link to="/" className="nav-link">
                   Register
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a href="/" className="nav-link">
+              <li
+                className={
+                  window.location.pathname === '/cart'
+                    ? 'nav-item active'
+                    : 'nav-item'
+                }
+              >
+                <Link className="nav-link" to="/cart">
                   Cart
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
