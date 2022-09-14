@@ -193,8 +193,10 @@ Section 4. Cart Component Design
     III. <Cart/> && <Routes/>
 
 47. Quick Detour - CORS Review, Key element of distributed app
+48. CORS Review - Continued
 
-    I.
+49. Cart Management on Browser
+    I. create Cart->cartHandler->getCart(),getCartTotal() & getTotalItemsInCart()
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.

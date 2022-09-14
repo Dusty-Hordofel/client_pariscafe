@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+//add to cart
 export const addDishToCart = (dish) => {
   let cart = { dishes: [] };
 
@@ -13,4 +14,56 @@ export const addDishToCart = (dish) => {
     cart.dishes = uniqueDishes;
     localStorage.setItem('cart', JSON.stringify(cart)); //stringify is used to convert object to string
   }
+};
+
+//to get cart dishes
+export const getCart = () => {
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('cart')) {
+      const cart = JSON.parse(window.localStorage.getItem('cart')); //parse is used to convert string to object
+      return cart.dishes;
+    }
+
+    return [];
+  }
+
+  return [];
+};
+
+//to get total amount of dishes in cart
+export const getCartTotal = () => {
+  let dishes = [];
+
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('cart')) {
+      const cart = JSON.parse(window.localStorage.getItem('cart'));
+
+      dishes = cart.dishes;
+
+      let total = _.sumBy(dishes, (dish) => {
+        return dish.count * dish.price;
+      });
+      console.log(
+        '🚀 ~ file: cartHandler.js ~ line 62 ~ getCartTotal ~ total',
+        total
+      ); //_.sumBy is used to calculate total price of dishes
+
+      return total;
+    }
+  }
+};
+
+//to get total number of dishes in cart
+export const getTotalItemsInCart = () => {
+  let cart = {};
+
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(window.localStorage.getItem('cart'));
+    }
+
+    return cart.dishes ? cart.dishes.length : 0;
+  }
+
+  return 0;
 };
