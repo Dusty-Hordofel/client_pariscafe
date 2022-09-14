@@ -176,7 +176,9 @@ FRONTEND
 43. Design Notification Component to our App
     I. create UI->notification && <Catalog/>
     II. create showNotification && closeHandler
+
 44. Deploy to Cloud - Heroku
+    I. add the heroku endPoint in env file by changing: REACT_APP_API_BASE_URL=http://localhost:xxxx
 45. Deploy to Netlify - Connect Two Clouds
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
