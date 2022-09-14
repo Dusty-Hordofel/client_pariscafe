@@ -179,7 +179,11 @@ FRONTEND
 
 44. Deploy to Cloud - Heroku
     I. add the heroku endPoint in env file by changing: REACT_APP_API_BASE_URL=http://localhost:xxxx
+
 45. Deploy to Netlify - Connect Two Clouds
+    I. npm install netlify-cli -g
+    II. in the terminal: netlify login , netlify status, netlify link(Choose from a list of your recently updated sites).
+    III. sudo netlify env:import .env
 
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
