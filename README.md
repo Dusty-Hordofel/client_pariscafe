@@ -198,6 +198,11 @@ Section 4. Cart Component Design
 49. Cart Management on Browser
     I. create Cart->cartHandler->getCart(),getCartTotal() & getTotalItemsInCart()
 
+50. Cart Component - Unauthenticated View
+    I. update <Cart/> informations
+    II. update position of main elements in Main->Main.css
+    III. update App.css file
+
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
 Faites preuve de patience et de sagesse.
