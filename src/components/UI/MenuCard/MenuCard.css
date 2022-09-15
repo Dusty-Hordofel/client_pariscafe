@@ -1,0 +1,79 @@
+.menu-card {
+  box-sizing: border-box;
+  margin: 5px 5px;
+  height: 240px;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 1px grey;
+  border: 1px solid var(--primary-navy);
+  border-left: 10px solid var(--primary-navy);
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.dish-img {
+  height: 80px;
+  width: 80%;
+  margin: 1px 10px;
+  border-radius: 5%;
+}
+
+.title {
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-navy);
+  margin-bottom: 5px;
+  /* font-weight: bold; */
+}
+
+.description {
+  justify-content: center;
+  text-align: center;
+  color: #850505;
+  margin-top: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.price {
+  margin-top: 3px;
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-navy);
+}
+
+.quantity {
+  margin-top: 3px;
+  justify-content: center;
+  text-align: center;
+  color: var(--primary-navy);
+}
+
+.controls {
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.fa-minus {
+  color: var(--primary-navy);
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.fa-trash {
+  color: var(--primary-navy);
+  cursor: pointer;
+}
+/* hsl(0, 93%, 27%) */
+
+.fa-plus {
+  color: var(--primary-navy);
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+Link:hover,
+a:hover {
+  text-decoration: none;
+}

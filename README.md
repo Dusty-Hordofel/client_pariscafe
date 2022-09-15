@@ -206,6 +206,15 @@ Section 4. Cart Component Design
 51. Cart Component - Unauthenticated View Continued
     I. update <Cart/> informations
 
-Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
-Beaucoup s’exposent trop vite et tombent également vite.
-Faites preuve de patience et de sagesse.
+52. Cart Component - Render Cart
+    I. <Cart/>
+
+            I. import { useState, useEffect } from 'react';
+            II. const [dishes, setDishes] = useState([]);
+            III. create init() && useEffect()
+            IV. create showCart() && renderCart()
+            V. create UI-><MenuCard/>
+
+    Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
+    Beaucoup s’exposent trop vite et tombent également vite.
+    Faites preuve de patience et de sagesse.

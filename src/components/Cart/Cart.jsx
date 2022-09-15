@@ -1,9 +1,58 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../Layout/Layout';
-import { getCartTotal, getTotalItemsInCart } from './cartHandler';
+import { getCart, getCartTotal, getTotalItemsInCart } from './cartHandler';
+import MenuCard from '../UI/MenuCard/MenuCard';
 
 const Cart = () => {
+  const [dishes, setDishes] = useState([]);
+
+  const init = async () => {
+    try {
+      const items = await getCart();
+      setDishes(items);
+    } catch (error) {
+      console.log('🚀 ~ file: Cart.js ~ line 18 ~ init ~ error', error);
+    }
+  };
+
+  const updateCart = async (dish, action) => {
+    console.log('🚀 ~ file: Cart.js ~ line 28 ~ updateCart ~ dish', dish);
+    // await updateDishQuantity(dish);
+    // setDishes(getCart());
+    // setNotificationText(
+    //   action === 'increment' ? 'ITEM_QTY_INCREASED' : 'ITEM_QTY_DECREASED'
+    // );
+    // setShow(true);
+  };
+
+  const removeDish = async (dish) => {
+    console.log('🚀 ~ file: Cart.js ~ line 33 ~ removeDish ~ dish', dish);
+    // await removeDishFromCart(dish._id, () => {
+    //   setDishes(getCart());
+    // });
+    // setNotificationText('REMOVE_FROM_CART');
+    // setShow(true);
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
+
+  const showCart = () => (
+    <>
+      {dishes.map((dish) => (
+        <div className="col-lg-4 col-md-5" key={dish._id}>
+          <MenuCard
+            dish={dish}
+            updateCart={updateCart}
+            removeDish={removeDish}
+          />
+        </div>
+      ))}
+    </>
+  );
+
   const renderCart = () => {
     return (
       <Layout title={'Cart Summary'}>
@@ -25,7 +74,7 @@ const Cart = () => {
         </div>
         <div className="row justify-content-center mt-5">
           <div className="col-lg-6 col-7">
-            <div className="row justify-content-start">{/*{showCart()}*/}</div>
+            <div className="row justify-content-start">{showCart()}</div>
           </div>
           <div className="col-lg-5 col-md-6">
             <h5 style={{ textDecoration: 'underline' }}>
