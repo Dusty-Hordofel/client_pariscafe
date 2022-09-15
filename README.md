@@ -203,6 +203,9 @@ Section 4. Cart Component Design
     II. update position of main elements in Main->Main.css
     III. update App.css file
 
+51. Cart Component - Unauthenticated View Continued
+    I. update <Cart/> informations
+
 Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
 Beaucoup s’exposent trop vite et tombent également vite.
 Faites preuve de patience et de sagesse.
