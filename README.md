@@ -185,6 +185,47 @@ FRONTEND
     II. in the terminal: netlify login , netlify status, netlify link(Choose from a list of your recently updated sites).
     III. sudo netlify env:import .env
 
-Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
-Beaucoup s’exposent trop vite et tombent également vite.
-Faites preuve de patience et de sagesse.
+Section 4. Cart Component Design
+
+46. Cart Component Design
+    I. update a link informations
+    II. create components->Cart-><Cart/>
+    III. <Cart/> && <Routes/>
+
+47. Quick Detour - CORS Review, Key element of distributed app
+48. CORS Review - Continued
+
+49. Cart Management on Browser
+    I. create Cart->cartHandler->getCart(),getCartTotal() & getTotalItemsInCart()
+
+50. Cart Component - Unauthenticated View
+    I. update <Cart/> informations
+    II. update position of main elements in Main->Main.css
+    III. update App.css file
+
+51. Cart Component - Unauthenticated View Continued
+    I. update <Cart/> informations
+
+52. Cart Component - Render Cart
+    I. <Cart/>
+
+            I. import { useState, useEffect } from 'react';
+            II. const [dishes, setDishes] = useState([]);
+            III. create init() && useEffect()
+            IV. create showCart() && renderCart()
+            V. create UI-><MenuCard/>
+
+53. Cart Component UI Event Handling
+    I. Cart -> cartHandler -> updateDishQuantity() & removeDishFromCart()
+    II. use them in <Cart/> & update updateCart
+
+54. Cart Component - Notification Integration
+    I. <Cart/>
+
+            I. create [show, setShow] & [notificationText, setNotificationText]
+            II. update updateCart &removeDish
+            III. import Notification() , create displayNotification() & closeHandler()
+
+    Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
+    Beaucoup s’exposent trop vite et tombent également vite.
+    Faites preuve de patience et de sagesse.

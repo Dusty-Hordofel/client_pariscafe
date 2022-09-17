@@ -7,6 +7,7 @@ import image2 from '../../../assets/addl-images/italian-cobmo-meal.jpeg';
 import image3 from '../../../assets/addl-images/enchilladas.jpeg';
 
 import './Menu.css';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   const renderMenu = () => {
@@ -25,7 +26,7 @@ const Menu = () => {
           loop
         />
         <div className="container">
-          <a href="/browse">
+          <Link to="/catalog">
             <div className="d-flex justify-content-center align-items-center flex-wrap">
               <div className="card" style={{ width: '192px' }}>
                 <img className="card-img-top" src={image1} alt="Dish 1." />
@@ -60,7 +61,7 @@ const Menu = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </section>
     );

@@ -54,3 +54,13 @@ body::-webkit-scrollbar-thumb {
   background: var(--primary-purple);
   border-radius: 8px;
 }
+
+h2,
+h3 {
+  font-family: 'Roboto Bold', sans-serif !important;
+}
+
+h4,
+h5 {
+  font-family: 'Roboto Regular', sans-serif !important;
+}
