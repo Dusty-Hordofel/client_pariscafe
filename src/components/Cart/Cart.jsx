@@ -9,9 +9,12 @@ import {
   removeDishFromCart,
 } from './cartHandler';
 import MenuCard from '../UI/MenuCard/MenuCard';
+import { Notification } from '../UI/Notification/Notification';
 
 const Cart = () => {
   const [dishes, setDishes] = useState([]);
+  const [show, setShow] = useState(false);
+  const [notificationText, setNotificationText] = useState('');
 
   const init = async () => {
     try {
@@ -27,10 +30,10 @@ const Cart = () => {
     console.log('🚀 ~ file: Cart.js ~ line 28 ~ updateCart ~ dish', dish);
     await updateDishQuantity(dish);
     setDishes(getCart());
-    // setNotificationText(
-    //   action === 'increment' ? 'ITEM_QTY_INCREASED' : 'ITEM_QTY_DECREASED'
-    // );
-    // setShow(true);
+    setNotificationText(
+      action === 'increment' ? 'ITEM_QTY_INCREASED' : 'ITEM_QTY_DECREASED'
+    );
+    setShow(true);
   };
 
   //dish is passed from MenuCard component.It is parameter.
@@ -39,13 +42,22 @@ const Cart = () => {
     await removeDishFromCart(dish._id, () => {
       setDishes(getCart());
     });
-    // setNotificationText('REMOVE_FROM_CART');
-    // setShow(true);
+    setNotificationText('REMOVE_FROM_CART');
+    setShow(true);
   };
 
   useEffect(() => {
     init();
   }, []);
+
+  const closeHandler = () => {
+    setShow(false);
+  };
+
+  const displayNotification = () =>
+    show && (
+      <Notification show={show} text={notificationText} close={closeHandler} />
+    );
 
   const showCart = () => (
     <>
@@ -64,6 +76,7 @@ const Cart = () => {
   const renderCart = () => {
     return (
       <Layout title={'Cart Summary'}>
+        {displayNotification()}
         <div className="row justify-content-center mt-5 mb-32x32">
           <div className="col-12 col-lg-4">
             <h4>Your Cart contains {getTotalItemsInCart()} dish(es)</h4>

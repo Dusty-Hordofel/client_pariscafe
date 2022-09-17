@@ -219,6 +219,13 @@ Section 4. Cart Component Design
     I. Cart -> cartHandler -> updateDishQuantity() & removeDishFromCart()
     II. use them in <Cart/> & update updateCart
 
+54. Cart Component - Notification Integration
+    I. <Cart/>
+
+            I. create [show, setShow] & [notificationText, setNotificationText]
+            II. update updateCart &removeDish
+            III. import Notification() , create displayNotification() & closeHandler()
+
     Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
     Beaucoup s’exposent trop vite et tombent également vite.
     Faites preuve de patience et de sagesse.
