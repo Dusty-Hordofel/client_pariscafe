@@ -215,6 +215,10 @@ Section 4. Cart Component Design
             IV. create showCart() && renderCart()
             V. create UI-><MenuCard/>
 
+53. Cart Component UI Event Handling
+    I. Cart -> cartHandler -> updateDishQuantity() & removeDishFromCart()
+    II. use them in <Cart/> & update updateCart
+
     Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
     Beaucoup s’exposent trop vite et tombent également vite.
     Faites preuve de patience et de sagesse.

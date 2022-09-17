@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../Layout/Layout';
-import { getCart, getCartTotal, getTotalItemsInCart } from './cartHandler';
+import {
+  getCart,
+  getCartTotal,
+  getTotalItemsInCart,
+  updateDishQuantity,
+  removeDishFromCart,
+} from './cartHandler';
 import MenuCard from '../UI/MenuCard/MenuCard';
 
 const Cart = () => {
@@ -16,21 +22,23 @@ const Cart = () => {
     }
   };
 
+  //dish anda action are passed from MenuCard component.They are parameters.
   const updateCart = async (dish, action) => {
     console.log('🚀 ~ file: Cart.js ~ line 28 ~ updateCart ~ dish', dish);
-    // await updateDishQuantity(dish);
-    // setDishes(getCart());
+    await updateDishQuantity(dish);
+    setDishes(getCart());
     // setNotificationText(
     //   action === 'increment' ? 'ITEM_QTY_INCREASED' : 'ITEM_QTY_DECREASED'
     // );
     // setShow(true);
   };
 
+  //dish is passed from MenuCard component.It is parameter.
   const removeDish = async (dish) => {
     console.log('🚀 ~ file: Cart.js ~ line 33 ~ removeDish ~ dish', dish);
-    // await removeDishFromCart(dish._id, () => {
-    //   setDishes(getCart());
-    // });
+    await removeDishFromCart(dish._id, () => {
+      setDishes(getCart());
+    });
     // setNotificationText('REMOVE_FROM_CART');
     // setShow(true);
   };

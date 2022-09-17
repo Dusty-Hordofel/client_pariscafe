@@ -67,3 +67,33 @@ export const getTotalItemsInCart = () => {
 
   return 0;
 };
+
+export const updateDishQuantity = (dish) => {
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('cart')) {
+      const cart = JSON.parse(window.localStorage.getItem('cart'));
+
+      const updatedDishes = _.map(cart.dishes, (item) => {
+        if (item._id === dish._id) {
+          item.count = dish.count;
+        }
+        return item;
+      }); //_.map is used to update the quantity of dish&&a
+
+      cart.dishes = updatedDishes;
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }
+};
+
+export const removeDishFromCart = (id, callback) => {
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('cart')) {
+      const cart = JSON.parse(window.localStorage.getItem('cart'));
+
+      _.remove(cart.dishes, { _id: id });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      callback();
+    }
+  }
+};
