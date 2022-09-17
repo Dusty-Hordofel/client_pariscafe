@@ -232,7 +232,10 @@ Section 6. Protecting your App
     II. Quickstarts -> npm install @auth0/auth0-react
     III. create REACT_APP_AUTH0_CLIENT_ID & REACT_APP_AUTH0_DOMAIN in .env
     IV. create const DOMAIN & CLIENT_ID in config.js && index.js
+
 56. Design of Sign In and Sign out Flows
+    I. create Auth->Signin,Signout,Signup && Routes.jsx
+
 57. Integration with Navbar
 58. Auth0 integration with Netlify - CI/CD
 59. Spinner Integration
