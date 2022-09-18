@@ -225,7 +225,7 @@ Section 4. Cart Component Design
             I. create [show, setShow] & [notificationText, setNotificationText]
             II. update updateCart &removeDish
 
-Section 6. Protecting your App
+Section 5. Protecting your App
 
 55. Intro to auth0 - sign up
     I. https://auth0.com/docs/quickstart/spa/react/interactive
@@ -258,7 +258,11 @@ Section 6. Protecting your App
 60. Auth0 - Sign In Flow
 61. Auth0 User Profile
     I. create Auth->Profile-><Profile/> && <Navbar/>
+
 62. API Endpoint - User Creation
+    I. import { useAuth0 } from '@auth0/auth0-react';
+    II. destructure { user, isAuthenticated, getAccessTokenSilently } & add a conditionnal rendering
+    III. test the script & retrieve the user in our database using the backend part.
 63. API Endpoint User Creation - Testing
 64. UI - User Creation on First Login
 65. UI - Exactly Once User Creation
