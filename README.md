@@ -237,6 +237,12 @@ Section 6. Protecting your App
     I. create Auth->Signin,Signout,Signup && Routes.jsx
 
 57. Integration with Navbar
+    I. <Navbar/>
+
+            I. import { useAuth0 } from '@auth0/auth0-react';
+            II. add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
+
+
 58. Auth0 integration with Netlify - CI/CD
 59. Spinner Integration
 60. Auth0 - Sign In Flow

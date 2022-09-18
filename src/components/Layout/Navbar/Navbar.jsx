@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css';
@@ -5,6 +6,10 @@ import logo from '../../../assets/images/dosa.jpg';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const { isAuthenticated } = useAuth0();
+  const { user } = useAuth0();
+  console.log(isAuthenticated);
+
   const renderNavbar = () => {
     return (
       <nav className="navbar navbar-expand-lg bg-light">
@@ -41,21 +46,45 @@ const Navbar = () => {
                   Browse
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/signin" className="nav-link">
-                  Sign in
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/signup" className="nav-link">
-                  Register
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/signout" className="nav-link">
-                  Sign out
-                </Link>
-              </li>
+              {!isAuthenticated && (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/signin">
+                      Sign In
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/signup">
+                      Register
+                    </Link>
+                  </li>
+                </>
+              )}
+
+              {isAuthenticated && (
+                <li
+                  className={
+                    window.location.pathname === '/me'
+                      ? 'nav-item active'
+                      : 'nav-item'
+                  }
+                >
+                  <Link className="nav-link" to="/me">
+                    <span
+                      style={{
+                        background: 'var(--primary-navy)',
+                        color: 'var(--primary-white)',
+                        padding: '5px 20px',
+                        borderRadius: '15px',
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      {user.name}
+                    </span>
+                  </Link>
+                </li>
+              )}
+
               <li
                 className={
                   window.location.pathname === '/cart'
@@ -67,6 +96,19 @@ const Navbar = () => {
                   Cart
                 </Link>
               </li>
+              {isAuthenticated && (
+                <li
+                  className={
+                    window.location.pathname === '/signout'
+                      ? 'nav-item active'
+                      : 'nav-item'
+                  }
+                >
+                  <Link className="nav-link" to="/signout">
+                    Sign out
+                  </Link>
+                </li>
+              )}
             </ul>
             <form className="d-flex" role="search">
               <div className="input-group">
