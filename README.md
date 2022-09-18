@@ -263,8 +263,12 @@ Section 5. Protecting your App
     I. import { useAuth0 } from '@auth0/auth0-react';
     II. destructure { user, isAuthenticated, getAccessTokenSilently } & add a conditionnal rendering
     III. test the script & retrieve the user in our database using the backend part.
+
 63. API Endpoint User Creation - Testing
+
 64. UI - User Creation on First Login
+    I. create api->user->createUser() && App.js
+
 65. UI - Exactly Once User Creation
 66. Auth0 API Security - JSON Web Tokens, Protecting your backend APIs
 67. API Integration with auth0 security
