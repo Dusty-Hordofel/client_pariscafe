@@ -243,6 +243,11 @@ Section 6. Protecting your App
             II. add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
             III. test all the script
 
+    II. netlify command to import all env variable to netlify
+
+            I. sudo netlify env:list
+            II. sudo netlify env:import .env
+
 58. Auth0 integration with Netlify - CI/CD
 
 59. Spinner Integration
@@ -264,3 +269,7 @@ Section 6. Protecting your App
 domain: dev-3m3vgdiu.us.auth0.com
 clientID: 8oq09joGSZvecapA8rbG5RCc3epVW6vV
 key: 9fxZ2Qgy6MFA84bgVLuVpXNLkx6O4MPQ9R3UntWeqiLMquUEVNxX5Lj9ufivSZJ3
+
+netlify env:list
+sudo netlify env:import .env
+git status, git branch
