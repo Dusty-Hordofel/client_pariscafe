@@ -250,9 +250,10 @@ Section 6. Protecting your App
     III. go to the Auth0 application,set Settings page and make sure you are sending a valid callback url
 
             I. add https://pariscafe.netlify.app/  in settings
-            II. update Main->Main.css file
 
 59. Spinner Integration
+    I. update Main->Main.css & Footer->Footer.css files.
+    II. update UI->spinner script by adding a type conditionnal rendering.
 60. Auth0 - Sign In Flow
 61. Auth0 User Profile
 62. API Endpoint - User Creation

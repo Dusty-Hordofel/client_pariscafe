@@ -4,6 +4,7 @@
   width: 100%;
   min-height: 13vh;
   padding: 10px;
+  border-top: 3px solid var(--primary-white) !important;
 }
 
 .footer-column {
