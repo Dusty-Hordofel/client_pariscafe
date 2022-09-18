@@ -254,8 +254,10 @@ Section 6. Protecting your App
 59. Spinner Integration
     I. update Main->Main.css & Footer->Footer.css files.
     II. update UI->spinner script by adding a type conditionnal rendering.
+
 60. Auth0 - Sign In Flow
 61. Auth0 User Profile
+    I. create Auth->Profile-><Profile/> && <Navbar/>
 62. API Endpoint - User Creation
 63. API Endpoint User Creation - Testing
 64. UI - User Creation on First Login
