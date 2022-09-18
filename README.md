@@ -243,12 +243,14 @@ Section 6. Protecting your App
             II. add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
             III. test all the script
 
-    II. netlify command to import all env variable to netlify
-
-            I. sudo netlify env:list
-            II. sudo netlify env:import .env
-
 58. Auth0 integration with Netlify - CI/CD
+
+    I. sudo netlify env:list
+    II. sudo netlify env:import .env
+    III. go to the Auth0 application,set Settings page and make sure you are sending a valid callback url
+
+            I. add https://pariscafe.netlify.app/  in settings
+            II. update Main->Main.css file
 
 59. Spinner Integration
 60. Auth0 - Sign In Flow

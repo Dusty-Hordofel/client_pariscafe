@@ -1,8 +1,6 @@
 .main {
   min-height: 80vh;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
+
   padding: 20px;
   background-color: var(--primary-custom-gray);
   text-align: center;
@@ -10,9 +8,7 @@
 
 .main-background {
   min-height: 80vh;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
+
   background: url('../../../assets/images/idli-background.jpg');
   background-position: center;
   background-size: cover;
@@ -23,4 +19,6 @@
   background: rgba(0, 0, 0, 0.4);
   padding: 20px;
   width: 100vw;
+  height: auto;
+  padding: 40px 20px;
 }
