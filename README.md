@@ -270,6 +270,9 @@ Section 5. Protecting your App
     I. create api->user->createUser() && App.js
 
 65. UI - Exactly Once User Creation
+    I. update App.js file
+    II. create a rule : Auth Pipeline -> create a new Rule.
+    III.save and try rule & save rule.
 66. Auth0 API Security - JSON Web Tokens, Protecting your backend APIs
 67. API Integration with auth0 security
 68. UI - Auth0 - API Integration
