@@ -241,9 +241,10 @@ Section 6. Protecting your App
 
             I. import { useAuth0 } from '@auth0/auth0-react';
             II. add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
-
+            III. test all the script
 
 58. Auth0 integration with Netlify - CI/CD
+
 59. Spinner Integration
 60. Auth0 - Sign In Flow
 61. Auth0 User Profile
