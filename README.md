@@ -225,7 +225,7 @@ Section 4. Cart Component Design
             I. create [show, setShow] & [notificationText, setNotificationText]
             II. update updateCart &removeDish
 
-Section 6. Protecting your App
+Section 5. Protecting your App
 
 55. Intro to auth0 - sign up
     I. https://auth0.com/docs/quickstart/spa/react/interactive
@@ -243,33 +243,44 @@ Section 6. Protecting your App
             II. add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
             III. test all the script
 
-    II. netlify command to import all env variable to netlify
-
-            I. sudo netlify env:list
-            II. sudo netlify env:import .env
-
 58. Auth0 integration with Netlify - CI/CD
 
+    I. sudo netlify env:list
+    II. sudo netlify env:import .env
+    III. go to the Auth0 application,set Settings page and make sure you are sending a valid callback url
+
+            I. add https://pariscafe.netlify.app/  in settings
+
 59. Spinner Integration
+    I. update Main->Main.css & Footer->Footer.css files.
+    II. update UI->spinner script by adding a type conditionnal rendering.
+
 60. Auth0 - Sign In Flow
 61. Auth0 User Profile
+    I. create Auth->Profile-><Profile/> && <Navbar/>
+
 62. API Endpoint - User Creation
+    I. import { useAuth0 } from '@auth0/auth0-react';
+    II. destructure { user, isAuthenticated, getAccessTokenSilently } & add a conditionnal rendering
+    III. test the script & retrieve the user in our database using the backend part.
+
 63. API Endpoint User Creation - Testing
+
 64. UI - User Creation on First Login
+    I. create api->user->createUser() && App.js
+
 65. UI - Exactly Once User Creation
+    I. update App.js file
+    II. create a rule : Auth Pipeline -> create a new Rule.
+    III.save and try rule & save rule.
+
 66. Auth0 API Security - JSON Web Tokens, Protecting your backend APIs
+
+    I.auth0... ->dashboard->application->APIs->creatAPI.
+    II. create .env -> AUDIENCE equivalent to identifier in Auth0 && index.js
+
 67. API Integration with auth0 security
 68. UI - Auth0 - API Integration
-69. 76. CI / CD - Deploy to Heroku and Netlify
 
-70. Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
-    Beaucoup s’exposent trop vite et tombent également vite.
-    Faites preuve de patience et de sagesse.
-
-domain: dev-3m3vgdiu.us.auth0.com
-clientID: 8oq09joGSZvecapA8rbG5RCc3epVW6vV
-key: 9fxZ2Qgy6MFA84bgVLuVpXNLkx6O4MPQ9R3UntWeqiLMquUEVNxX5Lj9ufivSZJ3
-
-netlify env:list
-sudo netlify env:import .env
-git status, git branch
+69. CI / CD - Deploy to Heroku and Netlify
+    I. deploy the script in Netlify

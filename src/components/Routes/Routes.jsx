@@ -9,6 +9,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import Signin from '../Auth/Signin/Singin';
 import Signup from '../Auth/Signup/Signup';
 import Signout from '../Auth/Signout/Signout';
+import Profile from '../Auth/Profile/Profile';
 
 const Routes = () => {
   const deployRoutes = () => {
@@ -21,6 +22,7 @@ const Routes = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signout" element={<Signout />} />
+          <Route path="/me" element={<Profile />} />
         </Road>
       </Router>
     );
