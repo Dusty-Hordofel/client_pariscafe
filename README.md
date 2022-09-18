@@ -281,16 +281,6 @@ Section 5. Protecting your App
 
 67. API Integration with auth0 security
 68. UI - Auth0 - API Integration
-69. 76. CI / CD - Deploy to Heroku and Netlify
 
-70. Parfois et bien souvent, il est mieux d’avancer dans l’ombre que dans la lumière.
-    Beaucoup s’exposent trop vite et tombent également vite.
-    Faites preuve de patience et de sagesse.
-
-domain: dev-3m3vgdiu.us.auth0.com
-clientID: 8oq09joGSZvecapA8rbG5RCc3epVW6vV
-key: 9fxZ2Qgy6MFA84bgVLuVpXNLkx6O4MPQ9R3UntWeqiLMquUEVNxX5Lj9ufivSZJ3
-
-netlify env:list
-sudo netlify env:import .env
-git status, git branch
+69. CI / CD - Deploy to Heroku and Netlify
+    I. deploy the script in Netlify
