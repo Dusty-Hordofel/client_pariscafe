@@ -26,7 +26,7 @@ function App() {
           token
         );
         const result = await createUser(user, token);
-        console.log('🚀 ~ file: App.js ~ line 22 ~ init ~ result', result.data);
+        console.log('🚀 ~ file: App.js ~ line 28 ~ init ~ result', result.data);
       } else {
         console.log('User already present in our system ....');
       }
