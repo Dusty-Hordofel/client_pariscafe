@@ -22,7 +22,7 @@ function App() {
       if (loginCount <= 1) {
         const token = await getAccessTokenSilently();
         console.log(
-          '🚀 ~ file: App.js ~ line 23 ~ createUserHandler ~ token',
+          '🚀 ~ file: App.js ~ line 24 ~ createUserHandler ~ token',
           token
         );
         const result = await createUser(user, token);

@@ -3,6 +3,7 @@ const TIMEOUT = process.env.REACT_APP_API_TIMEOUT;
 const DOMAIN = process.env.REACT_APP_AUTH0_DOMAIN;
 const CLIENT_ID = process.env.REACT_APP_AUTH0_CLIENT_ID;
 const CLAIMS_URI = process.env.REACT_APP_AUTH0_CLAIMS_URI;
+const AUDIENCE = process.env.REACT_APP_AUTH0_AUDIENCE;
 
 if (!API_BASE_URL) {
   throw new Error(
@@ -34,4 +35,9 @@ if (!CLAIMS_URI) {
   );
 }
 
-export { API_BASE_URL, TIMEOUT, DOMAIN, CLIENT_ID, CLAIMS_URI };
+if (!AUDIENCE) {
+  throw new Error(
+    '.env is missing the definition for REACT_APP_AUTH0_AUDIENCE environment variable'
+  );
+}
+export { API_BASE_URL, TIMEOUT, DOMAIN, CLIENT_ID, CLAIMS_URI, AUDIENCE };

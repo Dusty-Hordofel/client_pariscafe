@@ -273,7 +273,12 @@ Section 5. Protecting your App
     I. update App.js file
     II. create a rule : Auth Pipeline -> create a new Rule.
     III.save and try rule & save rule.
+
 66. Auth0 API Security - JSON Web Tokens, Protecting your backend APIs
+
+    I.auth0... ->dashboard->application->APIs->creatAPI.
+    II. create .env -> AUDIENCE equivalent to identifier in Auth0 && index.js
+
 67. API Integration with auth0 security
 68. UI - Auth0 - API Integration
 69. 76. CI / CD - Deploy to Heroku and Netlify
