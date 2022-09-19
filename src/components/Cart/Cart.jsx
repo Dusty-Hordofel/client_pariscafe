@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 import Layout from '../Layout/Layout';
 import {
   getCart,
@@ -12,6 +13,7 @@ import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
 
 const Cart = () => {
+  const { isAuthenticated } = useAuth0();
   const [dishes, setDishes] = useState([]);
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState('');
@@ -82,19 +84,21 @@ const Cart = () => {
             <h4>Your Cart contains {getTotalItemsInCart()} dish(es)</h4>
           </div>
           <div className="col-12 col-lg-auto">
-            <button
-              className="btn btn-primary"
-              style={{
-                background: 'var(--primary-navy)',
-                color: 'var(--primary-white)',
-              }}
-            >
-              Continue Shopping <strong>&#x27F9;</strong>
-            </button>
+            <Link to="/catalog">
+              <button
+                className="btn btn-primary"
+                style={{
+                  background: 'var(--primary-navy)',
+                  color: 'var(--primary-white)',
+                }}
+              >
+                Continue Shopping <strong>&#x27F9;</strong>
+              </button>
+            </Link>
           </div>
         </div>
         <div className="row justify-content-center mt-5">
-          <div className="col-lg-6 col-7">
+          <div className="col-lg-6 col-6  mt-3 mt-md-0 order-1 order-lg-0 d-none d-lg-block">
             <div className="row justify-content-start">{showCart()}</div>
           </div>
           <div className="col-lg-5 col-md-6">
@@ -106,12 +110,16 @@ const Cart = () => {
               </span>{' '}
             </h5>
 
-            <Link to="/signin">
-              <button className="btn btn-success">
-                <i className="fa fa-lock" />{' '}
-                <span style={{ padding: '5px 10px' }}>Signin to Checkout</span>
-              </button>
-            </Link>
+            {!isAuthenticated && (
+              <Link to="/signin">
+                <button className="btn btn-success">
+                  <i className="fa fa-lock" />{' '}
+                  <span style={{ padding: '5px 10px' }}>
+                    Signin to Checkout
+                  </span>
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </Layout>

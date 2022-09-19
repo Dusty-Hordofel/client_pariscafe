@@ -1,5 +1,5 @@
 nav {
-  background-color: var(--primary-navbar) !important;
+  background-color: var(--primary-navbar);
   border-bottom: 1px solid var(--primary-navy);
 }
 
@@ -13,13 +13,13 @@ nav ul > li > a {
   border-bottom: 3px solid transparent;
 }
 
-.navbar-nav .nav-item .active {
+.navbar-nav .nav-item.active {
   border-bottom: 3px solid var(--primary-orange) !important;
 }
 
 .navbar-nav .nav-item:hover {
-  border-bottom: 3px solid var(--primary-green) !important;
-  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 3px solid var(--primary-green);
+  transition: border 0.5s ease-in-out;
 }
 
 nav .nav-link {

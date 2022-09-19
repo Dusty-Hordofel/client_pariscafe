@@ -284,3 +284,15 @@ Section 5. Protecting your App
 
 69. CI / CD - Deploy to Heroku and Netlify
     I. deploy the script in Netlify
+
+Section 6. Back to Cart - Authenticated view
+
+70. Cart Component - Integration with auth0
+    I. import { useAuth0 } from '@auth0/auth0-react';
+    II. add a conditionnal rendering to Signin to Checkout.
+    III. import getTotalItemsInCart & add cart icon in <Navbar/>
+    IV. update <Navbar/>
+
+71. UI - Responsive Design
+72. Responsive Design , Favicon Design and UI Changes
+73. CI / CD - Deploy to Netlify
