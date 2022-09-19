@@ -307,3 +307,7 @@ Section 6. Back to Cart - Authenticated view
     I. sudo netlify env:import .env
     II. create a pullRequest and merge with main
     III. change proxy
+
+74. CI / CD - Deploy to Netlify
+    I. update .env
+    II. create a pullRequest and merge with main
