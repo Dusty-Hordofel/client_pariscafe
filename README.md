@@ -302,4 +302,8 @@ Section 6. Back to Cart - Authenticated view
     III. update <BrowseCard/> and <MenuCard/> & restart app because of changes
     IV. add a favicon to our project (https://redketchup.io/favicon-generator)
     V. add favicon in public folder and update manifest.json
+
 73. CI / CD - Deploy to Netlify
+    I. sudo netlify env:import .env
+    II. create a pullRequest and merge with main
+    III. change proxy
