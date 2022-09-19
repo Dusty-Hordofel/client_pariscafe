@@ -11,6 +11,7 @@ import {
 } from './cartHandler';
 import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
+import Slider from '../UI/Slider/Slider';
 
 const Cart = () => {
   const { isAuthenticated } = useAuth0();
@@ -61,6 +62,10 @@ const Cart = () => {
       <Notification show={show} text={notificationText} close={closeHandler} />
     );
 
+  const showCartMobile = () => (
+    <Slider data={dishes} updateCart={updateCart} removeDish={removeDish} />
+  );
+
   const showCart = () => (
     <>
       {dishes.map((dish) => (
@@ -98,6 +103,9 @@ const Cart = () => {
           </div>
         </div>
         <div className="row justify-content-center mt-5">
+          <div className="col-12 order-1 d-block d-lg-none">
+            {showCartMobile()}
+          </div>
           <div className="col-lg-6 col-6  mt-3 mt-md-0 order-1 order-lg-0 d-none d-lg-block">
             <div className="row justify-content-start">{showCart()}</div>
           </div>

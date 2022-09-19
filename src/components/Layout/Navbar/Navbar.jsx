@@ -148,18 +148,18 @@ const Navbar = () => {
                 aria-label="Search"
                 size="40"
               />
-              <div className="input-group-append">
-                <button
-                  className="btn btn-outline-success"
-                  style={{
-                    background: 'var(--primary-green)',
-                    color: 'var(--primary-white)',
-                  }}
-                  type="submit"
-                >
-                  <FontAwesomeIcon icon={faSearch} />
-                </button>
-              </div>
+              {/* <div className="input-group-append">*/}
+              <button
+                className="btn btn-outline-var(--primary-navy)"
+                style={{
+                  background: 'var(--primary-navy)',
+                  color: 'var(--primary-white)',
+                }}
+                type="submit"
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+              {/*</div>*/}
             </div>
           </form>
         </div>

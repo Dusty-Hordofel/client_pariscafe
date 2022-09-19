@@ -294,5 +294,6 @@ Section 6. Back to Cart - Authenticated view
     IV. update <Navbar/>
 
 71. UI - Responsive Design
+    I. create UI-><Slider/>,slider.css & <Controls/> && <Cart/>
 72. Responsive Design , Favicon Design and UI Changes
 73. CI / CD - Deploy to Netlify

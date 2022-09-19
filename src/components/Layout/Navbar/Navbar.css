@@ -1,5 +1,5 @@
 nav {
-  background-color: var(--primary-navbar);
+  background-color: var(--primary-alt-white);
   border-bottom: 1px solid var(--primary-navy);
 }
 
@@ -27,7 +27,7 @@ nav .nav-link {
 }
 
 form input[type='text'] {
-  background-color: var(--primary-peach) !important;
+  background-color: var(--primary-white) !important;
 }
 
 /** Logo **/
