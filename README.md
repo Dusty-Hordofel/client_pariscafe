@@ -284,3 +284,26 @@ Section 5. Protecting your App
 
 69. CI / CD - Deploy to Heroku and Netlify
     I. deploy the script in Netlify
+
+Section 6. Back to Cart - Authenticated view
+
+70. Cart Component - Integration with auth0
+    I. import { useAuth0 } from '@auth0/auth0-react';
+    II. add a conditionnal rendering to Signin to Checkout.
+    III. import getTotalItemsInCart & add cart icon in <Navbar/>
+    IV. update <Navbar/>
+
+71. UI - Responsive Design
+    I. create UI-><Slider/>,slider.css & <Controls/> && <Cart/>
+
+72. Responsive Design , Favicon Design and UI Changes
+    I.change REACT_APP_API_BASE_URL
+    II. add REACT_APP_IMG_URL in config and .env file
+    III. update <BrowseCard/> and <MenuCard/> & restart app because of changes
+    IV. add a favicon to our project (https://redketchup.io/favicon-generator)
+    V. add favicon in public folder and update manifest.json
+
+73. CI / CD - Deploy to Netlify
+    I. sudo netlify env:import .env
+    II. create a pullRequest and merge with main
+    III. change proxy
