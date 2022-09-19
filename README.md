@@ -295,5 +295,11 @@ Section 6. Back to Cart - Authenticated view
 
 71. UI - Responsive Design
     I. create UI-><Slider/>,slider.css & <Controls/> && <Cart/>
+
 72. Responsive Design , Favicon Design and UI Changes
+    I.change REACT_APP_API_BASE_URL
+    II. add REACT_APP_IMG_URL in config and .env file
+    III. update <BrowseCard/> and <MenuCard/> & restart app because of changes
+    IV. add a favicon to our project (https://redketchup.io/favicon-generator)
+    V. add favicon in public folder and update manifest.json
 73. CI / CD - Deploy to Netlify

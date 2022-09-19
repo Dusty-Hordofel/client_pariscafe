@@ -1,5 +1,5 @@
 import React from 'react';
-import { API_BASE_URL } from '../../../config/Config';
+import { IMG_URL } from '../../../config/Config';
 
 import './BrowseCard.css';
 
@@ -40,7 +40,7 @@ const BrowseCard = ({ dish, addToCart }) => {
       style={{ backgroundColor: '#fff !important' }}
     >
       <img
-        src={`${API_BASE_URL}/api/dishes/${dish._id}/photo`}
+        src={`${IMG_URL}/api/dishes/${dish._id}/photo`}
         alt={dish.name}
         className="card-img-top-bc"
       />

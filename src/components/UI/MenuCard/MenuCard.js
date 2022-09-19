@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { API_BASE_URL } from '../../../config/Config';
+import { IMG_URL } from '../../../config/Config';
 
 import './MenuCard.css';
 
@@ -47,7 +47,7 @@ const MenuCard = ({ dish, updateCart, removeDish }) => {
       <div className="title">{dish.name}</div>
       <div>
         <img
-          src={`${API_BASE_URL}/api/dishes/${dish._id}/photo`}
+          src={`${IMG_URL}/api/dishes/${dish._id}/photo`}
           alt={dish.name}
           className="dish-img"
         />
