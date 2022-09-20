@@ -324,6 +324,8 @@ Section 7. Preparing for checkout
     IV. add a constionnal rendering to <Cart/>
 
 78. API Integration with Address Form Prefill
+    I. create api->user-> updateUserAddress() et getUserAddress() && <Cart/>
+    II. test <Cart/>
 79. API Integration Address Form Prefill - Continued
 80. API Integration Address Save / Update
 81. CI/CD - Deploy to Heroku and Netlify

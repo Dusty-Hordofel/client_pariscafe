@@ -12,18 +12,66 @@ import {
 import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
 import CheckoutForm from '../UI/CheckoutForm/CheckoutForm';
+import { getUserAddress, updateUserAddress } from '../../api/user';
 import Slider from '../UI/Slider/Slider';
 
 const Cart = () => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 
   const [dishes, setDishes] = useState([]);
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState('');
   const [address, setAddress] = useState({});
 
+  const updateAddress = async (address) => {
+    const { sub } = user;
+    const id = sub.split('|')[1];
+
+    try {
+      const token = await getAccessTokenSilently();
+      const result = await updateUserAddress(id, address, token);
+      console.log(
+        '🚀 ~ file: Cart.js ~ line 32 ~ updateAddress ~ result',
+        result.data
+      );
+    } catch (error) {
+      console.log(
+        '🚀 ~ file: Cart.js ~ line 36 ~ updateAddress ~ error',
+        error
+      );
+    }
+  };
+
+  const getAddress = async () => {
+    const { sub } = user;
+
+    const id = sub.split('|')[1]; //to get the id from the sub
+
+    try {
+      const token = await getAccessTokenSilently();
+      const result = await getUserAddress(id, token);
+      setAddress(result.data);
+    } catch (error) {
+      if (error.response) {
+        console.log(
+          '🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error',
+          error
+        );
+        console.log(
+          '🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error',
+          error
+        );
+        console.log(
+          '🚀 ~ file: Cart.js ~ line 38 ~ getAddress ~ error.response',
+          error.response.data.error
+        );
+      }
+    }
+  };
+
   const init = async () => {
     try {
+      isAuthenticated && getAddress();
       const items = await getCart();
       setDishes(items);
     } catch (error) {
