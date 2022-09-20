@@ -27,8 +27,14 @@ function App() {
         );
         const result = await createUser(user, token);
         console.log('🚀 ~ file: App.js ~ line 28 ~ init ~ result', result.data);
+        console.log('🚀 ~ file: App.js ~ line 28 ~ init ~ result', token);
       } else {
         console.log('User already present in our system ....');
+        const token = await getAccessTokenSilently();
+        console.log(
+          '🚀 ~ file: App.js ~ line 24 ~ createUserHandler ~ token',
+          token
+        );
       }
     } else {
       console.log('User is not authenticated');

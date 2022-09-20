@@ -11,13 +11,16 @@ import {
 } from './cartHandler';
 import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
+import CheckoutForm from '../UI/CheckoutForm/CheckoutForm';
 import Slider from '../UI/Slider/Slider';
 
 const Cart = () => {
   const { isAuthenticated } = useAuth0();
+
   const [dishes, setDishes] = useState([]);
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState('');
+  const [address, setAddress] = useState({});
 
   const init = async () => {
     try {
@@ -109,16 +112,17 @@ const Cart = () => {
           <div className="col-lg-6 col-6  mt-3 mt-md-0 order-1 order-lg-0 d-none d-lg-block">
             <div className="row justify-content-start">{showCart()}</div>
           </div>
-          <div className="col-lg-5 col-md-6">
-            <h5 style={{ textDecoration: 'underline' }}>
-              Total: <i className="fa fa-inr" />
-              <span style={{ padding: '0 5px' }}>
-                {' '}
-                {getCartTotal().toFixed(2)}
-              </span>{' '}
-            </h5>
-
-            {!isAuthenticated && (
+          <div className="col-lg-5 col-md-6 ">
+            {getCartTotal() > 0 && (
+              <h5 style={{ textDecoration: 'underline' }}>
+                Total: <i className="fa fa-inr" />
+                <span style={{ padding: '0 5px' }}>
+                  {' '}
+                  {getCartTotal().toFixed(2)}
+                </span>{' '}
+              </h5>
+            )}
+            {!isAuthenticated && getCartTotal() > 0 && (
               <Link to="/signin">
                 <button className="btn btn-success">
                   <i className="fa fa-lock" />{' '}
@@ -127,6 +131,12 @@ const Cart = () => {
                   </span>
                 </button>
               </Link>
+            )}
+            {isAuthenticated && getCartTotal() > 0 && (
+              <CheckoutForm
+                addressType={'Shipping Address'}
+                address={address}
+              />
             )}
           </div>
         </div>
