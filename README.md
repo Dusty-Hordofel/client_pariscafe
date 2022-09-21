@@ -336,4 +336,7 @@ Section 7. Preparing for checkout
 
 81. CI/CD - Deploy to Netlify
     I. deploy Preparing for checkout to Netlify
+
 82. Spinner Integration
+    I. <AppSpinner/> && <Cart/>
+    II. update <Notification/> && <Cart/>
