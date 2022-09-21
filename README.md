@@ -369,6 +369,7 @@ Section 8. Payments Workflow Design
             IV. create showSuccessMessage() & displayEmptyCartMessage
 
 89. End-to-End Testing Order Creation - Continued
+    I. add style in <Cart/>
 90. Order CANCEL Flow
 91. Stripe Webhook - ORDER Fulfilment
 92. Stripe Webhook - ORDER Fulfilment - Continued

@@ -17,6 +17,7 @@ import { getUserAddress, updateUserAddress } from '../../api/user';
 import AppSpinner from '../UI/Spinner/AppSpinner';
 import { createOrder } from '../../api/order';
 import Slider from '../UI/Slider/Slider';
+import './cart.css';
 
 const Cart = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
