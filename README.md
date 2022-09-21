@@ -347,10 +347,20 @@ Section 8. Payments Workflow Design
     I. signup in stripe and update branding in Settings
     II. create a payement test & go to developper -> payment online
     III. choose Page Checkout prédéfinie for Prebuilt Checkout page & test
+
 84. Stripe Integration
 85. Testing Stripe Integration
 86. API - Create Order
+
 87. Testing Create Order
+    I. create api->order->index.js
+    II. update util->AxiosInstance.js.
+    III. <Cart/>
+
+            I. saveOrder() && as props -> <checkoutForm/>
+            II.  const [loading, setLoading] = useState(false);
+
+
 88. End-End Testing - Order Creation
 89. End-to-End Testing Order Creation - Continued
 90. Order CANCEL Flow

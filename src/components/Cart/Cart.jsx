@@ -13,6 +13,7 @@ import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
 import CheckoutForm from '../UI/CheckoutForm/CheckoutForm';
 import { getUserAddress, updateUserAddress } from '../../api/user';
+import { createOrder } from '../../api/order';
 import Slider from '../UI/Slider/Slider';
 
 const Cart = () => {
@@ -22,7 +23,29 @@ const Cart = () => {
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState('');
   const [address, setAddress] = useState({});
+  const [loading, setLoading] = useState(false);
 
+  const saveOrder = async () => {
+    setLoading(true);
+
+    const order_data = { dishes, address, order_total: await getCartTotal() };
+
+    console.log(
+      '🚀 ~ file: Cart.jsx ~ line 33 ~ saveOrder ~ order_data',
+      order_data
+    );
+    const token = await getAccessTokenSilently();
+
+    try {
+      const result = await createOrder(order_data, token);
+      console.log(
+        '🚀 ~ file: Cart.js ~ line 39 ~ saveOrder ~ result',
+        result.data.redirect
+      );
+    } catch (error) {
+      console.log('🚀 ~ file: Cart.js ~ line 40 ~ saveOrder ~ error', error);
+    }
+  };
   const updateAddress = async (address) => {
     const { sub } = user;
     const id = sub.split('|')[1];
@@ -186,6 +209,7 @@ const Cart = () => {
                 addressType={'Shipping Address'}
                 address={address}
                 updateAddress={updateAddress}
+                checkout={saveOrder}
               />
             )}
           </div>
