@@ -19,7 +19,7 @@
   padding: 5px;
   outline: none;
   /* background: #f1c17e; */
-  background: var(--primary-peac) !important;
+  background: var(--primary-white) !important;
 }
 
 .addr-form input:focus {
@@ -27,7 +27,8 @@
 }
 
 .react-tel-input .form-control {
-  background: var(--primary-peach) !important;
+  background: var(--primary-alt-white) !important;
+  /* background: var(--primary-peach) !important; */
 
   font-family: 'Roboto Condensed', sans-serif !important;
   width: 200px !important ;
