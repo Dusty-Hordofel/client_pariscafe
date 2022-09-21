@@ -336,4 +336,35 @@ Section 7. Preparing for checkout
 
 81. CI/CD - Deploy to Netlify
     I. deploy Preparing for checkout to Netlify
+
 82. Spinner Integration
+    I. <AppSpinner/> && <Cart/>
+    II. update <Notification/> && <Cart/>
+
+Section 8. Payments Workflow Design
+
+83. Intro to Stripe and Stripe Signup
+    I. signup in stripe and update branding in Settings
+    II. create a payement test & go to developper -> payment online
+    III. choose Page Checkout prédéfinie for Prebuilt Checkout page & test
+84. Stripe Integration
+85. Testing Stripe Integration
+86. API - Create Order
+87. Testing Create Order
+88. End-End Testing - Order Creation
+89. End-to-End Testing Order Creation - Continued
+90. Order CANCEL Flow
+91. Stripe Webhook - ORDER Fulfilment
+92. Stripe Webhook - ORDER Fulfilment - Continued
+93. ORDER Fulfilment - Messaging
+94. Tiny Url Service - Sign Up with Bitly
+95. Bitly Integration with the App
+96. API Testing - ORDER Fulfilment
+97. API Security - Testing with JWT Tokens from auth0
+98. E-2-E Testing ORDER Fulfilment
+99. API Dealing with ABANDONED Orders
+100.  API Dealing with ABANDONED Orders
+101.  E-2-E Testing ABANDONED Orders
+102.  CI / CD - Deploy to Cloud
+103.  Testing ORDER , Payment Flows on Cloud
+104.  Responsive Design
