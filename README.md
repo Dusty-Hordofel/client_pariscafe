@@ -329,6 +329,11 @@ Section 7. Preparing for checkout
 
 79. API Integration Address Form Prefill - Continued
     I. update <CheckoutForm/> and CheckoutForm.css
+
 80. API Integration Address Save / Update
+    I. api->user->updateUserAddress() && <Cart/> -> updateAddress()
+    II. use updateAddress as a props in <Cart/> -> <CheckoutForm/>
+
 81. CI/CD - Deploy to Heroku and Netlify
+    I.
 82. Spinner Integration

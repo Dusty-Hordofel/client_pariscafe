@@ -184,6 +184,7 @@ const Cart = () => {
               <CheckoutForm
                 addressType={'Shipping Address'}
                 address={address}
+                updateAddress={updateAddress}
               />
             )}
           </div>
