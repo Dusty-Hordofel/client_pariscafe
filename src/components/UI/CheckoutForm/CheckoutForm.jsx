@@ -96,10 +96,7 @@ const CheckoutForm = ({ address, addressType, updateAddress, checkout }) => {
     <div className="d-flex flex-column align-items-center mb-2">
       <form onSubmit={handleSubmit}>
         <div className="addr-form">
-          <label
-            className="text-dark mb-2"
-            style={{ fontWeight: 'bold', color: 'white' }}
-          >
+          <label className="text-dark mb-2" style={{ fontWeight: 'bold' }}>
             {addressType}
           </label>
 
@@ -107,8 +104,8 @@ const CheckoutForm = ({ address, addressType, updateAddress, checkout }) => {
             <input
               type="text"
               placeholder="Full Name .."
-              id="line1"
-              name="line1"
+              id="full_name"
+              name="full_name"
               value={values.full_name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -121,7 +118,7 @@ const CheckoutForm = ({ address, addressType, updateAddress, checkout }) => {
             <input
               type="text"
               placeholder="Address .."
-              id="line1"
+              id="full_name"
               name="line1"
               value={values.line1}
               onChange={handleChange}

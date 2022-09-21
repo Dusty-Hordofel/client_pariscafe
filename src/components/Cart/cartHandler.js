@@ -97,3 +97,15 @@ export const removeDishFromCart = (id, callback) => {
     }
   }
 };
+
+export const emptyCart = () => {
+  if (typeof window !== 'undefined') {
+    if (localStorage.getItem('cart')) {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      cart.dishes = [];
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    return;
+  }
+};

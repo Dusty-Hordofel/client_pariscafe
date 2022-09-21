@@ -360,13 +360,20 @@ Section 8. Payments Workflow Design
             I. saveOrder() && as props -> <checkoutForm/>
             II.  const [loading, setLoading] = useState(false);
 
-
 88. End-End Testing - Order Creation
+    I. <Cart/>
+
+            I. update useEffect ->
+            II. create cartHandler->emptyCart()
+            III. create [checkoutProgress, setCheckoutProgress]...
+            IV. create showSuccessMessage() & displayEmptyCartMessage
+
 89. End-to-End Testing Order Creation - Continued
 90. Order CANCEL Flow
 91. Stripe Webhook - ORDER Fulfilment
 92. Stripe Webhook - ORDER Fulfilment - Continued
 93. ORDER Fulfilment - Messaging
+
 94. Tiny Url Service - Sign Up with Bitly
 95. Bitly Integration with the App
 96. API Testing - ORDER Fulfilment
