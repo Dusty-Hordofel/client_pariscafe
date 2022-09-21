@@ -1,0 +1,41 @@
+.addr-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 470px;
+  width: 310px;
+  border: 1px solid var(--primary-navy);
+  padding: 10px 10px;
+  border-radius: 10px;
+  background: var(--primary-navy) !important;
+
+  /* margin: 12px 0;   */
+}
+
+.addr-form input {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: grey;
+  padding: 5px;
+  outline: none;
+  /* background: #f1c17e; */
+  background: var(--primary-white) !important;
+}
+
+.addr-form input:focus {
+  border: 3px solid lightblue;
+}
+
+.react-tel-input .form-control {
+  background: var(--primary-alt-white) !important;
+  /* background: var(--primary-peach) !important; */
+
+  font-family: 'Roboto Condensed', sans-serif !important;
+  width: 200px !important ;
+  margin-left: 10px;
+  outline: none !important;
+}
+
+.error {
+  border: 1px solid red !important;
+}

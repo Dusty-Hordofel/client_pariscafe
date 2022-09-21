@@ -311,3 +311,29 @@ Section 6. Back to Cart - Authenticated view
 74. CI / CD - Deploy to Netlify
     I. update .env
     II. create a pullRequest and merge with main
+
+Section 7. Preparing for checkout
+
+75. API Endpoint - Address Capture
+76. Mongo Model Update
+
+77. Form Design - Address Data
+    I. create checkoutForm -> <CheckoutForm/> && <Cart/>
+    II. npm i formik yup react-phone-input-2 deep-equal
+    III. create component -> FormError-> <Error/>
+    IV. add a constionnal rendering to <Cart/>
+
+78. API Integration with Address Form Prefill
+    I. create api->user-> updateUserAddress() et getUserAddress() && <Cart/>
+    II. test <Cart/>
+
+79. API Integration Address Form Prefill - Continued
+    I. update <CheckoutForm/> and CheckoutForm.css
+
+80. API Integration Address Save / Update
+    I. api->user->updateUserAddress() && <Cart/> -> updateAddress()
+    II. use updateAddress as a props in <Cart/> -> <CheckoutForm/>
+
+81. CI/CD - Deploy to Netlify
+    I. deploy Preparing for checkout to Netlify
+82. Spinner Integration

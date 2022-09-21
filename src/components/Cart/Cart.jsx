@@ -11,16 +11,67 @@ import {
 } from './cartHandler';
 import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
+import CheckoutForm from '../UI/CheckoutForm/CheckoutForm';
+import { getUserAddress, updateUserAddress } from '../../api/user';
 import Slider from '../UI/Slider/Slider';
 
 const Cart = () => {
-  const { isAuthenticated } = useAuth0();
+  const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
+
   const [dishes, setDishes] = useState([]);
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState('');
+  const [address, setAddress] = useState({});
+
+  const updateAddress = async (address) => {
+    const { sub } = user;
+    const id = sub.split('|')[1];
+
+    try {
+      const token = await getAccessTokenSilently();
+      const result = await updateUserAddress(id, address, token);
+      console.log(
+        '🚀 ~ file: Cart.js ~ line 32 ~ updateAddress ~ result',
+        result.data
+      );
+    } catch (error) {
+      console.log(
+        '🚀 ~ file: Cart.js ~ line 36 ~ updateAddress ~ error',
+        error
+      );
+    }
+  };
+
+  const getAddress = async () => {
+    const { sub } = user;
+
+    const id = sub.split('|')[1]; //to get the id from the sub
+
+    try {
+      const token = await getAccessTokenSilently();
+      const result = await getUserAddress(id, token);
+      setAddress(result.data);
+    } catch (error) {
+      if (error.response) {
+        console.log(
+          '🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error',
+          error
+        );
+        console.log(
+          '🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error',
+          error
+        );
+        console.log(
+          '🚀 ~ file: Cart.js ~ line 38 ~ getAddress ~ error.response',
+          error.response.data.error
+        );
+      }
+    }
+  };
 
   const init = async () => {
     try {
+      isAuthenticated && getAddress();
       const items = await getCart();
       setDishes(items);
     } catch (error) {
@@ -51,6 +102,7 @@ const Cart = () => {
 
   useEffect(() => {
     init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const closeHandler = () => {
@@ -109,16 +161,17 @@ const Cart = () => {
           <div className="col-lg-6 col-6  mt-3 mt-md-0 order-1 order-lg-0 d-none d-lg-block">
             <div className="row justify-content-start">{showCart()}</div>
           </div>
-          <div className="col-lg-5 col-md-6">
-            <h5 style={{ textDecoration: 'underline' }}>
-              Total: <i className="fa fa-inr" />
-              <span style={{ padding: '0 5px' }}>
-                {' '}
-                {getCartTotal().toFixed(2)}
-              </span>{' '}
-            </h5>
-
-            {!isAuthenticated && (
+          <div className="col-lg-5 col-md-6 ">
+            {getCartTotal() > 0 && (
+              <h5 style={{ textDecoration: 'underline' }}>
+                Total: <i className="fa fa-inr" />
+                <span style={{ padding: '0 5px' }}>
+                  {' '}
+                  {getCartTotal().toFixed(2)}
+                </span>{' '}
+              </h5>
+            )}
+            {!isAuthenticated && getCartTotal() > 0 && (
               <Link to="/signin">
                 <button className="btn btn-success">
                   <i className="fa fa-lock" />{' '}
@@ -127,6 +180,13 @@ const Cart = () => {
                   </span>
                 </button>
               </Link>
+            )}
+            {isAuthenticated && getCartTotal() > 0 && (
+              <CheckoutForm
+                addressType={'Shipping Address'}
+                address={address}
+                updateAddress={updateAddress}
+              />
             )}
           </div>
         </div>
