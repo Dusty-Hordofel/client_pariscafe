@@ -334,6 +334,6 @@ Section 7. Preparing for checkout
     I. api->user->updateUserAddress() && <Cart/> -> updateAddress()
     II. use updateAddress as a props in <Cart/> -> <CheckoutForm/>
 
-81. CI/CD - Deploy to Heroku and Netlify
-    I.
+81. CI/CD - Deploy to Netlify
+    I. deploy Preparing for checkout to Netlify
 82. Spinner Integration
