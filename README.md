@@ -377,9 +377,11 @@ Section 8. Payments Workflow Design
              I. update useEffect and create orderUpdateHandler()
              II. create showCancelMessage ()
 
-
 91. Stripe Webhook - ORDER Fulfilment
+    I. documentation (https://stripe.com/docs/payments/checkout/fulfill-orders)
 92. Stripe Webhook - ORDER Fulfilment - Continued
+    I. update <Cart/>
+
 93. ORDER Fulfilment - Messaging
 
 94. Tiny Url Service - Sign Up with Bitly

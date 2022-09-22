@@ -32,6 +32,8 @@ const Cart = () => {
   const [checkoutSuccess, setCheckoutSuccess] = useState('');
   const [checkoutCanceled, setCheckoutCanceled] = useState('');
 
+  const [sessionId, setSessionId] = useState('');
+
   const saveOrder = async () => {
     setLoading(true);
 
@@ -154,6 +156,10 @@ const Cart = () => {
     init(query);
     let statusMessage;
 
+    if (query.get('id') && isAuthenticated) {
+      setSessionId(query.get('id'));
+    }
+
     if (query.get('success') && isAuthenticated) {
       //empty the cart
       emptyCart();
@@ -189,7 +195,7 @@ const Cart = () => {
         }}
       >
         {checkoutSuccess ? (
-          <Link to="orders/12345">{checkoutSuccess}</Link>
+          <Link to={`/myorders/${sessionId}`}>{checkoutSuccess}</Link>
         ) : null}
       </div>
     );
@@ -294,7 +300,7 @@ const Cart = () => {
               {getTotalItemsInCart() === 0 && displayEmptyCartMessage()}
             </div>
             <div className="row justify-content-center mt-2">
-              {showCancelMessage()}
+              {checkoutCanceled && showCancelMessage()}
             </div>
 
             <div className="row justify-content-center mt-5">
