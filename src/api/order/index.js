@@ -23,23 +23,3 @@ export const createOrder = async (order_data, token) => {
     throw error;
   }
 };
-
-export const updateOrderStatus = async (id, token) => {
-  const headers = { Authorization: `Bearer ${token}` };
-
-  try {
-    const response = await AxiosInstance.put(
-      `/api/orders/${id}`,
-      {},
-      { headers }
-    );
-
-    return response;
-  } catch (error) {
-    console.log(
-      '🚀 ~ file: index.js ~ line 44 ~ updateOrderStatus ~ error',
-      error
-    );
-    throw error;
-  }
-};

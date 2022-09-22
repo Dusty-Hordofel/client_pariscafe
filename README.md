@@ -370,7 +370,14 @@ Section 8. Payments Workflow Design
 
 89. End-to-End Testing Order Creation - Continued
     I. add style in <Cart/>
+
 90. Order CANCEL Flow
+    I. <Cart/>
+
+             I. update useEffect and create orderUpdateHandler()
+             II. create showCancelMessage ()
+
+
 91. Stripe Webhook - ORDER Fulfilment
 92. Stripe Webhook - ORDER Fulfilment - Continued
 93. ORDER Fulfilment - Messaging

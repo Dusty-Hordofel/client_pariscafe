@@ -14,8 +14,8 @@ import MenuCard from '../UI/MenuCard/MenuCard';
 import { Notification } from '../UI/Notification/Notification';
 import CheckoutForm from '../UI/CheckoutForm/CheckoutForm';
 import { getUserAddress, updateUserAddress } from '../../api/user';
-import AppSpinner from '../UI/Spinner/AppSpinner';
 import { createOrder } from '../../api/order';
+import AppSpinner from '../UI/Spinner/AppSpinner';
 import Slider from '../UI/Slider/Slider';
 import './cart.css';
 
@@ -59,13 +59,21 @@ const Cart = () => {
     const id = sub.split('|')[1];
 
     try {
+      setLoading(true);
+
       const token = await getAccessTokenSilently();
       const result = await updateUserAddress(id, address, token);
       console.log(
         '🚀 ~ file: Cart.js ~ line 32 ~ updateAddress ~ result',
         result.data
       );
+      setAddress(result.data);
+      setLoading(false);
+      setNotificationText('ADDRESS_UPDATED');
+      setShow(true);
     } catch (error) {
+      setLoading(false);
+
       console.log(
         '🚀 ~ file: Cart.js ~ line 36 ~ updateAddress ~ error',
         error
@@ -76,14 +84,19 @@ const Cart = () => {
   const getAddress = async () => {
     const { sub } = user;
 
-    const id = sub.split('|')[1]; //to get the id from the sub
+    const id = sub.split('|')[1];
 
     try {
+      setLoading(true);
       const token = await getAccessTokenSilently();
       const result = await getUserAddress(id, token);
       setAddress(result.data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
+
       if (error.response) {
+        console.log('🚀 ~ file: Cart.js ~ line 88 ~ saveOrder ~ error', error);
         console.log(
           '🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error',
           error
@@ -136,7 +149,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const query = new URLSearchParams(window.location.search); //URLSearchParams is a built in object in javascript.it's used to get the query string from the url.
+    const query = new URLSearchParams(window.location.search); //URLSearchParams is used to get the query string from the url.
 
     init(query);
     let statusMessage;
@@ -147,13 +160,23 @@ const Cart = () => {
       // refresh the view
       setDishes(getCart());
       //do the messaging
+
       setCheckoutProgress('completed');
       statusMessage = `Your order is palced !! You will receive a text confirmation soon.`;
       setCheckoutSuccess(statusMessage);
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (query.get('canceled') && isAuthenticated) {
+      console.log(
+        '🚀 ~ file: Cart.js ~ line 175 ~ useEffect ~ query',
+        query.get('id')
+      );
+      setCheckoutProgress('Canceled');
+      statusMessage =
+        'Order canceled -- continue to shop ariound and checkout when ready.';
+      setCheckoutCanceled(statusMessage);
+    }
+  }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const showSuccessMessage = () => {
     return (
@@ -168,6 +191,21 @@ const Cart = () => {
         {checkoutSuccess ? (
           <Link to="orders/12345">{checkoutSuccess}</Link>
         ) : null}
+      </div>
+    );
+  };
+
+  const showCancelMessage = () => {
+    return (
+      <div
+        className="alert alert-info"
+        style={{
+          display: checkoutProgress ? 'block' : 'none',
+          fontWeight: 'bold',
+          background: 'var(--primary-peach',
+        }}
+      >
+        {checkoutCanceled ? <span>{checkoutCanceled}</span> : null}
       </div>
     );
   };
@@ -255,6 +293,10 @@ const Cart = () => {
 
               {getTotalItemsInCart() === 0 && displayEmptyCartMessage()}
             </div>
+            <div className="row justify-content-center mt-2">
+              {showCancelMessage()}
+            </div>
+
             <div className="row justify-content-center mt-5">
               <div className="col-12 order-1 d-block d-lg-none">
                 {showCartMobile()}
