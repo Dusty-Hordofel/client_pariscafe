@@ -3,6 +3,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import AppSpinner from '../../UI/Spinner/AppSpinner';
 
 const Singin = () => {
+  // const returnTo = props.location.returnTo || '/';
+  // console.log(returnTo);
   const { loginWithRedirect } = useAuth0();
 
   const [loading, setLoading] = useState(false);

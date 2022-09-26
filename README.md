@@ -383,15 +383,23 @@ Section 8. Payments Workflow Design
     I. update <Cart/>
 
 93. ORDER Fulfilment - Messaging
-
 94. Tiny Url Service - Sign Up with Bitly
 95. Bitly Integration with the App
 96. API Testing - ORDER Fulfilment
+
 97. API Security - Testing with JWT Tokens from auth0
 98. E-2-E Testing ORDER Fulfilment
+    I. pass props to Signin checkout Link in <Cart/> && <Sigin> to redirect user
+    II. create components->utils->history->createBrowserHistory() && index.js
+    III. Redirect the user to the <Cart/>
+
 99. API Dealing with ABANDONED Orders
 100.  API Dealing with ABANDONED Orders
+
 101.  E-2-E Testing ABANDONED Orders
+      I. create api->order->index->updateOrderStatus()
+      II. update <Cart/>
+      III. update folder and files
 102.  CI / CD - Deploy to Cloud
 103.  Testing ORDER , Payment Flows on Cloud
 104.  Responsive Design

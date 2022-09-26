@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import Layout from '../Layout/Layout';
 import {
-  getTotalItemsInCart,
-  getCartTotal,
   getCart,
+  getCartTotal,
+  getTotalItemsInCart,
   updateDishQuantity,
   removeDishFromCart,
   emptyCart,
 } from './cartHandler';
-import { Notification } from '../UI/Notification/Notification';
 import MenuCard from '../UI/MenuCard/MenuCard';
-import Slider from '../UI/Slider/Slider';
+import { Notification } from '../UI/Notification/Notification';
 import CheckoutForm from '../UI/CheckoutForm/CheckoutForm';
 import { getUserAddress, updateUserAddress } from '../../api/user';
+import { createOrder } from '../../api/order';
 import AppSpinner from '../UI/Spinner/AppSpinner';
-import { createOrder, updateOrderStatus } from '../../api/order';
-import './Cart.css';
+import Slider from '../UI/Slider/Slider';
+import './cart.css';
 
 const Cart = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 
   const [dishes, setDishes] = useState([]);
-
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState('');
   const [address, setAddress] = useState({});
@@ -35,12 +34,15 @@ const Cart = () => {
 
   const [sessionId, setSessionId] = useState('');
 
-  //TODO: SAVE ORDER
   const saveOrder = async () => {
     setLoading(true);
 
     const order_data = { dishes, address, order_total: await getCartTotal() };
 
+    console.log(
+      '🚀 ~ file: Cart.jsx ~ line 33 ~ saveOrder ~ order_data',
+      order_data
+    );
     const token = await getAccessTokenSilently();
 
     try {
@@ -54,7 +56,6 @@ const Cart = () => {
     }
   };
 
-  //TODO: UPDATE ADDRESS
   const updateAddress = async (address) => {
     const { sub } = user;
     const id = sub.split('|')[1];
@@ -82,7 +83,6 @@ const Cart = () => {
     }
   };
 
-  //TODO: GET ADDRESS
   const getAddress = async () => {
     const { sub } = user;
 
@@ -115,7 +115,7 @@ const Cart = () => {
     }
   };
 
-  //TODO: UPDATE CART
+  //dish anda action are passed from MenuCard component.They are parameters.
   const updateCart = async (dish, action) => {
     console.log('🚀 ~ file: Cart.js ~ line 28 ~ updateCart ~ dish', dish);
     await updateDishQuantity(dish);
@@ -126,7 +126,7 @@ const Cart = () => {
     setShow(true);
   };
 
-  //TODO: REMOVE DISH
+  //dish is passed from MenuCard component.It is parameter.
   const removeDish = async (dish) => {
     console.log('🚀 ~ file: Cart.js ~ line 33 ~ removeDish ~ dish', dish);
     await removeDishFromCart(dish._id, () => {
@@ -150,26 +150,8 @@ const Cart = () => {
     }
   };
 
-  //TODO: UPDATE ORDER STATUS
-  const orderUpdateHandler = async (id) => {
-    const token = await getAccessTokenSilently();
-
-    try {
-      const result = await updateOrderStatus(id, token);
-      console.log(
-        '🚀 ~ file: Cart.js ~ line 163 ~ orderUpdateHandler ~ result',
-        result.data
-      );
-    } catch (error) {
-      console.log(
-        '🚀 ~ file: Cart.js ~ line 170 ~ orderUpdateHandler ~ error',
-        error
-      );
-    }
-  };
-
   useEffect(() => {
-    const query = new URLSearchParams(window.location.search);
+    const query = new URLSearchParams(window.location.search); //URLSearchParams is used to get the query string from the url.
 
     init(query);
     let statusMessage;
@@ -199,14 +181,9 @@ const Cart = () => {
       statusMessage =
         'Order canceled -- continue to shop ariound and checkout when ready.';
       setCheckoutCanceled(statusMessage);
-      //call the api to update order status to abandoned
-
-      const id = query.get('id');
-      orderUpdateHandler(id);
     }
   }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  //TODO: SHOW SUCCESS MESSAGE
   const showSuccessMessage = () => {
     return (
       <div
@@ -224,7 +201,6 @@ const Cart = () => {
     );
   };
 
-  //TODO: SHOW CANCEL MESSAGE
   const showCancelMessage = () => {
     return (
       <div
@@ -240,14 +216,19 @@ const Cart = () => {
     );
   };
 
-  //TODO: DISPLAY EMPTY CART MESSAGE
   const displayEmptyCartMessage = () => (
     <section>
       {showSuccessMessage()}
       <div className="d-flex flex-column align-items-center flex-wrap ">
         <h4 className="text-muted align-self-center">Your cart is empty</h4>.
         <Link to="/catalog">
-          <button className="btn btn-primary">
+          <button
+            className="btn btn-primary"
+            style={{
+              background: 'var(--primary-navy)',
+              color: 'var(--primary-white)',
+            }}
+          >
             {' '}
             <span style={{ padding: '0 50px', fontWeight: 'bold' }}>
               add DiSHES
@@ -259,23 +240,19 @@ const Cart = () => {
     </section>
   );
 
-  //TODO: CLOSE POPUP
   const closeHandler = () => {
     setShow(false);
   };
 
-  //TODO: DISPLAY NOTIFICATION
   const displayNotification = () =>
     show && (
       <Notification show={show} text={notificationText} close={closeHandler} />
     );
 
-  //TODO: SHOW MOBILE CART
   const showCartMobile = () => (
     <Slider data={dishes} updateCart={updateCart} removeDish={removeDish} />
   );
 
-  //TODO: SHOW CART
   const showCart = () => (
     <>
       {dishes.map((dish) => (
@@ -290,7 +267,6 @@ const Cart = () => {
     </>
   );
 
-  //TODO: RENDER CART
   const renderCart = () => {
     return (
       <Layout title={'Cart Summary'}>
@@ -299,7 +275,7 @@ const Cart = () => {
           <AppSpinner />
         ) : (
           <>
-            <div className="row justify-content-center mt-5 mb-3">
+            <div className="row justify-content-center mt-5 mb-32x32">
               {getTotalItemsInCart() > 0 && (
                 <>
                   <div className="col-12 col-lg-4">
@@ -307,7 +283,13 @@ const Cart = () => {
                   </div>
                   <div className="col-12 col-lg-auto">
                     <Link to="/catalog">
-                      <button className="btn btn-primary">
+                      <button
+                        className="btn btn-primary"
+                        style={{
+                          background: 'var(--primary-navy)',
+                          color: 'var(--primary-white)',
+                        }}
+                      >
                         Continue Shopping <strong>&#x27F9;</strong>
                       </button>
                     </Link>
@@ -320,6 +302,7 @@ const Cart = () => {
             <div className="row justify-content-center mt-2">
               {checkoutCanceled && showCancelMessage()}
             </div>
+
             <div className="row justify-content-center mt-5">
               <div className="col-12 order-1 d-block d-lg-none">
                 {showCartMobile()}
@@ -362,8 +345,7 @@ const Cart = () => {
       </Layout>
     );
   };
-
-  return <>{renderCart()}</>;
+  return <div>{renderCart()}</div>;
 };
 
 export default Cart;

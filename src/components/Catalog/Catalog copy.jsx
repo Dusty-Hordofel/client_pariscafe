@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../Layout/Layout';
-import { getDishList, getFilteredDishList } from '../../api/dish';
-import { getCategoryList } from '../../api/category';
-
 import Slideshow from '../UI/Slideshow/Slideshow';
-import BrowseCard from '../UI/BrowseCard/BrowseCard';
+import { getDishList, getFilteredDishList } from '../../api/dish/index';
+import { getCategoryList } from '../../api/category/index';
 import CheckboxGroup from '../UI/CheckboxGroup/CheckboxGroup';
+import BrowseCard from '../UI/BrowseCard/BrowseCard';
 import AppSpinner from '../UI/Spinner/AppSpinner';
 import { Notification } from '../UI/Notification/Notification';
 
@@ -14,11 +13,9 @@ import { addDishToCart } from '../Cart/cartHandler';
 const Catalog = () => {
   const [dishes, setDishes] = useState([]);
   const [filteredDishes, setFilteredDishes] = useState([]);
-
   const [categories, setCategories] = useState([]);
 
   const [loading, setLoading] = useState(false);
-
   const [show, setShow] = useState(false);
 
   const closeHandler = () => {
@@ -33,11 +30,18 @@ const Catalog = () => {
     </>
   );
 
+  // console.log(dishes);
+  console.log(
+    '🚀 ~ file: Catalog.jsx ~ line 12 ~ Catalog ~ filteredDishes',
+    filteredDishes
+  );
+  // console.log(categories);
+
   const init = async () => {
     try {
       setLoading(true);
       const result = await getDishList();
-      console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
+      // console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
       setDishes(result.data);
 
       // get all categories
@@ -82,7 +86,7 @@ const Catalog = () => {
           filteredDishes.map((dish) => {
             return (
               <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish.id}>
-                <BrowseCard dish={dish} key={dish._id} addToCart={addToCart} />
+                <BrowseCard dish={dish} key={dish._id} />
               </div>
             );
           })}
@@ -91,17 +95,19 @@ const Catalog = () => {
   };
 
   const addToCart = (dish) => {
-    console.log('🚀 ~ file: Catalog.js ~ line 54 ~ addDishToCart ~ dish', dish);
+    console.log(
+      '🚀 ~ file: Catalog.jsx ~ line 54 ~ addDishToCart ~ dish)',
+      dish
+    );
     addDishToCart(dish);
     setShow(true);
   };
 
   const getFilteredDishes = async (categories) => {
     console.log(
-      '🚀 ~ file: Catalog.js ~ line 72 ~ getFilteredDishes ~ categories',
+      '🚀 ~ file: Catalog.jsx ~ line 67 ~ getFilteredDishes ~ categories',
       categories
     );
-
     const categoriesLength = categories.length;
 
     try {
@@ -124,48 +130,48 @@ const Catalog = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      if (error.response) {
-        console.log(
-          '🚀 ~ file: Catalog.js ~ line 81 ~ getFilteredDishes ~ error.response',
-          error.response.data.error
-        );
-      }
+      console.log(
+        '🚀 ~ file: Catalog.jsx ~ line 74 ~ getFilteredDishes ~ error',
+        error
+      );
     }
   };
 
-  const renderCatalog = () => (
-    <Layout title="Savor Our Delicacies">
-      {showNotification()}
-      {loading ? (
-        <AppSpinner />
-      ) : (
-        <section className="container mt-4">
-          <div className="row justify-content-center">
-            <div className="col-md-8 col-12">
-              <Slideshow />
-            </div>
-            <div className="row justify-content-center mt-4">
-              <div className="col-lg-2 mt-2">
-                <h4>Filter By Category</h4>
-                <CheckboxGroup
-                  categories={categories}
-                  handleFiltering={getFilteredDishes}
-                />
+  const renderCatalog = () => {
+    return (
+      <Layout title="Dishes Catalog" background={true}>
+        {showNotification()}
+        {loading ? (
+          <AppSpinner />
+        ) : (
+          <section className="container mt-4">
+            <div className="row justify-content-center">
+              <div className="col-md-8 col-12">
+                <Slideshow />
               </div>
-              <div className="col-lg-10 mt-2">
-                <div className="row justify-content-center">
-                  {displayDishes()}
-                  {displayFilteredDishes()}
+              <div className="row justify-content-center mt-4">
+                <div className="col-lg-2 mt-2">
+                  <h4>Filter By Category</h4>
+                  <CheckboxGroup
+                    categories={categories}
+                    handleFiltering={getFilteredDishes}
+                  />
+                </div>
+                <div className="col-lg-10 mt-2">
+                  <div className="row justify-content-center">
+                    {displayDishes()}
+
+                    {displayFilteredDishes()}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      )}
-    </Layout>
-  );
-
-  return <>{renderCatalog()}</>;
+          </section>
+        )}
+      </Layout>
+    );
+  };
+  return <div>{renderCatalog()}</div>;
 };
 
 export default Catalog;
