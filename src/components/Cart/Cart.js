@@ -352,4 +352,5 @@ const Cart = () => {
   return <>{renderCart()}</>;
 };
 
+//all changes will be  commited
 export default Cart;
