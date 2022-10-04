@@ -35,7 +35,6 @@ const Cart = () => {
 
   const [sessionId, setSessionId] = useState("");
 
-  //TODO: SAVE ORDER
   const saveOrder = async () => {
     setLoading(true);
 
@@ -54,7 +53,6 @@ const Cart = () => {
     }
   };
 
-  //TODO: UPDATE ADDRESS
   const updateAddress = async (address) => {
     const { sub } = user;
     const id = sub.split("|")[1];
@@ -82,7 +80,6 @@ const Cart = () => {
     }
   };
 
-  //TODO: GET ADDRESS
   const getAddress = async () => {
     const { sub } = user;
 
@@ -115,7 +112,6 @@ const Cart = () => {
     }
   };
 
-  //TODO: UPDATE CART
   const updateCart = async (dish, action) => {
     console.log("🚀 ~ file: Cart.js ~ line 28 ~ updateCart ~ dish", dish);
     await updateDishQuantity(dish);
@@ -126,7 +122,6 @@ const Cart = () => {
     setShow(true);
   };
 
-  //TODO: REMOVE DISH
   const removeDish = async (dish) => {
     console.log("🚀 ~ file: Cart.js ~ line 33 ~ removeDish ~ dish", dish);
     await removeDishFromCart(dish._id, () => {
@@ -150,7 +145,6 @@ const Cart = () => {
     }
   };
 
-  //TODO: UPDATE ORDER STATUS
   const orderUpdateHandler = async (id) => {
     const token = await getAccessTokenSilently();
 
@@ -206,7 +200,6 @@ const Cart = () => {
     }
   }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  //TODO: SHOW SUCCESS MESSAGE
   const showSuccessMessage = () => {
     return (
       <div
@@ -224,7 +217,6 @@ const Cart = () => {
     );
   };
 
-  //TODO: SHOW CANCEL MESSAGE
   const showCancelMessage = () => {
     return (
       <div
@@ -240,7 +232,6 @@ const Cart = () => {
     );
   };
 
-  //TODO: DISPLAY EMPTY CART MESSAGE
   const displayEmptyCartMessage = () => (
     <section>
       {showSuccessMessage()}
@@ -259,23 +250,19 @@ const Cart = () => {
     </section>
   );
 
-  //TODO: CLOSE POPUP
   const closeHandler = () => {
     setShow(false);
   };
 
-  //TODO: DISPLAY NOTIFICATION
   const displayNotification = () =>
     show && (
       <Notification show={show} text={notificationText} close={closeHandler} />
     );
 
-  //TODO: SHOW MOBILE CART
   const showCartMobile = () => (
     <Slider data={dishes} updateCart={updateCart} removeDish={removeDish} />
   );
 
-  //TODO: SHOW CART
   const showCart = () => (
     <>
       {dishes.map((dish) => (
@@ -290,7 +277,6 @@ const Cart = () => {
     </>
   );
 
-  //TODO: RENDER CART
   const renderCart = () => {
     return (
       <Layout title={"Cart Summary"}>

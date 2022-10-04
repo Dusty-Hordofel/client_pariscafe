@@ -1,24 +1,24 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 export const addDishToCart = (dish) => {
   let cart = { dishes: [] };
 
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      cart = JSON.parse(localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
     }
 
     cart.dishes.push({ ...dish, count: 1 });
-    const uniqueDishes = _.uniqBy(cart.dishes, '_id');
+    const uniqueDishes = _.uniqBy(cart.dishes, "_id");
     cart.dishes = uniqueDishes;
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 };
 
 export const getCart = () => {
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      const cart = JSON.parse(window.localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      const cart = JSON.parse(window.localStorage.getItem("cart"));
       return cart.dishes;
     }
 
@@ -31,9 +31,9 @@ export const getCart = () => {
 export const getCartTotal = () => {
   let dishes = [];
 
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      const cart = JSON.parse(window.localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      const cart = JSON.parse(window.localStorage.getItem("cart"));
 
       dishes = cart.dishes;
 
@@ -41,7 +41,7 @@ export const getCartTotal = () => {
         return dish.count * dish.price;
       });
       console.log(
-        '🚀 ~ file: cartHandler.js ~ line 62 ~ getCartTotal ~ total',
+        "🚀 ~ file: cartHandler.js ~ line 62 ~ getCartTotal ~ total",
         total
       );
 
@@ -53,9 +53,9 @@ export const getCartTotal = () => {
 export const getTotalItemsInCart = () => {
   let cart = {};
 
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      cart = JSON.parse(window.localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(window.localStorage.getItem("cart"));
     }
 
     return cart.dishes ? cart.dishes.length : 0;
@@ -65,9 +65,9 @@ export const getTotalItemsInCart = () => {
 };
 
 export const updateDishQuantity = (dish) => {
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      const cart = JSON.parse(window.localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      const cart = JSON.parse(window.localStorage.getItem("cart"));
 
       const updatedDishes = _.map(cart.dishes, (item) => {
         if (item._id === dish._id) {
@@ -77,29 +77,29 @@ export const updateDishQuantity = (dish) => {
       });
 
       cart.dishes = updatedDishes;
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
   }
 };
 
 export const removeDishFromCart = (id, callback) => {
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      const cart = JSON.parse(window.localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      const cart = JSON.parse(window.localStorage.getItem("cart"));
 
       _.remove(cart.dishes, { _id: id });
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem("cart", JSON.stringify(cart));
       callback();
     }
   }
 };
 
 export const emptyCart = () => {
-  if (typeof window !== 'undefined') {
-    if (localStorage.getItem('cart')) {
-      const cart = JSON.parse(localStorage.getItem('cart'));
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      const cart = JSON.parse(localStorage.getItem("cart"));
       cart.dishes = [];
-      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
 
     return;
