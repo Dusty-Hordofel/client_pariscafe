@@ -10,6 +10,7 @@ import Signin from "../Auth/Signin/Singin";
 import Signup from "../Auth/Signup/Signup";
 import Signout from "../Auth/Signout/Signout";
 import Profile from "../Auth/Profile/Profile";
+import Orders from "../Orders/Orders";
 
 const Routes = () => {
   const deployRoutes = () => {
@@ -23,6 +24,7 @@ const Routes = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signout" element={<Signout />} />
           <Route path="/me" element={<Profile />} />
+          <Route path="/orders" element={<Orders />} />
         </Road>
       </Router>
     );

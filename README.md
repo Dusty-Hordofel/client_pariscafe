@@ -498,4 +498,28 @@ FRONTEND
 
 - test Payments Workflow using random user.
 
-### 104. Responsive Design
+## Section 9. ORDER Management Workflow
+
+### 104. Designing ORDER Component
+
+- create <Order/>
+
+### 105. API - Retrieve user specific ORDERS
+
+### 106. UI Integration with API
+
+### 107. Display ORDERs in Accordion Component
+
+### 108. Protected Routes, Forced Authentication
+
+### 109. UI - ORDER Component Design
+
+### 110. UI - ORDER Component Design Continued
+
+### 111. UI - ORDER Component Design Continued
+
+### 112. UI - Responsive Design
+
+### 57. De-selecting ABANDONED Orders
+
+### 113. CI / CD - Deploy to Cloud
