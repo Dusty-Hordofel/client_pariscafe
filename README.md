@@ -491,9 +491,11 @@ FRONTEND
 
 ### 102. CI / CD - Deploy to Cloud
 
-- deploy Preparing for checkout to Netlify
-- create redirect file in public folder.
+- https://pariscafe.netlify.app deployed to Netlify
+- create redirect file in public folder because of netlify redirect error after paying or cancelling payment
 
 ### 103. Testing ORDER , Payment Flows on Cloud
+
+- test Payments Workflow using random user.
 
 ### 104. Responsive Design
