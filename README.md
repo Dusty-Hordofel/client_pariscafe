@@ -315,6 +315,7 @@ FRONTEND
 
 ### 62. API Endpoint - User Creation
 
+<<<<<<< HEAD
     - import { useAuth0 } from '@auth0/auth0-react';
     - destructure { user, isAuthenticated, getAccessTokenSilently } & add a conditionnal rendering
     - test the script & retrieve the user in our database using the backend part.
@@ -494,3 +495,11 @@ FRONTEND
 ### 103. Testing ORDER , Payment Flows on Cloud
 
 ### 104. Responsive Design
+=======
+81. CI/CD - Deploy to Netlify
+    I. deploy Preparing for checkout to Netlify
+
+82. Spinner Integration
+    I. <AppSpinner/> && <Cart/>
+    II. update <Notification/> && <Cart/>
+>>>>>>> 4e27750f572d49f4a1b333863d059ae051d3345c
