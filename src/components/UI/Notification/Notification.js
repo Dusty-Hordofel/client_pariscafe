@@ -53,6 +53,13 @@ export const Notification = ({ show, close, text }) => {
       case 'ADDRESS_UPDATED':
         return <>Customer Address updated.</>;
 
+      case 'ADDRESS_UPDATED':
+        return (
+          <>
+            Customer Address updated.
+          </>
+        )
+
       case 'ORDER_CANCELED':
         return <>Order canceled..</>;
 

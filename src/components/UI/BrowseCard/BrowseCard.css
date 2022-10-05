@@ -1,13 +1,17 @@
 .card {
+  
   width: 13rem;
   border-radius: 10px;
   min-height: 25.1875rem;
+
 }
 
 .card-title {
+
   text-align: center;
   margin-top: 10px;
   padding: 5px;
+  
 }
 
 .dish-image {
@@ -18,27 +22,29 @@
   box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
 }
 
-.card-body {
+.card-body{
   padding: 0.2rem 0 !important;
 }
 
-.card-text {
+.card-text{
   font-size: 0.9rem;
   padding: 1rem 0.5rem 0 0.5rem;
 }
 
 .text-secondary {
+
   min-height: 100px;
 }
 
-.card-img-top-bc {
+
+.card-img-top-bc{
   transition: transform 0.5s ease;
-  margin-left: 8px;
+  margin-left: 8px ;
   border-radius: 5%;
   max-height: 100px;
   background: var(--primary-white) !important;
 }
 
-.card-img-top:hover {
+.card-img-top:hover{
   transform: scale(1.1);
 }

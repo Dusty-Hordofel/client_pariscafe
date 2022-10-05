@@ -17,14 +17,15 @@ function App() {
         loginCount
       );
 
-      console.log('🚀 ~ file: App.js ~ line 10 ~ App ~ user', user);
+      console.log('🚀 ~ file: App.js ~ line 20 ~ App ~ user', user);
+
+      const token = await getAccessTokenSilently();
+      console.log(
+        '🚀 ~ file: App.js ~ line 24 ~ createUserHandler ~ token',
+        token
+      );
 
       if (loginCount <= 1) {
-        const token = await getAccessTokenSilently();
-        console.log(
-          '🚀 ~ file: App.js ~ line 24 ~ createUserHandler ~ token',
-          token
-        );
         const result = await createUser(user, token);
         console.log('🚀 ~ file: App.js ~ line 28 ~ init ~ result', result.data);
         console.log('🚀 ~ file: App.js ~ line 28 ~ init ~ result', token);

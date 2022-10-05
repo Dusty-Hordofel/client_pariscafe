@@ -11,3 +11,17 @@ export const AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: TIMEOUT,
 });
+
+AxiosInstance.interceptors.response.use(
+  (response) => {
+    console.log('🚀 ~ file: AxiosInstance.js ~ line 17 ~ response', response);
+    if (response.data.redirect) {
+      window.location = response.data.redirect;
+    }
+
+    return response;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);

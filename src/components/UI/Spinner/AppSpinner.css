@@ -1,14 +1,18 @@
 .spinner {
+
   display: flex;
   justify-content: center;
   align-self: start;
 }
 
 .spinner-with-backdrop {
+
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: var(--primary-alt-white);
+  background-color: var(--primary-backdrop);
+
+
 }

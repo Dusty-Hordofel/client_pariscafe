@@ -1,0 +1,10 @@
+.background-empty-cart{
+
+  background: url('../../assets/images/emptycart.jpg');
+  background-position: center;
+  background-size:  cover;
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  margin: 50px;
+}

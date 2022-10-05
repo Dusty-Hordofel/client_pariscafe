@@ -5,25 +5,28 @@
   width: 150px;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 1px grey;
-  border: 1px solid var(--primary-navy);
-  border-left: 10px solid var(--primary-navy);
+  border: 1px solid green;
+  border-left: 10px solid saddlebrown;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: #fff;
+  background-color:  #fff;
 }
 
 .dish-img {
+
   height: 80px;
   width: 80%;
   margin: 1px 10px;
   border-radius: 5%;
 }
 
+
 .title {
+
   justify-content: center;
   text-align: center;
-  color: var(--primary-navy);
+  color: #DD0404;
   margin-bottom: 5px;
   /* font-weight: bold; */
 }
@@ -31,8 +34,8 @@
 .description {
   justify-content: center;
   text-align: center;
-  color: #850505;
-  margin-top: 10px;
+  color: #850505 ;
+  margin-top: 10px;  
   font-family: 'Nunito', sans-serif;
 }
 
@@ -40,14 +43,16 @@
   margin-top: 3px;
   justify-content: center;
   text-align: center;
-  color: var(--primary-navy);
+  color: #850505;
+
 }
 
 .quantity {
   margin-top: 3px;
   justify-content: center;
   text-align: center;
-  color: var(--primary-navy);
+  color:green;
+
 }
 
 .controls {
@@ -56,24 +61,23 @@
 }
 
 .fa-minus {
-  color: var(--primary-navy);
-  margin-right: 15px;
+  color: #DD0404;
+  margin-right: 15px ;
   cursor: pointer;
 }
 
 .fa-trash {
-  color: var(--primary-navy);
+  color: #DD0404;
   cursor: pointer;
 }
 /* hsl(0, 93%, 27%) */
 
 .fa-plus {
-  color: var(--primary-navy);
+  color: green;
   margin-right: 15px;
   cursor: pointer;
 }
 
-Link:hover,
-a:hover {
+Link:hover , a:hover {
   text-decoration: none;
 }
