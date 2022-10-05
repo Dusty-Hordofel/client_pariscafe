@@ -1,405 +1,496 @@
 FRONTEND
 
-Section 1. Project Kickoff and Setting upthe bases
+## Section 1. Project Kickoff and Setting upthe bases
 
-1.  Project Installs
-    I. npx-create-react-app fe_indicafe
-    II. npm start to run the project using the terminal
-    III. delete some files
+### 1. Project Installs
 
-2.  Tools and Extensions
-    I. See npm and node version
-    II. install ES7,Bracket pair colorizer,Turbo Console Log,Import Cost, REST Client,ngrok for VSCode
-    III. create components-><TestComponent/>
-    IV. npm i lodash
-    V. create rest.http to test rest client
-    VI. run ngrok start with the commande palette.
+    - npx-create-react-app fe_indicafe
+    - npm start to run the project using the terminal
+    - delete some files
 
-3.  Building the UI Layout
-    I. create components->Layout-><Layout/> && renderLayout()
-    II create <Navbar /> <Main /> <Footer /> && <Layout/>
-    III. create Layout.css
-    IV. create Navbar-><Navbar />,Main-><Main /> & Footer-><Footer />
-    V. create Navbar,Main & Footer css files & import <Layout/> in App.js
+### 2. Tools and Extensions
 
-4.  Bootstrap Integration
-    I. update App.css file
-    II. npm i bootstrap && App.js
-    III. fontawesome
+    - See npm and node version
+    - install ES7,Bracket pair colorizer,Turbo Console Log,Import Cost, REST Client,ngrok for VSCode
+    - create components-><TestComponent/>
+    - npm i lodash
+    - create rest.http to test rest client
+    V- run ngrok start with the commande palette.
 
-         I. npm i --save @fortawesome/fontawesome-svg-core
-         II. npm i --save @fortawesome/free-solid-svg-icons
-         III. npm i --save @fortawesome/free-regular-svg-icons
-         IV. npm i --save @fortawesome/react-fontawesome@latest
-         V. npm i @fortawesome/free-brands-svg-icons
+### 3. Building the UI Layout
 
-    IV. add Roboto Condensed Italic (https://fonts.google.com/specimen/Roboto+Condensed) && App.css
+    - create components->Layout-><Layout/> && renderLayout()
+    - create <Navbar /> <Main /> <Footer /> && <Layout/>
+    - create Layout.css
+    - create Navbar-><Navbar />,Main-><Main /> & Footer-><Footer />
+    - create Navbar,Main & Footer css files & import <Layout/> in App.js
 
-5.  Navbar Design
-    I. <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> && index.html
-    II. import <Navbar/> from Bootstrap to <Navbar>
-    III. import { faBars, faSearch, faCartPlus } from '@fortawesome/free-solid-svg-icons';
-    IV. import {fontAwesomeIcon} from '@fortawesome/react-fontawesome';
+### 4. Bootstrap Integration
 
-6.  Styling Navbar
-    I. change container-fluid to container to have more space.
-    II. style <Navbar/>
+    - update App.css file
+    - npm i bootstrap && App.js
+    - fontawesome
 
-7.  Design Project Logo/Brand
-    I. add assets folder
-    II. style <Navbar/> && Logo
+         - npm i --save @fortawesome/fontawesome-svg-core
+         - npm i --save @fortawesome/free-solid-svg-icons
+         - npm i --save @fortawesome/free-regular-svg-icons
+         - npm i --save @fortawesome/react-fontawesome@latest
+         - npm i @fortawesome/free-brands-svg-icons
 
-8.  Design Dynamic Component & Footer Component
-    I.update & style <Main/> & pass it a props.
-    II. update & style <Footer/> .
+    - add Roboto Condensed Italic (https://fonts.google.com/specimen/Roboto+Condensed) && App.css
 
-9.  Sign up with Github and Integration (alredy done)
-10. Sign up with Netlify, Setting up CI / CD for the front end project.
+### 5. Navbar Design
 
-Section 2. Design the Project Landing Page for our App
+    - <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> && index.html
+    - import <Navbar/> from Bootstrap to <Navbar>
+    - import { faBars, faSearch, faCartPlus } from '@fortawesome/free-solid-svg-icons';
+    - import {fontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-11. Intro - Setting up the Landing Page
-    I. create components->LandingPage->LandingPage.js
-    II. import <Layout/> && <LandingPage/>
-    III. npm i react-router-dom
-    IV. create components->Routes-><Route/> && App.js
+### 6. Styling Navbar
 
-12. Sprucing up the Landing Page
-    I. pass title as a props in <LandingPage/> && pass it in <Main>
-    II. define a background & backdrop props in <LandingPage/> && <Layout>
-    III. update <Main/> adding a conditionnal rendering for background image and title
+    - change container-fluid to container to have more space.
+    - style <Navbar/>
 
-13. Design a background for Landing Page
-    I. add section & style it in <LandingPage/>
-    II. update <Main/> adding a conditionnal rendering for background image and title (done in last section )
+### 7. Design Project Logo/Brand
 
-14. Designing the Dish Menu & Integration with Typed component
-    I. add src->assets->addI-images & LandingPage->Menu-><Menu/>
-    II. add Bootstrap <Card/> && <Menu/>
-    III. add <Menu/> && <LandingPage/>
-    IV. npm install react-typed --force (for animated text)
+    - add assets folder
+    - style <Navbar/> && Logo
 
-15. CI/CD - Deploy to Netlify
+### 8. Design Dynamic Component & Footer Component
 
-Section 3. Catalog Design
+    -update & style <Main/> & pass it a props.
+    - update & style <Footer/> .
 
-16. Intro to Catalog Design
-    I. create components->Catalogue-><Catalog/>
+### 9. Sign up with Github and Integration (alredy done)
 
-17. Carousel Design
-    I. npm install react-bootstrap bootstrap
-    II. add Boostrap caroussel in a function!
-    III. create UI->SlideShow-><SlideShow/> && <Catalog/>
-    IV.style <SlideShow/>
+### 10. Sign up with Netlify, Setting up CI / CD for the front end project.
 
-BACKEND
+## Section 2. Design the Project Landing Page for our App
 
-18. First Steps to API Driven Design
-19. Intro to MongoDB on Cloud
-20. API integration with Mongo
-21. Designing our First API
-22. Designing our First Mongo model
-23. Designing API Error Handling Semantics
-24. API - Create a Dish Category
-25. Introduction to input validation on APIs
-26. API End point - Retrieve Category By Id
-27. Design API Endpoint to create a dish resource
-28. Enhance API to work with binary data - upload dish image
-29. API Input Data validation and Error Handling
-30. API Endpoint to Fetch All Dishes
-31. API Endpoint to retrieve dish photo
-32. API Code Integration with Github
-33. API Deploy to Cloud - Heroku
+### 11. Intro - Setting up the Landing Page
 
-FRONTEND
+    - create components->LandingPage->LandingPage.js
+    - import <Layout/> && <LandingPage/>
+    - npm i react-router-dom
+    - create components->Routes-><Route/> && App.js
 
-34. UI - API Integration - Setting up AXIOS
-    I. npm i axios && src->utils->AxiosInstance.js
-    II. create .env file & src->config->Config.js && utils->AxiosInstance.js
+### 12. Sprucing up the Landing Page
 
-35. UI - API Integration - Getting Dish Data
-    I. update components->Catalog information
-    II. create src->api->category & dish
-    III. <Catalog/>
+    - pass title as a props in <LandingPage/> && pass it in <Main>
+    - define a background & backdrop props in <LandingPage/> && <Layout>
+    - update <Main/> adding a conditionnal rendering for background image and title
 
-            I. import {useEffect ,useState} & create init function.
-            II.import getDishList()
-            III. create  [dishes, setDishes] & [loading, setLoading] states.
+### 13. Design a background for Landing Page
 
-36. UI-API Integration - Presenting Dish detail as Card Component
+    - add section & style it in <LandingPage/>
+    - update <Main/> adding a conditionnal rendering for background image and title (done in last section )
 
-    I.create components->UI-><BrowseCard/ > & BrowseCard.css
-    II. <Catalog/>
+### 14. Designing the Dish Menu & Integration with Typed component
 
-            I. import <BrowseCard/> & pass dish as a props
-            II. create displayDishes()
-            III. add fontawesome cdn in public->index.html
-            IV. create displayDishes & addDishToCart.js &&
-            V. pass addDishToCart ass a props in displayDishes
+    - add src->assets->addI-images & LandingPage->Menu-><Menu/>
+    - add Bootstrap <Card/> && <Menu/>
+    - add <Menu/> && <LandingPage/>
+    - npm install react-typed --force (for animated text)
 
-37. API Endpoint to Filter Dishes By Category
+### 15. CI/CD - Deploy to Netlify
 
-38. Dish Filtering on UI & Adding Event Handling to Filter Dishes
-    I. create UI->checkbox-group->CheckboxGroup.js && CheckboxGroup.css
-    II. <CheckboxGroup/>
+## Section 3. Catalog Design
 
-            I. Retrieve categories as a Props from <Catalog/>
-            II. create renderCheckboxGroup() & handleSelected()
-            III. create  [selected, setSelected] & handleSelected
-            IV.
+### 16. Intro to Catalog Design
 
-    III.<Catalog/>
-    I. use api->category->getCategoryList() & get All Categories
-    II. create const [categories, setCategories]
-    III. pass handleFiltering as props to <CheckboxGroup/>
-    IV. create getFilteredDishes() & api->dish->getFilteredDishList()
+    - create components->Catalogue-><Catalog/>
 
-39. Adding Event Handling to Filter Dishes (done in the previous section) - 39Bis
-    I. pass handleFiltering as props to <CheckboxGroup/>
-    II. create getFilteredDishes() & api->dish->getFilteredDishList()
+### 17. Carousel Design
 
-40. Display Filtered Dishes
+    - npm install react-bootstrap bootstrap
+    - add Boostrap caroussel in a function!
+    - create UI->SlideShow-><SlideShow/> && <Catalog/>
+    -style <SlideShow/>
+
+## BACKEND
+
+### 18. First Steps to API Driven Design
+
+### 19. Intro to MongoDB on Cloud
+
+### 20. API integration with Mongo
+
+### 21. Designing our First API
+
+### 22. Designing our First Mongo model
+
+### 23. Designing API Error Handling Semantics
+
+### 24. API - Create a Dish Category
+
+### 25. Introduction to input validation on APIs
+
+### 26. API End point - Retrieve Category By Id
+
+### 27. Design API Endpoint to create a dish resource
+
+### 28. Enhance API to work with binary data - upload dish image
+
+### 29. API Input Data validation and Error Handling
+
+### 30. API Endpoint to Fetch All Dishes
+
+### 31. API Endpoint to retrieve dish photo
+
+### 32. API Code Integration with Github
+
+### 33. API Deploy to Cloud - Heroku
+
+## FRONTEND
+
+### 34. UI - API Integration - Setting up AXIOS
+
+    - npm i axios && src->utils->AxiosInstance.js
+    - create .env file & src->config->Config.js && utils->AxiosInstance.js
+
+### 35. UI - API Integration - Getting Dish Data
+
+    - update components->Catalog information
+    - create src->api->category & dish
+    - <Catalog/>
+
+            - import {useEffect ,useState} & create init function.
+            -import getDishList()
+            - create  [dishes, setDishes] & [loading, setLoading] states.
+
+### 36. UI-API Integration - Presenting Dish detail as Card Component
+
+    -create components->UI-><BrowseCard/ > & BrowseCard.css
+    - <Catalog/>
+
+            - import <BrowseCard/> & pass dish as a props
+            - create displayDishes()
+            - add fontawesome cdn in public->index.html
+            - create displayDishes & addDishToCart.js &&
+            - pass addDishToCart ass a props in displayDishes
+
+### 37. API Endpoint to Filter Dishes By Category
+
+### 38. Dish Filtering on UI & Adding Event Handling to Filter Dishes
+
+    - create UI->checkbox-group->CheckboxGroup.js && CheckboxGroup.css
+    - <CheckboxGroup/>
+
+            - Retrieve categories as a Props from <Catalog/>
+            - create renderCheckboxGroup() & handleSelected()
+            - create  [selected, setSelected] & handleSelected
+            -
+
+    -<Catalog/>
+    - use api->category->getCategoryList() & get All Categories
+    - create const [categories, setCategories]
+    - pass handleFiltering as props to <CheckboxGroup/>
+    - create getFilteredDishes() & api->dish->getFilteredDishList()
+
+### 39. Adding Event Handling to Filter Dishes (done in the previous section) - 39Bis
+
+    - pass handleFiltering as props to <CheckboxGroup/>
+    - create getFilteredDishes() & api->dish->getFilteredDishList()
+
+### 40. Display Filtered Dishes
+
     <Catalog/>
-    I. add a conditionnal rendering in Catalog->getFilteredDishes
-    II. components->Layout->navbar : add a conditionnal rendering for active style.
+    - add a conditionnal rendering in Catalog->getFilteredDishes
+    - components->Layout->navbar : add a conditionnal rendering for active style.
 
-41. Designing a Spinner Component for our app
-    I. npm i react-spinners
-    II. create components-> UI->spinner && <Catalog/> & <CheckboxGroup/>
-    III. App.css
-    IV. add a conditionnal rendering for spinner in <Catalog/>
+### 41. Designing a Spinner Component for our app
 
-42. Design Adding dishes To Cart
-    I. create components->cart->caddDishToCart() && <Catalog/>
-    II. npm i react-notifications
+    - npm i react-spinners
+    - create components-> UI->spinner && <Catalog/> & <CheckboxGroup/>
+    - App.css
+    - add a conditionnal rendering for spinner in <Catalog/>
 
-43. Design Notification Component to our App
-    I. create UI->notification && <Catalog/>
-    II. create showNotification && closeHandler
+### 42. Design Adding dishes To Cart
 
-44. Deploy to Cloud - Heroku
-    I. add the heroku endPoint in env file by changing: REACT_APP_API_BASE_URL=http://localhost:xxxx
+    - create components->cart->caddDishToCart() && <Catalog/>
+    - npm i react-notifications
 
-45. Deploy to Netlify - Connect Two Clouds
-    I. npm install netlify-cli -g
-    II. in the terminal: netlify login , netlify status, netlify link(Choose from a list of your recently updated sites).
-    III. sudo netlify env:import .env
+### 43. Design Notification Component to our App
 
-Section 4. Cart Component Design
+    - create UI->notification && <Catalog/>
+    - create showNotification && closeHandler
 
-46. Cart Component Design
-    I. update a link informations
-    II. create components->Cart-><Cart/>
-    III. <Cart/> && <Routes/>
+### 44. Deploy to Cloud - Heroku
 
-47. Quick Detour - CORS Review, Key element of distributed app
-48. CORS Review - Continued
+    - add the heroku endPoint in env file by changing: REACT_APP_API_BASE_URL=http://localhost:xxxx
 
-49. Cart Management on Browser
-    I. create Cart->cartHandler->getCart(),getCartTotal() & getTotalItemsInCart()
+### 45. Deploy to Netlify - Connect Two Clouds
 
-50. Cart Component - Unauthenticated View
-    I. update <Cart/> informations
-    II. update position of main elements in Main->Main.css
-    III. update App.css file
+    - npm install netlify-cli -g
+    - in the terminal: netlify login , netlify status, netlify link(Choose from a list of your recently updated sites).
+    - sudo netlify env:import .env
 
-51. Cart Component - Unauthenticated View Continued
-    I. update <Cart/> informations
+## Section 4. Cart Component Design
 
-52. Cart Component - Render Cart
-    I. <Cart/>
+### 46. Cart Component Design
 
-            I. import { useState, useEffect } from 'react';
-            II. const [dishes, setDishes] = useState([]);
-            III. create init() && useEffect()
-            IV. create showCart() && renderCart()
-            V. create UI-><MenuCard/>
+    - update a link informations
+    - create components->Cart-><Cart/>
+    - <Cart/> && <Routes/>
 
-53. Cart Component UI Event Handling
-    I. Cart -> cartHandler -> updateDishQuantity() & removeDishFromCart()
-    II. use them in <Cart/> & update updateCart
+### 47. Quick Detour - CORS Review, Key element of distributed app
 
-54. Cart Component - Notification Integration
-    I. <Cart/>
+### 48. CORS Review - Continued
 
-            I. create [show, setShow] & [notificationText, setNotificationText]
-            II. update updateCart &removeDish
+### 49. Cart Management on Browser
 
-Section 5. Protecting your App
+    - create Cart->cartHandler->getCart(),getCartTotal() & getTotalItemsInCart()
 
-55. Intro to auth0 - sign up
-    I. https://auth0.com/docs/quickstart/spa/react/interactive
-    II. Quickstarts -> npm install @auth0/auth0-react
-    III. create REACT_APP_AUTH0_CLIENT_ID & REACT_APP_AUTH0_DOMAIN in .env
-    IV. create const DOMAIN & CLIENT_ID in config.js && index.js
+### 50. Cart Component - Unauthenticated View
 
-56. Design of Sign In and Sign out Flows
-    I. create Auth->Signin,Signout,Signup && Routes.jsx
+    - update <Cart/> informations
+    - update position of main elements in Main->Main.css
+    - update App.css file
 
-57. Integration with Navbar
-    I. <Navbar/>
+### 51. Cart Component - Unauthenticated View Continued
 
-            I. import { useAuth0 } from '@auth0/auth0-react';
-            II. add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
-            III. test all the script
+    - update <Cart/> informations
 
-58. Auth0 integration with Netlify - CI/CD
+### 52. Cart Component - Render Cart
 
-    I. sudo netlify env:list
-    II. sudo netlify env:import .env
-    III. go to the Auth0 application,set Settings page and make sure you are sending a valid callback url
+    - <Cart/>
 
-            I. add https://pariscafe.netlify.app/  in settings
+            - import { useState, useEffect } from 'react';
+            - const [dishes, setDishes] = useState([]);
+            - create init() && useEffect()
+            - create showCart() && renderCart()
+            - create UI-><MenuCard/>
 
-59. Spinner Integration
-    I. update Main->Main.css & Footer->Footer.css files.
-    II. update UI->spinner script by adding a type conditionnal rendering.
+### 53. Cart Component UI Event Handling
 
-60. Auth0 - Sign In Flow
-61. Auth0 User Profile
-    I. create Auth->Profile-><Profile/> && <Navbar/>
+    - Cart -> cartHandler -> updateDishQuantity() & removeDishFromCart()
+    - use them in <Cart/> & update updateCart
 
-62. API Endpoint - User Creation
-    I. import { useAuth0 } from '@auth0/auth0-react';
-    II. destructure { user, isAuthenticated, getAccessTokenSilently } & add a conditionnal rendering
-    III. test the script & retrieve the user in our database using the backend part.
+### 54. Cart Component - Notification Integration
 
-63. API Endpoint User Creation - Testing
+    - <Cart/>
 
-64. UI - User Creation on First Login
-    I. create api->user->createUser() && App.js
+            - create [show, setShow] & [notificationText, setNotificationText]
+            - update updateCart &removeDish
 
-65. UI - Exactly Once User Creation
-    I. update App.js file
-    II. create a rule : Auth Pipeline -> create a new Rule.
-    III.save and try rule & save rule.
+## Section 5. Protecting your App
 
-66. Auth0 API Security - JSON Web Tokens, Protecting your backend APIs
+### 55. Intro to auth0 - sign up
 
-    I.auth0... ->dashboard->application->APIs->creatAPI.
-    II. create .env -> AUDIENCE equivalent to identifier in Auth0 && index.js
+- https://auth0.com/docs/quickstart/spa/react/interactive
+- Quickstarts -> npm install @auth0/auth0-react
+- create REACT_APP_AUTH0_CLIENT_ID & REACT_APP_AUTH0_DOMAIN in .env
+- create const DOMAIN & CLIENT_ID in config.js && index.js
 
-67. API Integration with auth0 security
-68. UI - Auth0 - API Integration
+### 56. Design of Sign In and Sign out Flows
 
-69. CI / CD - Deploy to Heroku and Netlify
-    I. deploy the script in Netlify
+    - create Auth->Signin,Signout,Signup && Routes.jsx
 
-Section 6. Back to Cart - Authenticated view
+### 57. Integration with Navbar
 
-70. Cart Component - Integration with auth0
-    I. import { useAuth0 } from '@auth0/auth0-react';
-    II. add a conditionnal rendering to Signin to Checkout.
-    III. import getTotalItemsInCart & add cart icon in <Navbar/>
-    IV. update <Navbar/>
+    - <Navbar/>
 
-71. UI - Responsive Design
-    I. create UI-><Slider/>,slider.css & <Controls/> && <Cart/>
+            - import { useAuth0 } from '@auth0/auth0-react';
+            - add a conditionnal rendering for Sign In,Register and Sign out in <Navbar/>.
+            - test all the script
 
-72. Responsive Design , Favicon Design and UI Changes
-    I.change REACT_APP_API_BASE_URL
-    II. add REACT_APP_IMG_URL in config and .env file
-    III. update <BrowseCard/> and <MenuCard/> & restart app because of changes
-    IV. add a favicon to our project (https://redketchup.io/favicon-generator)
-    V. add favicon in public folder and update manifest.json
+### 58. Auth0 integration with Netlify - CI/CD
 
-73. CI / CD - Deploy to Netlify
-    I. sudo netlify env:import .env
-    II. create a pullRequest and merge with main
-    III. change proxy
+- sudo netlify env:list
+- sudo netlify env:import .env
+- go to the Auth0 application,set Settings page and make sure you are sending a valid callback url
 
-74. CI / CD - Deploy to Netlify
-    I. update .env
-    II. create a pullRequest and merge with main
+            - add https://pariscafe.netlify.app/  in settings
 
-Section 7. Preparing for checkout
+### 59. Spinner Integration
 
-75. API Endpoint - Address Capture
-76. Mongo Model Update
+    - update Main->Main.css & Footer->Footer.css files.
+    - update UI->spinner script by adding a type conditionnal rendering.
 
-77. Form Design - Address Data
-    I. create checkoutForm -> <CheckoutForm/> && <Cart/>
-    II. npm i formik yup react-phone-input-2 deep-equal
-    III. create component -> FormError-> <Error/>
-    IV. add a constionnal rendering to <Cart/>
+### 60. Auth0 - Sign In Flow
 
-78. API Integration with Address Form Prefill
-    I. create api->user-> updateUserAddress() et getUserAddress() && <Cart/>
-    II. test <Cart/>
+### 61. Auth0 User Profile
 
-79. API Integration Address Form Prefill - Continued
-    I. update <CheckoutForm/> and CheckoutForm.css
+    - create Auth->Profile-><Profile/> && <Navbar/>
 
-80. API Integration Address Save / Update
-    I. api->user->updateUserAddress() && <Cart/> -> updateAddress()
-    II. use updateAddress as a props in <Cart/> -> <CheckoutForm/>
+### 62. API Endpoint - User Creation
 
-81. CI/CD - Deploy to Netlify
-    I. deploy Preparing for checkout to Netlify
+    - import { useAuth0 } from '@auth0/auth0-react';
+    - destructure { user, isAuthenticated, getAccessTokenSilently } & add a conditionnal rendering
+    - test the script & retrieve the user in our database using the backend part.
 
-82. Spinner Integration
-    I. <AppSpinner/> && <Cart/>
-    II. update <Notification/> && <Cart/>
+### 63. API Endpoint User Creation - Testing
 
-Section 8. Payments Workflow Design
+### 64. UI - User Creation on First Login
 
-83. Intro to Stripe and Stripe Signup
-    I. signup in stripe and update branding in Settings
-    II. create a payement test & go to developper -> payment online
-    III. choose Page Checkout prédéfinie for Prebuilt Checkout page & test
+    - create api->user->createUser() && App.js
 
-84. Stripe Integration
-85. Testing Stripe Integration
-86. API - Create Order
+### 65. UI - Exactly Once User Creation
 
-87. Testing Create Order
-    I. create api->order->index.js
-    II. update util->AxiosInstance.js.
-    III. <Cart/>
+    - update App.js file
+    - create a rule : Auth Pipeline -> create a new Rule.
+    -save and try rule & save rule.
 
-            I. saveOrder() && as props -> <checkoutForm/>
-            II.  const [loading, setLoading] = useState(false);
+### 66. Auth0 API Security - JSON Web Tokens, Protecting your backend APIs
 
-88. End-End Testing - Order Creation
-    I. <Cart/>
+    -auth0... ->dashboard->application->APIs->creatAP-
+    - create .env -> AUDIENCE equivalent to identifier in Auth0 && index.js
 
-            I. update useEffect ->
-            II. create cartHandler->emptyCart()
-            III. create [checkoutProgress, setCheckoutProgress]...
-            IV. create showSuccessMessage() & displayEmptyCartMessage
+### 67. API Integration with auth0 security
 
-89. End-to-End Testing Order Creation - Continued
-    I. add style in <Cart/>
+### 68. UI - Auth0 - API Integration
 
-90. Order CANCEL Flow
-    I. <Cart/>
+### 69. CI / CD - Deploy to Heroku and Netlify
 
-             I. update useEffect and create orderUpdateHandler()
-             II. create showCancelMessage ()
+    - deploy the script in Netlify
 
-91. Stripe Webhook - ORDER Fulfilment
-    I. documentation (https://stripe.com/docs/payments/checkout/fulfill-orders)
-92. Stripe Webhook - ORDER Fulfilment - Continued
-    I. update <Cart/>
+## Section 6. Back to Cart - Authenticated view
 
-93. ORDER Fulfilment - Messaging
-94. Tiny Url Service - Sign Up with Bitly
-95. Bitly Integration with the App
-96. API Testing - ORDER Fulfilment
+### 70. Cart Component - Integration with auth0
 
-97. API Security - Testing with JWT Tokens from auth0
-98. E-2-E Testing ORDER Fulfilment
-    I. pass props to Signin checkout Link in <Cart/> && <Sigin> to redirect user
-    II. create components->utils->history->createBrowserHistory() && index.js
-    III. Redirect the user to the <Cart/>
+    - import { useAuth0 } from '@auth0/auth0-react';
+    - add a conditionnal rendering to Signin to Checkout.
+    - import getTotalItemsInCart & add cart icon in <Navbar/>
+    - update <Navbar/>
 
-99. API Dealing with ABANDONED Orders
-100.  API Dealing with ABANDONED Orders
+### 71. UI - Responsive Design
 
-101.  E-2-E Testing ABANDONED Orders
-      I. create api->order->index->updateOrderStatus()
-      II. update <Cart/>
-      III. update folder and files
-102.  CI / CD - Deploy to Cloud
-103.  Testing ORDER , Payment Flows on Cloud
-104.  Responsive Design
+    - create UI-><Slider/>,slider.css & <Controls/> && <Cart/>
+
+### 72. Responsive Design , Favicon Design and UI Changes
+
+    -change REACT_APP_API_BASE_URL
+    - add REACT_APP_IMG_URL in config and .env file
+    - update <BrowseCard/> and <MenuCard/> & restart app because of changes
+    - add a favicon to our project (https://redketchup.io/favicon-generator)
+    - add favicon in public folder and update manifest.json
+
+### 73. CI / CD - Deploy to Netlify
+
+    - sudo netlify env:import .env
+    - create a pullRequest and merge with main
+    - change proxy
+
+### 74. CI / CD - Deploy to Netlify
+
+    - update .env
+    - create a pullRequest and merge with main
+
+## Section 7. Preparing for checkout
+
+### 75. API Endpoint - Address Capture
+
+### 76. Mongo Model Update
+
+### 77. Form Design - Address Data
+
+    - create checkoutForm -> <CheckoutForm/> && <Cart/>
+    - npm i formik yup react-phone-input-2 deep-equal
+    - create component -> FormError-> <Error/>
+    - add a constionnal rendering to <Cart/>
+
+### 78. API Integration with Address Form Prefill
+
+    - create api->user-> updateUserAddress() et getUserAddress() && <Cart/>
+    - test <Cart/>
+
+### 79. API Integration Address Form Prefill - Continued
+
+    - update <CheckoutForm/> and CheckoutForm.css
+
+### 80. API Integration Address Save / Update
+
+    - api->user->updateUserAddress() && <Cart/> -> updateAddress()
+    - use updateAddress as a props in <Cart/> -> <CheckoutForm/>
+
+### 81. CI/CD - Deploy to Netlify
+
+    - deploy Preparing for checkout to Netlify
+
+### 82. Spinner Integration
+
+    - <AppSpinner/> && <Cart/>
+    - update <Notification/> && <Cart/>
+
+## Section 8. Payments Workflow Design
+
+### 83. Intro to Stripe and Stripe Signup
+
+    - signup in stripe and update branding in Settings
+    - create a payement test & go to developper -> payment online
+    - choose Page Checkout prédéfinie for Prebuilt Checkout page & test
+
+### 84. Stripe Integration
+
+### 85. Testing Stripe Integration
+
+### 86. API - Create Order
+
+### 87. Testing Create Order
+
+    - create api->order->index.js
+    - update util->AxiosInstance.js.
+    - <Cart/>
+
+            - saveOrder() && as props -> <checkoutForm/>
+            -  const [loading, setLoading] = useState(false);
+
+### 88. End-End Testing - Order Creation
+
+    - <Cart/>
+
+            - update useEffect ->
+            - create cartHandler->emptyCart()
+            - create [checkoutProgress, setCheckoutProgress]...
+            - create showSuccessMessage() & displayEmptyCartMessage
+
+### 89. End-to-End Testing Order Creation - Continued
+
+    - add style in <Cart/>
+
+### 90. Order CANCEL Flow
+
+    - <Cart/>
+
+             - update useEffect and create orderUpdateHandler()
+             - create showCancelMessage ()
+
+### 91. Stripe Webhook - ORDER Fulfilment
+
+    - documentation (https://stripe.com/docs/payments/checkout/fulfill-orders)
+
+### 92. Stripe Webhook - ORDER Fulfilment - Continued
+
+    - update <Cart/>
+
+### 93. ORDER Fulfilment - Messaging
+
+### 94. Tiny Url Service - Sign Up with Bitly
+
+### 95. Bitly Integration with the App
+
+### 96. API Testing - ORDER Fulfilment
+
+### 97. API Security - Testing with JWT Tokens from auth0
+
+### 98. E-2-E Testing ORDER Fulfilment
+
+    - pass props to Signin checkout Link in <Cart/> && <Sigin> to redirect user
+    - create components->utils->history->createBrowserHistory() && index.js
+    - Redirect the user to the <Cart/>
+
+### 99. API Dealing with ABANDONED Orders
+
+### 100. API Dealing with ABANDONED Orders
+
+### 101. E-2-E Testing ABANDONED Orders
+
+      - create api->order->index->updateOrderStatus()
+      - update <Cart/>
+      - update folder and files
+
+### 102. CI / CD - Deploy to Cloud
+
+### 103. Testing ORDER , Payment Flows on Cloud
+
+### 104. Responsive Design

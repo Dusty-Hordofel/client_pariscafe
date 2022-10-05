@@ -1,7 +1,7 @@
 .notification {
   width: 600px;
   height: 45px;
-  background: var(--primary-navy);
+  background: var(--primary-bright-orange);
   border-radius: 10px;
   border-left: 8px solid var(--primary-bright-green);
   margin: 4rem auto;
@@ -13,6 +13,8 @@
   left: 30%;
 }
 
+
+
 .notification-content {
   display: flex;
   flex-direction: row;
@@ -22,20 +24,21 @@
 }
 
 .notification p {
+
   color: #fff;
   font-size: 1.2rem;
 }
 
 .notification .close-button {
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.0rem;
   cursor: pointer;
 }
 
 .notification-backdrop {
   height: 100%;
   width: 100%;
-  background: rgba(63, 61, 61, 0.692);
+   background: rgba(63, 61, 61, 0.692);
   cursor: pointer;
   transition: all 1.3s;
   position: fixed;
@@ -47,11 +50,12 @@
 @media screen and (max-width: 650px) {
   .notification {
     width: 80%;
-    margin: 0 auto;
-    left: 15%;
+    margin: 0 auto;  
+   left: 15%;
   }
 
   .notification-content {
+
     justify-content: space-around;
   }
 }

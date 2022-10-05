@@ -2,14 +2,14 @@ import {
   BrowserRouter as Router,
   Routes as Road,
   Route,
-} from 'react-router-dom';
-import Cart from '../Cart/Cart';
-import Catalog from '../Catalog/Catalog';
-import LandingPage from '../LandingPage/LandingPage';
-import Signin from '../Auth/Signin/Singin';
-import Signup from '../Auth/Signup/Signup';
-import Signout from '../Auth/Signout/Signout';
-import Profile from '../Auth/Profile/Profile';
+} from "react-router-dom";
+import Cart from "../Cart/Cart";
+import Catalog from "../Catalog/Catalog";
+import LandingPage from "../LandingPage/LandingPage";
+import Signin from "../Auth/Signin/Singin";
+import Signup from "../Auth/Signup/Signup";
+import Signout from "../Auth/Signout/Signout";
+import Profile from "../Auth/Profile/Profile";
 
 const Routes = () => {
   const deployRoutes = () => {

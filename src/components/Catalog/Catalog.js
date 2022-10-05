@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import Layout from '../Layout/Layout';
 import { getDishList, getFilteredDishList } from '../../api/dish';
 import { getCategoryList } from '../../api/category';
@@ -12,6 +12,8 @@ import { Notification } from '../UI/Notification/Notification';
 import { addDishToCart } from '../Cart/cartHandler';
 
 const Catalog = () => {
+
+
   const [dishes, setDishes] = useState([]);
   const [filteredDishes, setFilteredDishes] = useState([]);
 
@@ -21,23 +23,24 @@ const Catalog = () => {
 
   const [show, setShow] = useState(false);
 
+
   const closeHandler = () => {
     setShow(false);
-  };
+  }
 
   const showNotification = () => (
     <>
-      {show && (
-        <Notification show={show} text={'ADD_TO_CART'} close={closeHandler} />
-      )}
+      {show && <Notification show={show} text={'ADD_TO_CART'} close={closeHandler} />}
     </>
-  );
+  )
+
 
   const init = async () => {
+
     try {
       setLoading(true);
       const result = await getDishList();
-      console.log('🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result', result);
+      console.log("🚀 ~ file: Catalog.js ~ line 17 ~ init ~ result", result)
       setDishes(result.data);
 
       // get all categories
@@ -45,100 +48,100 @@ const Catalog = () => {
       const categoryList = await getCategoryList();
       setCategories(categoryList.data);
       setLoading(false);
+
     } catch (error) {
       setLoading(false);
       if (error.response) {
-        console.log(
-          '🚀 ~ file: Catalog.js ~ line 21 ~ init ~ error.response',
-          error.response.data.error
-        );
+        console.log("🚀 ~ file: Catalog.js ~ line 21 ~ init ~ error.response", error.response.data.error);
+
       }
+
     }
-  };
+
+  }
+
 
   useEffect(() => {
-    init();
+
+    init()
   }, []);
 
   const displayDishes = () => {
+
     return (
+
       <>
-        {dishes.length > 0 &&
-          dishes.map((dish) => {
-            return (
-              <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish._id}>
-                <BrowseCard dish={dish} key={dish._id} addToCart={addToCart} />
-              </div>
-            );
-          })}
+        {dishes.length > 0 && dishes.map(dish => {
+          return (
+            <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish._id}>
+              <BrowseCard dish={dish} key={dish._id} addToCart={addToCart} />
+            </div>
+          )
+        })}
       </>
-    );
-  };
+    )
+  }
 
   const displayFilteredDishes = () => {
+
     return (
+
       <>
-        {filteredDishes.length > 0 &&
-          filteredDishes.map((dish) => {
-            return (
-              <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish.id}>
-                <BrowseCard dish={dish} key={dish._id} addToCart={addToCart} />
-              </div>
-            );
-          })}
+        {filteredDishes.length > 0 && filteredDishes.map(dish => {
+          return (
+            <div className="col-10 col-lg-3 col-md-4 mt-2" key={dish.id}>
+              <BrowseCard dish={dish} key={dish._id} addToCart={addToCart} />
+            </div>
+          )
+        })}
       </>
-    );
-  };
+    )
+  }
+
 
   const addToCart = (dish) => {
-    console.log('🚀 ~ file: Catalog.js ~ line 54 ~ addDishToCart ~ dish', dish);
+
+    console.log("🚀 ~ file: Catalog.js ~ line 54 ~ addDishToCart ~ dish", dish);
     addDishToCart(dish);
-    setShow(true);
-  };
+    setShow(true)
+
+  }
 
   const getFilteredDishes = async (categories) => {
-    console.log(
-      '🚀 ~ file: Catalog.js ~ line 72 ~ getFilteredDishes ~ categories',
-      categories
-    );
+    console.log("🚀 ~ file: Catalog.js ~ line 72 ~ getFilteredDishes ~ categories", categories);
 
     const categoriesLength = categories.length;
 
+
     try {
       setLoading(true);
-      const result =
-        categoriesLength > 0
-          ? await getFilteredDishList(categories)
-          : await getDishList();
+      const result = categoriesLength > 0 ? await getFilteredDishList(categories) : await getDishList();
       categoriesLength > 0 ? setDishes([]) : setFilteredDishes([]);
-      categoriesLength > 0
-        ? setFilteredDishes(result.data)
-        : setDishes(result.data);
+      categoriesLength > 0 ? setFilteredDishes(result.data) : setDishes(result.data);
 
-      console.log(
-        '🚀 ~ file: Catalog.js ~ line 94 ~ getFilteredDishes ~ result',
-        result
-      );
+      console.log("🚀 ~ file: Catalog.js ~ line 94 ~ getFilteredDishes ~ result", result)
 
       setFilteredDishes(result.data);
       setLoading(false);
+
     } catch (error) {
+
       setLoading(false);
       if (error.response) {
-        console.log(
-          '🚀 ~ file: Catalog.js ~ line 81 ~ getFilteredDishes ~ error.response',
-          error.response.data.error
-        );
+        console.log("🚀 ~ file: Catalog.js ~ line 81 ~ getFilteredDishes ~ error.response", error.response.data.error);
+
       }
+
     }
-  };
+
+
+  }
 
   const renderCatalog = () => (
-    <Layout title="Savor Our Delicacies">
+
+    <Layout title="Savor Our Delicacies" >
       {showNotification()}
-      {loading ? (
-        <AppSpinner />
-      ) : (
+      {loading ? <AppSpinner /> :
         <section className="container mt-4">
           <div className="row justify-content-center">
             <div className="col-md-8 col-12">
@@ -147,25 +150,32 @@ const Catalog = () => {
             <div className="row justify-content-center mt-4">
               <div className="col-lg-2 mt-2">
                 <h4>Filter By Category</h4>
-                <CheckboxGroup
-                  categories={categories}
-                  handleFiltering={getFilteredDishes}
-                />
+                <CheckboxGroup categories={categories} handleFiltering={getFilteredDishes} />
               </div>
               <div className="col-lg-10 mt-2">
                 <div className="row justify-content-center">
+
                   {displayDishes()}
                   {displayFilteredDishes()}
+
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      )}
-    </Layout>
-  );
 
-  return <>{renderCatalog()}</>;
-};
+            </div>
+
+
+          </div>
+
+        </section>
+      }
+    </Layout>
+  )
+
+  return (
+    <>
+      {renderCatalog()}
+    </>
+  )
+}
 
 export default Catalog;
