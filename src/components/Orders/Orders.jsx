@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Layout from "../Layout/Layout";
 import { getMyOrders } from "../../api/order";
+
 import Accordion from "../UI/Accordion/Accordion";
 
 const Orders = () => {
@@ -14,20 +15,19 @@ const Orders = () => {
       const token = await getAccessTokenSilently();
       const result = await getMyOrders(token);
       console.log(
-        "🚀 ~ file: Orders.js ~ line 17 ~ init ~ result",
+        "🚀 ~ file: Orders.js ~ line 23 ~ init ~ result",
         result.data
       );
 
       setOrders(result.data.orders);
     } catch (error) {
-      console.log("🚀 ~ file: Orders.js ~ line 22 ~ getOrders ~ error", error);
+      console.log("🚀 ~ file: Orders.js ~ line 26 ~ getOrders ~ error", error);
     }
   };
 
   useEffect(() => {
     init();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuthenticated]);
+  }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const displayOrders = () => <Accordion orders={orders} />;
 
@@ -38,7 +38,8 @@ const Orders = () => {
       </div>
     </Layout>
   );
-  return <div>{renderOrders()}</div>;
+
+  return <>{renderOrders()}</>;
 };
 
 export default Orders;

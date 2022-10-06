@@ -4,7 +4,7 @@ FRONTEND
 
 ### 1. Project Installs
 
-    - npx-create-react-app fe_indicafe
+    - npx-create-react-app paricafe
     - npm start to run the project using the terminal
     - delete some files
 
@@ -508,11 +508,14 @@ FRONTEND
 
 - create getMyOrders api method && <Orders/>
 
-### 107. Display ORDERs in Accordion Component
+### 106. Display ORDERs in Accordion Component
 
 - use Bootstrap accordeon to display order details
 
 ### 108. Protected Routes, Forced Authentication
+
+- Use Auth0 documentation to Protect routes. Ref to Documentary References below.
+- create Auth-><ProtectedRoute/> && <Routes/>
 
 ### 109. UI - ORDER Component Design
 
@@ -528,7 +531,11 @@ FRONTEND
 
 ---
 
-## 📚 REST API Dependencies
+### 📚 REST API Dependencies
 
 - 🔗 [moment](https://www.npmjs.com/package/moment)
--
+
+### 📚 Documentary References
+
+- 🔗 [The Complete Guide To React User Authentication with Auth0](https://auth0.com/blog/complete-guide-to-react-user-authentication/)
+- 🔗 [React Login with Auth0](https://auth0.com/docs/quickstart/spa/react/01-login#show-user-profile-information)
