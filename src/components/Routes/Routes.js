@@ -11,6 +11,7 @@ import Signup from "../Auth/Signup/Signup";
 import Signout from "../Auth/Signout/Signout";
 import Profile from "../Auth/Profile/Profile";
 import Orders from "../Orders/Orders";
+import Order from "../Orders/Order/Order";
 import LoggedInRoutes from "../Auth/ProtectedRoute/LoggedInRoutes";
 import NotLoggedInRoutes from "../Auth/ProtectedRoute/NotLoggedInRoutes";
 
@@ -21,13 +22,14 @@ const Routes = () => {
         <Road>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signout" element={<Signout />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/cart" element={<Cart />} />
           <Route element={<LoggedInRoutes />}>
             <Route path="/orders" element={<Orders />} />
+            <Route path="/orders/:id" element={<Order />} />
             <Route path="/me" element={<Profile />} />
           </Route>
           <Route element={<NotLoggedInRoutes />}>
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/catalog" element={<Catalog />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
           </Route>

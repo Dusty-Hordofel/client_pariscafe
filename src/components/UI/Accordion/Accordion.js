@@ -83,12 +83,7 @@ const Accordion = ({ orders = [] }) => {
                   </span>
 
                   <span>
-                    <Link
-                      to={{
-                        pathname: `/orders/${order._id}`,
-                        orderProps: { order },
-                      }}
-                    >
+                    <Link to={`/orders/${order._id}`} state={order}>
                       <button className="btn btn-outline-primary   mt-2 ml-2">
                         {" "}
                         VIEW ORDER{" "}

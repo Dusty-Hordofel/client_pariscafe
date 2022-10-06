@@ -515,19 +515,18 @@ FRONTEND
 ### 108. Protected Routes, Forced Authentication
 
 - Use Auth0 documentation to Protect routes. Ref to Documentary References below.
-- create Auth-><ProtectedRoute/> && <Routes/>
+- create Auth-><ProtectedRoute/>,<NotLoggedInRoutes/>,LoggedInRoutes && <Routes/>
 
 ### 109. UI - ORDER Component Design
 
-### 110. UI - ORDER Component Design Continued
+- create <Order/>,<OrderListing/>,<OrderStatus/>,<TrakingCard/> & <OrderTrackerVertical/>
+- pass order from <Accordeon/> to <Order/>
 
-### 111. UI - ORDER Component Design Continued
+### 110. UI - Responsive Design
 
-### 112. UI - Responsive Design
+### 111. De-selecting ABANDONED Orders
 
-### 57. De-selecting ABANDONED Orders
-
-### 113. CI / CD - Deploy to Cloud
+### 112. CI / CD - Deploy to Cloud
 
 ---
 
