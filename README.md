@@ -507,9 +507,10 @@ FRONTEND
 ### 105. UI Integration with API
 
 - create getMyOrders api method && <Orders/>
--
 
 ### 107. Display ORDERs in Accordion Component
+
+- use Bootstrap accordeon to display order details
 
 ### 108. Protected Routes, Forced Authentication
 
@@ -524,3 +525,10 @@ FRONTEND
 ### 57. De-selecting ABANDONED Orders
 
 ### 113. CI / CD - Deploy to Cloud
+
+---
+
+## 📚 REST API Dependencies
+
+- 🔗 [moment](https://www.npmjs.com/package/moment)
+-

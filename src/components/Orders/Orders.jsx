@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Layout from "../Layout/Layout";
 import { getMyOrders } from "../../api/order";
+import Accordion from "../UI/Accordion/Accordion";
 
 const Orders = () => {
   const { isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -28,9 +29,13 @@ const Orders = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
+  const displayOrders = () => <Accordion orders={orders} />;
+
   const renderOrders = () => (
     <Layout title="My Orders" background={true} backdrop={true}>
-      Welcome to the Orders page !!
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-6">{displayOrders()}</div>
+      </div>
     </Layout>
   );
   return <div>{renderOrders()}</div>;

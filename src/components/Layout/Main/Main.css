@@ -26,4 +26,5 @@
   width: 100vw;
   height: auto;
   padding: 40px 20px;
+  min-height: 80vh;
 }
