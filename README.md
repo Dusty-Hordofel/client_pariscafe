@@ -502,11 +502,12 @@ FRONTEND
 
 ### 104. Designing ORDER Component
 
-- create <Order/>
+- create <Order/> && <Navbar/>
 
-### 105. API - Retrieve user specific ORDERS
+### 105. UI Integration with API
 
-### 106. UI Integration with API
+- create getMyOrders api method && <Orders/>
+-
 
 ### 107. Display ORDERs in Accordion Component
 
