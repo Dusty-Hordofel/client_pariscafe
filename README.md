@@ -519,14 +519,24 @@ FRONTEND
 
 ### 109. UI - ORDER Component Design
 
-- create <Order/>,<OrderListing/>,<OrderStatus/>,<TrakingCard/> & <OrderTrackerVertical/>
+- create <Order/>,<OrderListing/>,<OrderStatus/>,<TrakingCard/>,<Address/> & <OrderTrackerVertical/>
 - pass order from <Accordeon/> to <Order/>
 
 ### 110. UI - Responsive Design
 
-### 111. De-selecting ABANDONED Orders
+### 111. CI / CD - Deploy to Cloud
 
-### 112. CI / CD - Deploy to Cloud
+- deploy to Netlify
+
+## Section 10. ORDER Management Workflow
+
+### 112. Intro - ADMIN Interface
+
+- update <Profile/>
+
+### 113. ADMIN Profile , Retrieve ORDERS
+
+- Update <Navbar/>
 
 ---
 
