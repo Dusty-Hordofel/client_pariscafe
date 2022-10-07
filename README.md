@@ -4,7 +4,7 @@ FRONTEND
 
 ### 1. Project Installs
 
-    - npx-create-react-app fe_indicafe
+    - npx-create-react-app paricafe
     - npm start to run the project using the terminal
     - delete some files
 
@@ -498,4 +498,43 @@ FRONTEND
 
 - test Payments Workflow using random user.
 
-### 104. Responsive Design
+## Section 9. ORDER Management Workflow
+
+### 104. Designing ORDER Component
+
+- create <Order/> && <Navbar/>
+
+### 105. UI Integration with API
+
+- create getMyOrders api method && <Orders/>
+
+### 106. Display ORDERs in Accordion Component
+
+- use Bootstrap accordeon to display order details
+
+### 108. Protected Routes, Forced Authentication
+
+- Use Auth0 documentation to Protect routes. Ref to Documentary References below.
+- create Auth-><ProtectedRoute/>,<NotLoggedInRoutes/>,LoggedInRoutes && <Routes/>
+
+### 109. UI - ORDER Component Design
+
+- create <Order/>,<OrderListing/>,<OrderStatus/>,<TrakingCard/> & <OrderTrackerVertical/>
+- pass order from <Accordeon/> to <Order/>
+
+### 110. UI - Responsive Design
+
+### 111. De-selecting ABANDONED Orders
+
+### 112. CI / CD - Deploy to Cloud
+
+---
+
+### 📚 REST API Dependencies
+
+- 🔗 [moment](https://www.npmjs.com/package/moment)
+
+### 📚 Documentary References
+
+- 🔗 [The Complete Guide To React User Authentication with Auth0](https://auth0.com/blog/complete-guide-to-react-user-authentication/)
+- 🔗 [React Login with Auth0](https://auth0.com/docs/quickstart/spa/react/01-login#show-user-profile-information)
