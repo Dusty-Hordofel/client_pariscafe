@@ -551,6 +551,14 @@ FRONTEND
 - filter input in <Orders/> using showOrdersForState()
 - add <Notification/>
 
+### 117. API Implement ACCEPT Orders Flow
+
+- update <Order/>
+
+### 118. UI Integration - ACCEPT Flow
+
+---
+
 ### 📚 REST API Dependencies
 
 - 🔗 [moment](https://www.npmjs.com/package/moment)
