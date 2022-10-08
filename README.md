@@ -557,6 +557,8 @@ FRONTEND
 
 ### 118. UI Integration - ACCEPT Flow
 
+- update updateOrderStatus method api
+
 ---
 
 ### 📚 REST API Dependencies

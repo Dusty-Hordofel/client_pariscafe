@@ -64,22 +64,45 @@ export const createOrder = async (order_data, token) => {
   }
 };
 
-export const updateOrderStatus = async (id, token) => {
+export const updateOrderStatus = async (id, status, token) => {
   const headers = { Authorization: `Bearer ${token}` };
 
+  const URI = `/api/orders/${id}/?`;
+
   try {
-    const response = await AxiosInstance.put(
-      `/api/orders/${id}`,
-      {},
+    const result = await AxiosInstance.put(
+      `${URI}`,
+      { new_status: status },
       { headers }
     );
 
-    return response;
+    return result;
   } catch (error) {
     console.log(
-      "🚀 ~ file: index.js ~ line 44 ~ updateOrderStatus ~ error",
+      "🚀 ~ file: index.js ~ line 79 ~ updateOrderStatus ~ error",
       error
     );
+
     throw error;
   }
 };
+
+// export const updateOrderStatus = async (id, token) => {
+//   const headers = { Authorization: `Bearer ${token}` };
+
+//   try {
+//     const response = await AxiosInstance.put(
+//       `/api/orders/${id}`,
+//       {},
+//       { headers }
+//     );
+
+//     return response;
+//   } catch (error) {
+//     console.log(
+//       "🚀 ~ file: index.js ~ line 44 ~ updateOrderStatus ~ error",
+//       error
+//     );
+//     throw error;
+//   }
+// };
