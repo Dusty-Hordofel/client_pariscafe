@@ -557,7 +557,15 @@ FRONTEND
 
 ### 118. UI Integration - ACCEPT Flow
 
-- update updateOrderStatus method api
+- update updateOrderStatus method api & <OrderStatus/>
+
+### 119. UI Testing ACCEPT Flow
+
+- test all process
+
+### 120. CI/CD - Deploy to Cloud
+
+- deployed to Netlify Cloud
 
 ---
 
