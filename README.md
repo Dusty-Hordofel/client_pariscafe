@@ -536,7 +536,11 @@ FRONTEND
 
 ### 113. ADMIN Profile , Retrieve ORDERS
 
-- Update <Navbar/>
+- Update <Navbar/>, <Orders/>
+
+### 114. Implementing Authorization - embedding SCOPEs in JWT tokens
+
+- create api getOrdersForAdmin && <Orders/>
 
 ---
 

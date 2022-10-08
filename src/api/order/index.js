@@ -1,5 +1,27 @@
 import { AxiosInstance } from "../../util/AxiosInstance";
 
+export const getOrdersForAdmin = async (token, status = "Ordered") => {
+  const headers = { Authorization: `Bearer ${token}` };
+
+  const URI = "/api/orders/admin/?";
+  const params = new URLSearchParams({
+    limit: 10,
+    status,
+  });
+
+  try {
+    const response = await AxiosInstance.get(`${URI}${params}`, { headers });
+    return response;
+  } catch (error) {
+    console.log(
+      "🚀 ~ file: index.js ~ line 45 ~ getOrdersForAdmin ~ error",
+      error
+    );
+
+    throw error;
+  }
+};
+
 export const getMyOrders = async (token) => {
   const headers = { Authorization: `Bearer ${token}` };
 

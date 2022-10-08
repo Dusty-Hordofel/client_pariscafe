@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Layout from "../Layout/Layout";
 import AppSpinner from "../UI/Spinner/AppSpinner";
-import { getMyOrders } from "../../api/order";
+import { getMyOrders, getOrdersForAdmin } from "../../api/order";
 import { CLAIMS_URI } from "../../config/Config";
 import Accordion from "../UI/Accordion/Accordion";
 
@@ -19,13 +19,15 @@ const Orders = () => {
     try {
       setLoading(true);
       const token = await getAccessTokenSilently();
-      const result = await getMyOrders(token);
+      const result = isAdmin
+        ? await getOrdersForAdmin(token)
+        : await getMyOrders(token);
       console.log(
         "🚀 ~ file: Orders.js ~ line 23 ~ init ~ result",
         result.data
       );
 
-      setOrders(result.data.orders);
+      isAdmin ? setOrders(result.data) : setOrders(result.data.orders);
       setLoading(false);
     } catch (error) {
       setLoading(false);
