@@ -5,15 +5,22 @@ import {
   faBars,
   faSearch,
   faCartPlus,
+  faUserShield,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getTotalItemsInCart } from "../../Cart/cartHandler";
+import { CLAIMS_URI } from "../../../config/Config";
+
 import "./Navbar.css";
 import logo from "../../../assets/images/dosa.jpg";
 
 const Navbar = () => {
   const { isAuthenticated } = useAuth0();
   const { user } = useAuth0();
+
+  const isAdmin =
+    isAuthenticated && user[`${CLAIMS_URI}/roles`].includes("admin");
+  console.log("🚀 ~ file: Navbar.js ~ line 22 ~ Navbar ~ isAdmin", isAdmin);
 
   const renderNavbar = () => (
     <nav className="navbar navbar-expand-lg navbar-light ">
@@ -95,36 +102,41 @@ const Navbar = () => {
                       fontWeight: "bold",
                     }}
                   >
-                    {user.name}
+                    {isAdmin && (
+                      <FontAwesomeIcon icon={faUserShield} size="xs" />
+                    )}{" "}
+                    &nbsp;{user.name}
                   </span>
                 </Link>
               </li>
             )}
 
-            <li
-              className={
-                window.location.pathname === "/cart"
-                  ? "nav-item active"
-                  : "nav-item"
-              }
-            >
-              <Link className="nav-link" to="/cart">
-                Cart &nbsp;
-                <FontAwesomeIcon
-                  icon={faCartPlus}
-                  style={{ color: "orangered" }}
-                />{" "}
-                {getTotalItemsInCart() > 0 && (
-                  <span>
-                    <sup>
-                      <small className="cart-badge">
-                        {getTotalItemsInCart()}
-                      </small>
-                    </sup>
-                  </span>
-                )}
-              </Link>
-            </li>
+            {!isAdmin && (
+              <li
+                className={
+                  window.location.pathname === "/cart"
+                    ? "nav-item active"
+                    : "nav-item"
+                }
+              >
+                <Link className="nav-link" to="/cart">
+                  Cart &nbsp;
+                  <FontAwesomeIcon
+                    icon={faCartPlus}
+                    style={{ color: "orangered" }}
+                  />{" "}
+                  {getTotalItemsInCart() > 0 && (
+                    <span>
+                      <sup>
+                        <small className="cart-badge">
+                          {getTotalItemsInCart()}
+                        </small>
+                      </sup>
+                    </span>
+                  )}
+                </Link>
+              </li>
+            )}
             {isAuthenticated && (
               <>
                 <li

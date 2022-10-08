@@ -1,19 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import { useAuth0 } from '@auth0/auth0-react';
-import Layout from '../../Layout/Layout';
+import { useAuth0 } from "@auth0/auth0-react";
+import Layout from "../../Layout/Layout";
 
 const Profile = () => {
-
   const { user } = useAuth0();
   const { picture } = user;
+  console.log("🚀 ~ file: Profile.js ~ line 8 ~ Profile ~ user", user);
 
   const renderProfile = () => (
-
     <Layout title="Profile Information" background={true}>
-
       <div>
-        <div className="row align-items-center " >
+        <div className="row align-items-center ">
           <div className="col-md-2 mb-3">
             <img
               src={picture}
@@ -28,16 +26,10 @@ const Profile = () => {
           </pre>
         </div>
       </div>
-
     </Layout>
+  );
 
-  )
+  return <>{renderProfile()}</>;
+};
 
-  return (
-    <>
-      {renderProfile()}
-    </>
-  )
-}
-
-export default Profile
+export default Profile;

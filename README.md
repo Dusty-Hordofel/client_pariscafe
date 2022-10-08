@@ -519,14 +519,53 @@ FRONTEND
 
 ### 109. UI - ORDER Component Design
 
-- create <Order/>,<OrderListing/>,<OrderStatus/>,<TrakingCard/> & <OrderTrackerVertical/>
+- create <Order/>,<OrderListing/>,<OrderStatus/>,<TrakingCard/>,<Address/> & <OrderTrackerVertical/>
 - pass order from <Accordeon/> to <Order/>
 
 ### 110. UI - Responsive Design
 
-### 111. De-selecting ABANDONED Orders
+### 111. CI / CD - Deploy to Cloud
 
-### 112. CI / CD - Deploy to Cloud
+- deploy to Netlify
+
+## Section 10. ORDER Management Workflow
+
+### 112. Intro - ADMIN Interface
+
+- update <Profile/>
+
+### 113. ADMIN Profile , Retrieve ORDERS
+
+- Update <Navbar/>, <Orders/>
+
+### 114. Implementing Authorization - embedding SCOPEs in JWT tokens
+
+- create api getOrdersForAdmin && <Orders/>
+
+### 115. Display ADMIN Orders, Implement Filter Logic
+
+- update <Orders/>
+
+### 116. Implement Filter Orders on STATE
+
+- filter input in <Orders/> using showOrdersForState()
+- add <Notification/>
+
+### 117. API Implement ACCEPT Orders Flow
+
+- update <Order/>
+
+### 118. UI Integration - ACCEPT Flow
+
+- update updateOrderStatus method api & <OrderStatus/>
+
+### 119. UI Testing ACCEPT Flow
+
+- test all process
+
+### 120. CI/CD - Deploy to Cloud
+
+- deployed to Netlify Cloud
 
 ---
 
