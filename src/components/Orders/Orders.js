@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Layout from "../Layout/Layout";
-import AppSpinner from "../UI/Spinner/AppSpinner";
 import { getMyOrders, getOrdersForAdmin } from "../../api/order";
-import { CLAIMS_URI } from "../../config/Config";
+
 import Accordion from "../UI/Accordion/Accordion";
+import AppSpinner from "../UI/Spinner/AppSpinner";
+
+import { CLAIMS_URI } from "../../config/Config";
+
+import { Notification } from "../UI/Notification/Notification";
 
 import "./Orders.css";
+
 const Orders = () => {
   const { isAuthenticated, getAccessTokenSilently, user } = useAuth0();
-  const isAdmin =
-    isAuthenticated && user[`${CLAIMS_URI}/roles`]?.includes("admin");
-  const [loading, setLoading] = useState(false);
 
   const [orders, setOrders] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
+  const [filteredState, setFilteredState] = useState("");
+
+  const isAdmin =
+    isAuthenticated && user[`${CLAIMS_URI}/roles`].includes("admin");
+
+  const [show, setShow] = useState(false);
+
+  const [notificationText, setNotificationText] = useState("");
 
   const orderStates = ["Ordered", "Processing", "Dispatched", "Canceled"];
 
@@ -30,6 +43,7 @@ const Orders = () => {
       );
 
       isAdmin ? setOrders(result.data) : setOrders(result.data.orders);
+
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -37,11 +51,33 @@ const Orders = () => {
     }
   };
 
+  const showOrdersForState = async (state) => {
+    setFilteredState(state);
+
+    try {
+      const token = await getAccessTokenSilently();
+      const result = await getOrdersForAdmin(token, state);
+      setOrders(result.data);
+    } catch (error) {
+      if (error.response) {
+        console.log(
+          "🚀 ~ file: Orders.js ~ line 62 ~ showOrdersForState ~ error",
+          error.response.data.error.message
+        );
+      }
+
+      setNotificationText(error.response.data.error.message);
+      setShow(true);
+      setOrders([]);
+    }
+  };
+
   useEffect(() => {
     init();
   }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const displayOrders = () => <Accordion orders={orders} />;
+  const displayOrders = () =>
+    orders.length > 0 && <Accordion orders={orders} />;
 
   const displayOrderStates = () => (
     <div className="filter-states">
@@ -49,7 +85,14 @@ const Orders = () => {
         {orderStates.map((state, index) => {
           return (
             <li key={index}>
-              <input type="radio" name={state} value={state} /> {state}
+              <input
+                type="radio"
+                name={state}
+                value={state}
+                checked={state === filteredState}
+                onChange={() => showOrdersForState(state)}
+              />{" "}
+              {state}
             </li>
           );
         })}
@@ -57,6 +100,13 @@ const Orders = () => {
     </div>
   );
 
+  const closeHandler = () => {
+    setShow(false);
+  };
+
+  const displayNotification = () => (
+    <Notification show={show} text={notificationText} close={closeHandler} />
+  );
   const renderOrdersForUsers = () =>
     !isAdmin && (
       <Layout title="My Orders" background={true} backdrop={true}>
@@ -73,6 +123,7 @@ const Orders = () => {
   const renderOrdersForAdminUsers = () =>
     isAdmin && (
       <Layout title="Orders">
+        {show && displayNotification()}
         <div className="row justify-content-center mt-5">
           <div className="col-8 col-md-3">
             <div className="row justify-content-center">
@@ -89,6 +140,7 @@ const Orders = () => {
         </div>
       </Layout>
     );
+
   return (
     <>
       {renderOrdersForUsers()}

@@ -546,7 +546,10 @@ FRONTEND
 
 - update <Orders/>
 
----
+### 116. Implement Filter Orders on STATE
+
+- filter input in <Orders/> using showOrdersForState()
+- add <Notification/>
 
 ### 📚 REST API Dependencies
 
