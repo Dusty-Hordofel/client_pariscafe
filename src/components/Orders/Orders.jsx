@@ -15,6 +15,8 @@ const Orders = () => {
 
   const [orders, setOrders] = useState([]);
 
+  const orderStates = ["Ordered", "Processing", "Dispatched", "Canceled"];
+
   const init = async () => {
     try {
       setLoading(true);
@@ -41,6 +43,20 @@ const Orders = () => {
 
   const displayOrders = () => <Accordion orders={orders} />;
 
+  const displayOrderStates = () => (
+    <div className="filter-states">
+      <ul>
+        {orderStates.map((state, index) => {
+          return (
+            <li key={index}>
+              <input type="radio" name={state} value={state} /> {state}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+
   const renderOrdersForUsers = () =>
     !isAdmin && (
       <Layout title="My Orders" background={true} backdrop={true}>
@@ -57,7 +73,6 @@ const Orders = () => {
   const renderOrdersForAdminUsers = () =>
     isAdmin && (
       <Layout title="Orders">
-        {/* {show && displayNotification()} */}
         <div className="row justify-content-center mt-5">
           <div className="col-8 col-md-3">
             <div className="row justify-content-center">
@@ -67,7 +82,7 @@ const Orders = () => {
             </div>
 
             <div className="row justify-content-center">
-              {/* <div className="col-8">{displayOrderStates()}</div> */}
+              <div className="col-8">{displayOrderStates()}</div>
             </div>
           </div>
           <div className="col-12 col-lg-6 mt-4">{displayOrders()}</div>

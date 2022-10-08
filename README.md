@@ -542,6 +542,10 @@ FRONTEND
 
 - create api getOrdersForAdmin && <Orders/>
 
+### 115. Display ADMIN Orders, Implement Filter Logic
+
+- update <Orders/>
+
 ---
 
 ### 📚 REST API Dependencies
