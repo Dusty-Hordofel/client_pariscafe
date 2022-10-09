@@ -8,7 +8,7 @@ import Address from "../../UI/Address/Address";
 import OrderListing from "../../UI/OrderListing/OrderListing";
 import { TrackingCardVertical as OrderTrackerVertical } from "../../UI/TrackingCard/TrackingCardVertical";
 import { CLAIMS_URI } from "../../../config/Config";
-import { updateOrderStatus } from "../../../api/order";
+import { updateOrderStatus, cancelOrder } from "../../../api/order";
 import { Notification } from "../../UI/Notification/Notification";
 
 import AppSpinner from "../../UI/Spinner/AppSpinner";
@@ -26,6 +26,34 @@ const Order = () => {
 
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
+  const cancelHandler = async (id, status) => {
+    console.log(
+      "🚀 ~ file: Order.js ~ line 32 ~ cancelHandler ~ id",
+      id,
+      status
+    );
+
+    try {
+      setLoading(true);
+      const token = await getAccessTokenSilently();
+
+      const result = await cancelOrder(id, status, token);
+      console.log(
+        "🚀 ~ file: Order.js ~ line 41 ~ cancelHandler ~ result",
+        result.data
+      );
+      setLoading(false);
+      setNotificationText("Your Order is canceled.");
+      setShow(true);
+    } catch (error) {
+      setLoading(false);
+      console.log(
+        "🚀 ~ file: Order.js ~ line 41 ~ cancelHandler ~ result",
+        error.response.data
+      );
+    }
+  };
 
   const acceptHandler = async (id, status) => {
     try {
@@ -80,6 +108,7 @@ const Order = () => {
                 order={order}
                 isAdmin={isAdmin}
                 accept={acceptHandler}
+                cancel={cancelHandler}
               />
             </div>
             <div className="row justify-content-center mt-3">

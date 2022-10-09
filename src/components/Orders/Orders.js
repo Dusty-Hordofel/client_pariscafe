@@ -55,10 +55,13 @@ const Orders = () => {
     setFilteredState(state);
 
     try {
+      setLoading(true);
       const token = await getAccessTokenSilently();
       const result = await getOrdersForAdmin(token, state);
       setOrders(result.data);
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       if (error.response) {
         console.log(
           "🚀 ~ file: Orders.js ~ line 62 ~ showOrdersForState ~ error",
@@ -123,6 +126,7 @@ const Orders = () => {
   const renderOrdersForAdminUsers = () =>
     isAdmin && (
       <Layout title="Orders">
+        {loading && <AppSpinner />}
         {show && displayNotification()}
         <div className="row justify-content-center mt-5">
           <div className="col-8 col-md-3">

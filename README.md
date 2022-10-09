@@ -567,6 +567,23 @@ FRONTEND
 
 - deployed to Netlify Cloud
 
+## Section 11. ORDER Refund Flow
+
+### 121 API - CANCEL Order
+
+- update <Orders/>
+
+### 122 UI Integration - CANCEL Flow
+
+- create cancelOrder api method && <Order/>
+- set user permissions to cancelOrder
+
+### 63 E-2-E Testing CANCEL Flow
+
+-
+
+### 64 CI/CD - Deploy to Cloud
+
 ---
 
 ### 📚 REST API Dependencies

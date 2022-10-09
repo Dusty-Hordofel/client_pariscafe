@@ -9,7 +9,7 @@ const OrderStatus = ({ order, isAdmin, cancel, accept, dispatch, deliver }) => {
 
   const cancelOrder = () => {
     console.log("Cancel Order ..");
-    cancel(_id);
+    cancel(_id, "Canceled");
   };
 
   const acceptOrder = () => {
