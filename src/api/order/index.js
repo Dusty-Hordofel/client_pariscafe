@@ -87,6 +87,32 @@ export const updateOrderStatus = async (id, status, token) => {
   }
 };
 
+export const cancelOrder = async (id, status, token) => {
+  console.log("🚀 ~ file: index.js ~ line 119 ~ cancelOrder ~ token", token);
+
+  const headers = { Authorization: `Bearer ${token}` };
+
+  console.log(
+    "🚀 ~ file: index.js ~ line 125 ~ cancelOrder ~ headers",
+    headers
+  );
+
+  const URI = `/api/orders/${id}`;
+
+  try {
+    const result = await AxiosInstance.delete(`${URI}`, {
+      data: { new_status: status },
+      headers,
+    });
+
+    return result;
+  } catch (error) {
+    console.log("🚀 ~ file: index.js ~ line 79 ~ cancelOrder ~ error", error);
+
+    throw error;
+  }
+};
+
 // export const updateOrderStatus = async (id, token) => {
 //   const headers = { Authorization: `Bearer ${token}` };
 
