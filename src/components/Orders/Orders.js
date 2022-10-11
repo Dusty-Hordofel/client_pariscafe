@@ -80,7 +80,7 @@ const Orders = () => {
   }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const displayOrders = () =>
-    orders.length > 0 && <Accordion orders={orders} />;
+    orders && orders.length > 0 && <Accordion orders={orders} />;
 
   const displayOrderStates = () => (
     <div className="filter-states">
