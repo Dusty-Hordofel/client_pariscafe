@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Layout from "../../Layout/Layout";
 import OrderStatus from "../../UI/OrderStatus/OrderStatus";
@@ -12,14 +12,13 @@ import {
   updateOrderStatus,
   cancelOrder,
   getOrderStatus,
+  getOrderById,
 } from "../../../api/order";
 import { Notification } from "../../UI/Notification/Notification";
 
 import AppSpinner from "../../UI/Spinner/AppSpinner";
 
 const Order = () => {
-  const { state: order } = useLocation();
-
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   const isAdmin =
@@ -27,10 +26,36 @@ const Order = () => {
 
   const [show, setShow] = useState(false);
   const [notificationText, setNotificationText] = useState("");
-  const [status, setStatus] = useState([]);
 
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
+  const [status, setStatus] = useState([]);
+
+  const [order, setOrder] = useState();
+
+  const { id } = useParams();
+
+  const init = async () => {
+    try {
+      setLoading(true);
+      const token = await getAccessTokenSilently();
+      const result = await getOrderById(id, token);
+      setOrder(result.data);
+      setStatus(result.data.status);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(
+        "🚀 ~ file: Order.js ~ line 50 ~ init ~ error",
+        error.response.data
+      );
+    }
+  };
+
+  useEffect(() => {
+    init();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const cancelHandler = async (id, status) => {
     console.log(
@@ -105,46 +130,52 @@ const Order = () => {
   const renderOrder = () => (
     <Layout title="My Order">
       {show && displayNotification()}
-      {loading && <AppSpinner />}
-      <section>
-        <div className="row justify-content-center mt-4">
-          <div className="col-12">
-            <Link to="/orders">
-              <button className="btn btn-primary">
-                {" "}
-                <span style={{ fontWeight: "bold" }}> &#x27F8;</span> Back to My
-                Orders{" "}
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="row justify-content-center mt-3">
-          <div className="col-10 col-sm-6">
-            <div className="row justify-content-center">
-              <OrderStatus
-                order={order}
-                isAdmin={isAdmin}
-                accept={acceptHandler}
-                cancel={cancelHandler}
-              />
-            </div>
-            <div className="row justify-content-center mt-3">
-              <OrderTracker status={order.status} />
+      {loading || !order ? (
+        <AppSpinner />
+      ) : (
+        <section>
+          <div className="row justify-content-center mt-4">
+            <div className="col-12">
+              <Link to="/orders">
+                <button className="btn btn-primary">
+                  {" "}
+                  <span style={{ fontWeight: "bold" }}> &#x27F8;</span> Back to
+                  My Orders{" "}
+                </button>
+              </Link>
             </div>
           </div>
-          <div className="col-10 col-sm-5 mx-3">
-            <div className="row justify-content-center d-block d-lg-none mt-3">
-              <OrderTrackerVertical status={status} refresh={refreshHandler} />
+          <div className="row justify-content-center mt-3">
+            <div className="col-10 col-sm-6">
+              <div className="row justify-content-center">
+                <OrderStatus
+                  order={order}
+                  isAdmin={isAdmin}
+                  accept={acceptHandler}
+                  cancel={cancelHandler}
+                />
+              </div>
+              <div className="row justify-content-center mt-3">
+                <OrderTracker status={status} refresh={refreshHandler} />
+              </div>
             </div>
-            <div className="row justify-content-center">
-              <Address order={order} />
-            </div>
-            <div className="row justify-content-center mt-3">
-              <OrderListing order={order} />
+            <div className="col-10 col-sm-5 mx-3">
+              <div className="row justify-content-center d-block d-lg-none mt-3">
+                <OrderTrackerVertical
+                  status={status}
+                  refresh={refreshHandler}
+                />
+              </div>
+              <div className="row justify-content-center">
+                <Address order={order} />
+              </div>
+              <div className="row justify-content-center mt-3">
+                <OrderListing order={order} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </Layout>
   );
 

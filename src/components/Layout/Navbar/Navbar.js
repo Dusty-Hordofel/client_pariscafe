@@ -20,7 +20,6 @@ const Navbar = () => {
 
   const isAdmin =
     isAuthenticated && user[`${CLAIMS_URI}/roles`].includes("admin");
-  console.log("🚀 ~ file: Navbar.js ~ line 22 ~ Navbar ~ isAdmin", isAdmin);
 
   const renderNavbar = () => (
     <nav className="navbar navbar-expand-lg navbar-light ">
@@ -56,7 +55,10 @@ const Navbar = () => {
         >
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse mx-0 mx-lg-5"
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li
               className={

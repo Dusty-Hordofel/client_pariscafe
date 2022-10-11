@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import _ from 'lodash';
 import './CheckboxGroup.css';
 
 
-const CheckboxGroup = ({ categories, handleFiltering }) => {
+const CheckboxGroup = ({ categories, handleFiltering, categoriesSeleted }) => {
 
 
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState(categoriesSeleted);
 
   const handleSelected = (category) => {
 
@@ -36,7 +37,8 @@ const CheckboxGroup = ({ categories, handleFiltering }) => {
                   <label className="form-check-label" style={{ float: 'left' }}>
                     <input type="checkbox" className="form-check-input"
                       onChange={() => handleSelected(category._id)}
-                      value={''}
+                      value={category._id}
+                      checked={_.includes(selected, category._id)}
                     />
                     {category.name}
                   </label>

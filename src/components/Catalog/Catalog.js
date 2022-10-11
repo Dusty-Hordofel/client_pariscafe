@@ -18,6 +18,7 @@ const Catalog = () => {
   const [filteredDishes, setFilteredDishes] = useState([]);
 
   const [categories, setCategories] = useState([]);
+  const [selecetdCategories, setSelectedCategories] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -111,6 +112,7 @@ const Catalog = () => {
     console.log("🚀 ~ file: Catalog.js ~ line 72 ~ getFilteredDishes ~ categories", categories);
 
     const categoriesLength = categories.length;
+    setSelectedCategories(categories);
 
 
     try {
@@ -141,33 +143,35 @@ const Catalog = () => {
 
     <Layout title="Savor Our Delicacies" >
       {showNotification()}
-      {loading ? <AppSpinner /> :
-        <section className="container mt-4">
-          <div className="row justify-content-center">
-            <div className="col-md-8 col-12">
-              <Slideshow />
+      <section className="container mt-4">
+        <div className="row justify-content-center">
+          <div className="col-md-8 col-12">
+            <Slideshow />
+          </div>
+
+          {loading && <AppSpinner />}
+
+          <div className="row justify-content-center mt-4">
+            <div className="col-lg-2 mt-2">
+              <h4>Filter By Category</h4>
+              <CheckboxGroup categories={categories} handleFiltering={getFilteredDishes} categoriesSeleted={selecetdCategories} />
             </div>
-            <div className="row justify-content-center mt-4">
-              <div className="col-lg-2 mt-2">
-                <h4>Filter By Category</h4>
-                <CheckboxGroup categories={categories} handleFiltering={getFilteredDishes} />
+            <div className="col-lg-10 mt-2">
+              <div className="row justify-content-center">
+
+                {displayDishes()}
+                {displayFilteredDishes()}
+
               </div>
-              <div className="col-lg-10 mt-2">
-                <div className="row justify-content-center">
-
-                  {displayDishes()}
-                  {displayFilteredDishes()}
-
-                </div>
-              </div>
-
             </div>
-
 
           </div>
 
-        </section>
-      }
+
+        </div>
+
+      </section>
+
     </Layout>
   )
 
