@@ -8,7 +8,7 @@
   border: 1px solid var(--primary-navy);
   padding: 10px 10px;
   border-radius: 10px;
-
+ background: var(--primary-navy);
   /* margin: 12px 0;   */
 
 }
