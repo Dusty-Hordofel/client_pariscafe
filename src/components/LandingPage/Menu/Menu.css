@@ -6,7 +6,7 @@
 .card {
   margin: 20px ;
   padding: 10px;
-  background-color: var(--primary-custom-green);
+  background-color: var(--primary-white);
   min-height: 400px;
 }
 
