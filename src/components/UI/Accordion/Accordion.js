@@ -9,7 +9,7 @@ const LABEL_TYPES = {
   Canceled: { type: "danger" },
   Processing: { type: "warn" },
   Dispatched: { type: "info" },
-  Abandoned: { type: "info" },
+  Delivered: { type: "info" },
 };
 
 const Accordion = ({ orders = [] }) => {
@@ -83,7 +83,7 @@ const Accordion = ({ orders = [] }) => {
                   </span>
 
                   <span>
-                    <Link to={`/orders/${order._id}`} state={order}>
+                    <Link to={`/orders/${order._id}`}>
                       <button className="btn btn-outline-primary   mt-2 ml-2">
                         {" "}
                         VIEW ORDER{" "}

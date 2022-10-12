@@ -20,7 +20,6 @@ const Navbar = () => {
 
   const isAdmin =
     isAuthenticated && user[`${CLAIMS_URI}/roles`].includes("admin");
-  console.log("🚀 ~ file: Navbar.js ~ line 22 ~ Navbar ~ isAdmin", isAdmin);
 
   const renderNavbar = () => (
     <nav className="navbar navbar-expand-lg navbar-light ">
@@ -28,7 +27,7 @@ const Navbar = () => {
         <Link className="navbar-brand" to="/">
           <img src={logo} alt="Logo.." className="logo" />
           <label style={{ fontSize: "14px", fontWeight: "bold" }}>
-            ind<span className="logo-label">iC</span>af&egrave;
+            pari<span className="logo-label">SC</span>af&egrave;
           </label>
         </Link>
         <Link className="nav-link d-block d-lg-none" to="/cart">
@@ -56,7 +55,10 @@ const Navbar = () => {
         >
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse mx-0 mx-lg-5"
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li
               className={
@@ -173,18 +175,18 @@ const Navbar = () => {
                 aria-label="Search"
                 size="40"
               />
-              <div className="input-group-append">
-                <button
-                  className="btn btn-outline-success"
-                  style={{
-                    background: "var(--primary-green)",
-                    color: "var(--primary-white)",
-                  }}
-                  type="submit"
-                >
-                  <FontAwesomeIcon icon={faSearch} />
-                </button>
-              </div>
+              {/* <div className="input-group-append"> */}
+              <button
+                className="btn btn-outline-success"
+                style={{
+                  background: "var(--primary-navy)",
+                  color: "var(--primary-white)",
+                }}
+                type="submit"
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+              {/* </div> */}
             </div>
           </form>
         </div>

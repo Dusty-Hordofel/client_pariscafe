@@ -95,15 +95,6 @@ const Cart = () => {
       setLoading(false);
 
       if (error.response) {
-        console.log("🚀 ~ file: Cart.js ~ line 88 ~ saveOrder ~ error", error);
-        console.log(
-          "🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error",
-          error
-        );
-        console.log(
-          "🚀 ~ file: Cart.js ~ line 56 ~ updateAddress ~ error",
-          error
-        );
         console.log(
           "🚀 ~ file: Cart.js ~ line 38 ~ getAddress ~ error.response",
           error.response.data.error
@@ -211,7 +202,7 @@ const Cart = () => {
         }}
       >
         {checkoutSuccess ? (
-          <Link to={`/myorders/${sessionId}`}>{checkoutSuccess}</Link>
+          <Link to={`/orders/${sessionId}`}>{checkoutSuccess}</Link>
         ) : null}
       </div>
     );
@@ -308,7 +299,7 @@ const Cart = () => {
             </div>
             <div className="row justify-content-center mt-5">
               <div className="col-12 order-1 d-block d-lg-none">
-                {showCartMobile()}
+                {getTotalItemsInCart() > 0 && showCartMobile()}
               </div>
               <div className="col-lg-6 col-6  mt-3 mt-md-0 order-1 order-lg-0 d-none d-lg-block">
                 <div className="row justify-content-start">{showCart()}</div>

@@ -42,3 +42,49 @@ const Routes = () => {
 };
 
 export default Routes;
+
+// import React from 'react'
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import LandingPage from '../LandingPage/LandingPage';
+// import Catalog from '../Catalog/Catalog';
+// import Cart from '../Cart/Cart';
+// import Signin from '../Auth/Signin/Singin';
+// import Signup from '../Auth/Signup//Signup';
+// import Signout from '../Auth/Signout/Signout';
+// import Profile from '../Auth/Profile/Profile';
+// import Orders from '../Orders/Orders';
+// import Order from '../Orders/Order/Order';
+
+// import ProtectedRoute from '../Auth/ProtectedRoute/ProtectedRoute';
+
+// const Routes = () => {
+
+//   const deployRoutes = () => {
+
+//     return (
+//       <Router>
+//         <Switch>
+//           <Route path="/" exact component={LandingPage} />
+//           <Route path="/catalog" exact component={Catalog} />
+//           <Route path="/cart" exact component={Cart} />
+//           <Route path="/signin" exact component={Signin} />
+//           <Route path="/signup" exact component={Signup} />
+//           <Route path="/signout" exact component={Signout} />
+//           <ProtectedRoute path="/me" exact component={Profile} />
+//           <ProtectedRoute path="/orders" exact component={Orders} />
+//           <ProtectedRoute path="/orders/:id" exact component={Order} />
+
+//         </Switch>
+//       </Router>
+//     )
+//   }
+
+//   return (
+//     <>
+//       {deployRoutes()}
+//     </>
+//   )
+
+// }
+
+// export default Routes

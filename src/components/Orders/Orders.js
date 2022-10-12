@@ -59,6 +59,7 @@ const Orders = () => {
       const token = await getAccessTokenSilently();
       const result = await getOrdersForAdmin(token, state);
       setOrders(result.data);
+
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -80,7 +81,7 @@ const Orders = () => {
   }, [isAuthenticated]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const displayOrders = () =>
-    orders.length > 0 && <Accordion orders={orders} />;
+    orders && orders.length > 0 && <Accordion orders={orders} />;
 
   const displayOrderStates = () => (
     <div className="filter-states">
@@ -110,6 +111,7 @@ const Orders = () => {
   const displayNotification = () => (
     <Notification show={show} text={notificationText} close={closeHandler} />
   );
+
   const renderOrdersForUsers = () =>
     !isAdmin && (
       <Layout title="My Orders" background={true} backdrop={true}>
@@ -126,8 +128,9 @@ const Orders = () => {
   const renderOrdersForAdminUsers = () =>
     isAdmin && (
       <Layout title="Orders">
-        {loading && <AppSpinner />}
         {show && displayNotification()}
+        {loading && <AppSpinner />}
+
         <div className="row justify-content-center mt-5">
           <div className="col-8 col-md-3">
             <div className="row justify-content-center">

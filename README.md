@@ -578,11 +578,23 @@ FRONTEND
 - create cancelOrder api method && <Order/>
 - set user permissions to cancelOrder
 
-### 63 E-2-E Testing CANCEL Flow
+### 123 E-2-E Testing CANCEL Flow
 
--
+### 124 CI/CD - Deploy to Cloud
 
-### 64 CI/CD - Deploy to Cloud
+## Section 11. ORDER State Refresh - On Demand - Pull Model
+
+### 125. UI Integration, Stripe Idempotent Requests
+
+- create getOrderStatus api method && <Order/>
+
+### 126. Retrieve ORDER by Id
+
+### 127. UI Integration with multiple flows
+
+### 128. CI/CD - Deploy to Cloud
+
+### 129. Validating the Deploy on cloud
 
 ---
 
