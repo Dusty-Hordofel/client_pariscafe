@@ -14,6 +14,7 @@ import Orders from "../Orders/Orders";
 import Order from "../Orders/Order/Order";
 import LoggedInRoutes from "../Auth/ProtectedRoute/LoggedInRoutes";
 import NotLoggedInRoutes from "../Auth/ProtectedRoute/NotLoggedInRoutes";
+import AddCategory from "../Admin/AddCategory/AddCategory";
 
 const Routes = () => {
   const deployRoutes = () => {
@@ -24,6 +25,7 @@ const Routes = () => {
           <Route path="/signout" element={<Signout />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/admin/category/create" element={<AddCategory />} />
           <Route element={<LoggedInRoutes />}>
             <Route path="/orders" element={<Orders />} />
             <Route path="/orders/:id" element={<Order />} />

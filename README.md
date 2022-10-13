@@ -609,11 +609,12 @@ FRONTEND
 
 ### 133. Validation of Web sockets messaging between Netlify and Heroku
 
-## Section 14. Design-ADMIN-Section
+## Section 14. Design ADMINbSection
 
 ### 134. UI - Creating Dish Category
 
-### 135. Form state and data handling - Formik and Yup
+- create components->Admin-><AddCategory/>
+- create createCategory() api method
 
 ### 136. E-2-E Testing
 
