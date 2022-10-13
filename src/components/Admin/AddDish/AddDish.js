@@ -92,6 +92,7 @@ const AddDish = () => {
     touched,
   } = formik;
 
+  //TODO: Get getCategory List
   const getCategoiesFromDB = async () => {
     try {
       setLoading(true);
@@ -109,6 +110,7 @@ const AddDish = () => {
     }
   };
 
+  //TODO: Show all categories
   const showCategoies = () => (
     <>
       <option value="">Select Category</option>
