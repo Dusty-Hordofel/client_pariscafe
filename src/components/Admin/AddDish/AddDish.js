@@ -77,7 +77,7 @@ const AddDish = () => {
     onSubmit: (values) => {
       console.log(values);
       createHandler(values);
-    },
+    }, //send the data to the backend
     validationSchema,
     enableReinitialize: true,
   });
