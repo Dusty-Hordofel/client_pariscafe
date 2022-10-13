@@ -17,13 +17,13 @@ import { FilePond, registerPlugin } from "react-filepond";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginFileEncode from "filepond-plugin-file-encode";
-
+//npm i react-filepond filepond-plugin-image-exif-orientation filepond-plugin-image-preview filepond-plugin-file-encode --legacy-peer-deps
 import "filepond/dist/filepond.min.css";
 
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 
 import "./AddDish.css";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 registerPlugin(
   FilePondPluginImageExifOrientation,
@@ -51,7 +51,7 @@ const AddDish = () => {
   const { isAuthenticated, user } = useAuth0();
 
   const isAdmin =
-    isAuthenticated && user[`${CLAIMS_URI}/role`].includes("admin");
+    isAuthenticated && user[`${CLAIMS_URI}/roles`].includes("admin");
 
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -136,6 +136,7 @@ const AddDish = () => {
       <Notification text={notificationText} show={show} close={closeHandler} />
     );
 
+  //TODO: create a dish
   const createHandler = async (values) => {
     try {
       setLoading(true);
@@ -294,6 +295,7 @@ const AddDish = () => {
     </div>
   );
 
+  //TODO: Get the file
   const processFile = (files) => {
     setFiles(files);
 
@@ -308,7 +310,7 @@ const AddDish = () => {
       size: files[0].fileSize,
     });
   };
-
+  //TODO: Upload image
   const createUploadPanel = () => {
     return (
       <div className="input-row mb-3">

@@ -1,0 +1,5 @@
+.filepond--drop-label {
+    border : 2px solid lightblue !important; 
+    border-radius : 10px;
+    background: var(--primary-peach);
+  }

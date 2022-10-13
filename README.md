@@ -625,9 +625,13 @@ FRONTEND
 
 ### 137. UI Integration with API
 
+- add createDish api method
+
 ### 140. E-2-E Testing - Create a Dish
 
 ### 141. Image preview, upload with Formik
+
+-
 
 ### 86. Testing Dish Creation with image data
 
@@ -653,3 +657,5 @@ FRONTEND
 
 - 🔗 [The Complete Guide To React User Authentication with Auth0](https://auth0.com/blog/complete-guide-to-react-user-authentication/)
 - 🔗 [React Login with Auth0](https://auth0.com/docs/quickstart/spa/react/01-login#show-user-profile-information)
+- 🔗 [React-Filepon](https://www.npmjs.com/package/react-filepond)
+- 🔗 [filepond-plugin-image-preview](https://www.npmjs.com/package/filepond-plugin-image-preview)
