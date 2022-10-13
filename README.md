@@ -587,6 +587,7 @@ FRONTEND
 ### 125. UI Integration, Stripe Idempotent Requests
 
 - create getOrderStatus api method && <Order/>
+  -update folders
 
 ### 126. Retrieve ORDER by Id
 
@@ -595,6 +596,18 @@ FRONTEND
 ### 128. CI/CD - Deploy to Cloud
 
 ### 129. Validating the Deploy on cloud
+
+## Section 12. Real Time Messaging - Web Sockets, Push Model
+
+### 130. Intro to Web Sockets readiness on the React client
+
+- npm i socket.io-client && App.js
+
+### 131. Sending Real time messages from server to client
+
+### 132. Display Notification on UI; Deploy to Cloud
+
+### 133. Validation of Web sockets messaging between Netlify and Heroku
 
 ---
 
