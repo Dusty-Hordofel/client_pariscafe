@@ -24,7 +24,11 @@ const validationSchema = Yup.object({
 const AddCategory = () => {
   const { user, isAuthenticated } = useAuth0();
   const isAdmin =
-    isAuthenticated && user[`${CLAIMS_URI}/role`].includes("admin");
+    isAuthenticated && user[`${CLAIMS_URI}/roles`].includes("admin");
+  console.log(
+    "🚀 ~ file: AddCategory.js ~ line 27 ~ AddCategory ~ isAdmin",
+    isAdmin
+  );
 
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
@@ -131,14 +135,15 @@ const AddCategory = () => {
       {loading && <AppSpinner />}
       <div className="row justify-content-center">
         <div className="col col-md-2 mt-5">
-          <AdminTasks />
+          <AdminTasks />{" "}
         </div>
         <div className="col col-md-6 mt-4">{buildForm()}</div>
       </div>
     </Layout>
   );
 
-  return <>{isAdmin ? renderAddCategory() : <Navigate to="/" />}</>;
+  return <>{renderAddCategory()}</>;
+  // return <>{isAdmin ? renderAddCategory() : <Navigate to="/" />}</>;
 };
 
 export default AddCategory;

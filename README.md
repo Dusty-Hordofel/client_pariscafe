@@ -614,15 +614,16 @@ FRONTEND
 ### 134. UI - Creating Dish Category
 
 - create components->Admin-><AddCategory/>
-- create createCategory() api method
 
-### 136. E-2-E Testing
+### 135. Design Admin Links panel
 
-### 137. Design Admin Links panel
+- create component->UI-><AdminTasks/>
 
-### 138. Form Design for Adding Dish
+### 136. Form Design for Adding Dish
 
-### 139. UI Integration with API
+- create components->Admin-><AddDish/>
+
+### 137. UI Integration with API
 
 ### 140. E-2-E Testing - Create a Dish
 

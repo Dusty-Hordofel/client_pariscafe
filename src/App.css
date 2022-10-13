@@ -69,3 +69,8 @@ h2, h3{
 h4, h5 {
   font-family: "Roboto Regular", sans-serif !important;
 }
+
+input, textarea, select {
+
+  background-color: var(--primary-peach);
+}
