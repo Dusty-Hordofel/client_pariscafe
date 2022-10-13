@@ -582,7 +582,7 @@ FRONTEND
 
 ### 124 CI/CD - Deploy to Cloud
 
-## Section 11. ORDER State Refresh - On Demand - Pull Model
+## Section 12. ORDER State Refresh - On Demand - Pull Model
 
 ### 125. UI Integration, Stripe Idempotent Requests
 
@@ -597,7 +597,7 @@ FRONTEND
 
 ### 129. Validating the Deploy on cloud
 
-## Section 12. Real Time Messaging - Web Sockets, Push Model
+## Section 13. Real Time Messaging - Web Sockets, Push Model
 
 ### 130. Intro to Web Sockets readiness on the React client
 
@@ -608,6 +608,38 @@ FRONTEND
 ### 132. Display Notification on UI; Deploy to Cloud
 
 ### 133. Validation of Web sockets messaging between Netlify and Heroku
+
+## Section 14. Design-ADMIN-Section
+
+### 134. UI - Creating Dish Category
+
+### 135. Form state and data handling - Formik and Yup
+
+### 136. E-2-E Testing
+
+### 137. Design Admin Links panel
+
+### 138. Form Design for Adding Dish
+
+### 139. UI Integration with API
+
+### 140. E-2-E Testing - Create a Dish
+
+### 141. Image preview, upload with Formik
+
+### 86. Testing Dish Creation with image data
+
+### 87. Display Admin on Navbar
+
+### 88. CI/CD Deploy to cloud
+
+### 89. Spruce up the UI - Bug Fixes
+
+### 90. Protecting ADMIN APIs with JWT SCOPED tokens
+
+### 91. E-2-E Security Implementation , Testing , Deploy to Netlify
+
+### 92. Validation on Cloud
 
 ---
 
