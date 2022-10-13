@@ -10,13 +10,12 @@ import { createUser } from "./api/user";
 import { Notification } from "./components/UI/Notification/Notification";
 
 import { CLAIMS_URI, WS_URL } from "./config/Config";
-console.log("🚀 ~ file: App.js ~ line 13 ~ WS_URL", WS_URL);
 
 function App() {
   const socket = io(WS_URL, {
     transports: ["websocket"],
   });
-  console.log("🚀 ~ file: App.js ~ line 18 ~ App ~ WS_URL", WS_URL);
+  console.log("🚀 ~ file: App.js ~ line 18 ~ App ~ socket", socket);
 
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 

@@ -1,12 +1,12 @@
-import { Auth0Provider } from '@auth0/auth0-react';
-import { DOMAIN, CLIENT_ID, AUDIENCE } from './config/Config';
-import history from './components/util/history';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { Auth0Provider } from "@auth0/auth0-react";
+import { DOMAIN, CLIENT_ID, AUDIENCE } from "./config/Config";
+import history from "./components/util/history";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const onRedirectCallback = (appState) => {
   history.push(
