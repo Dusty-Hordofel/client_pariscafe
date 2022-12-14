@@ -105,6 +105,7 @@ const Catalog = () => {
 
     const categoriesLength = categories.length;
     setDishes([]);
+    setFilteredDishes([]);
     setSelectedCategories(categories);
 
     try {
@@ -113,10 +114,12 @@ const Catalog = () => {
         categoriesLength > 0
           ? await getFilteredDishList(categories)
           : await getDishList();
-      categoriesLength > 0 ? setDishes([]) : setFilteredDishes([]);
-      categoriesLength > 0
-        ? setFilteredDishes(result.data)
-        : setDishes(result.data);
+      // categoriesLength > 0 ? setDishes([]) : setFilteredDishes([]);
+      setFilteredDishes(result.data);
+
+      // categoriesLength > 0
+      //   ? setFilteredDishes(result.data)
+      //   : setDishes(result.data);
 
       console.log(
         "🚀 ~ file: Catalog.js ~ line 94 ~ getFilteredDishes ~ result",

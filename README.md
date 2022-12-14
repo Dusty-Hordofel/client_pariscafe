@@ -631,13 +631,15 @@ FRONTEND
 
 ### 141. Image preview, upload with Formik
 
+- npm i react-filepond filepond-plugin-image-exif-orientation filepond-plugin-image-preview filepond-plugin-file-encode --legacy-peer-deps
+
+### 142. Testing Dish Creation with image data
+
+### 143. Display Admin on Navbar
+
 -
 
-### 86. Testing Dish Creation with image data
-
-### 87. Display Admin on Navbar
-
-### 88. CI/CD Deploy to cloud
+### 144. CI/CD Deploy to cloud
 
 ### 89. Spruce up the UI - Bug Fixes
 

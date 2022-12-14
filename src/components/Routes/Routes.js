@@ -27,6 +27,7 @@ const Routes = () => {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/admin/category/create" element={<AddCategory />} />
+          <Route path="/admin" element={AddCategory} />
           <Route path="/admin/dish/create" element={<AddDish />} />
           <Route element={<LoggedInRoutes />}>
             <Route path="/orders" element={<Orders />} />
